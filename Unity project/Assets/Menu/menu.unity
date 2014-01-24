@@ -195,5 +195,5 @@ MonoBehaviour:
   width: 100
   height: 100
   text: Start
-  sceneName: Level 1
+  sceneName: Level Len
   skin: {fileID: 0}
