@@ -18,6 +18,9 @@ public class Tile : MonoBehaviour
 	
 	private bool bIsPainted = false;
 	
+	public bool bFlagGoalIsHere = false;
+	public Spawner connectedSpawner = null;
+	
 	void Start()
 	{
 		SetPainted(true);

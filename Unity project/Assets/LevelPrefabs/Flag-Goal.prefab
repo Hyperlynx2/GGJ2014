@@ -10,10 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11400000}
-  - 95: {fileID: 9500000}
   m_Layer: 0
-  m_Name: Tile
+  m_Name: Flag-Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,8 +23,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 16, y: 4, z: 0}
+  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +40,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: fc300c5889d4e934ca1a826e17ce2bdd, type: 2}
+  - {fileID: 2100000, guid: 5a7630f112c91ae468717860a2b1e9a5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -54,41 +52,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300050, guid: e897b71e873d86b41b88f4611207e36b, type: 3}
---- !u!95 &9500000
-Animator:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef10a90e752fa246a394a46ef82e35f, type: 3}
-  m_Name: 
-  NorthTile: {fileID: 0}
-  EastTile: {fileID: 0}
-  WestTile: {fileID: 0}
-  SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 1b9a165000e26914f8b90493ddbb8f48, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 929f83021b9b536488ea48b94d406c82, type: 3}
-  UnPaintedHighlightTexture: {fileID: 2800000, guid: a636deab76b4f6a4ea19c2caffd13695,
-    type: 3}
-  PaintedHighlightTexture: {fileID: 2800000, guid: b21e85acb1e37994fa8657de42a166d5,
-    type: 3}
-  bFlagGoalIsHere: 0
-  connectedSpawner: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 33863ed2755dcd64e84e03bf036da2da, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

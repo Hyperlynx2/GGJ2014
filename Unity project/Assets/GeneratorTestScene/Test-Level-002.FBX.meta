@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: e897b71e873d86b41b88f4611207e36b
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Flag-Goal
+    100002: Flag-Spawner-5
+    100004: Player-Spawner
+    100006: //RootNode
+    100008: Tile-Blank
+    100010: Tile-Blank 1
+    100012: Tile-Blank 10
+    100014: Tile-Blank 11
+    100016: Tile-Blank 12
+    100018: Tile-Blank 13
+    100020: Tile-Blank 14
+    100022: Tile-Blank 15
+    100024: Tile-Blank 16
+    100026: Tile-Blank 17
+    100028: Tile-Blank 18
+    100030: Tile-Blank 19
+    100032: Tile-Blank 2
+    100034: Tile-Blank 20
+    100036: Tile-Blank 21
+    100038: Tile-Blank 22
+    100040: Tile-Blank 23
+    100042: Tile-Blank 24
+    100044: Tile-Blank 25
+    100046: Tile-Blank 26
+    100048: Tile-Blank 27
+    100050: Tile-Blank 28
+    100052: Tile-Blank 29
+    100054: Tile-Blank 3
+    100056: Tile-Blank 30
+    100058: Tile-Blank 31
+    100060: Tile-Blank 32
+    100062: Tile-Blank 33
+    100064: Tile-Blank 34
+    100066: Tile-Blank 4
+    100068: Tile-Blank 5
+    100070: Tile-Blank 6
+    100072: Tile-Blank 7
+    100074: Tile-Blank 8
+    100076: Tile-Blank 9
+    400000: Flag-Goal
+    400002: Flag-Spawner-5
+    400004: Player-Spawner
+    400006: //RootNode
+    400008: Tile-Blank
+    400010: Tile-Blank 1
+    400012: Tile-Blank 10
+    400014: Tile-Blank 11
+    400016: Tile-Blank 12
+    400018: Tile-Blank 13
+    400020: Tile-Blank 14
+    400022: Tile-Blank 15
+    400024: Tile-Blank 16
+    400026: Tile-Blank 17
+    400028: Tile-Blank 18
+    400030: Tile-Blank 19
+    400032: Tile-Blank 2
+    400034: Tile-Blank 20
+    400036: Tile-Blank 21
+    400038: Tile-Blank 22
+    400040: Tile-Blank 23
+    400042: Tile-Blank 24
+    400044: Tile-Blank 25
+    400046: Tile-Blank 26
+    400048: Tile-Blank 27
+    400050: Tile-Blank 28
+    400052: Tile-Blank 29
+    400054: Tile-Blank 3
+    400056: Tile-Blank 30
+    400058: Tile-Blank 31
+    400060: Tile-Blank 32
+    400062: Tile-Blank 33
+    400064: Tile-Blank 34
+    400066: Tile-Blank 4
+    400068: Tile-Blank 5
+    400070: Tile-Blank 6
+    400072: Tile-Blank 7
+    400074: Tile-Blank 8
+    400076: Tile-Blank 9
+    2300000: Flag-Goal
+    2300002: Flag-Spawner-5
+    2300004: Player-Spawner
+    2300006: Tile-Blank
+    2300008: Tile-Blank 1
+    2300010: Tile-Blank 10
+    2300012: Tile-Blank 11
+    2300014: Tile-Blank 12
+    2300016: Tile-Blank 13
+    2300018: Tile-Blank 14
+    2300020: Tile-Blank 15
+    2300022: Tile-Blank 16
+    2300024: Tile-Blank 17
+    2300026: Tile-Blank 18
+    2300028: Tile-Blank 19
+    2300030: Tile-Blank 2
+    2300032: Tile-Blank 20
+    2300034: Tile-Blank 21
+    2300036: Tile-Blank 22
+    2300038: Tile-Blank 23
+    2300040: Tile-Blank 24
+    2300042: Tile-Blank 25
+    2300044: Tile-Blank 26
+    2300046: Tile-Blank 27
+    2300048: Tile-Blank 28
+    2300050: Tile-Blank 29
+    2300052: Tile-Blank 3
+    2300054: Tile-Blank 30
+    2300056: Tile-Blank 31
+    2300058: Tile-Blank 32
+    2300060: Tile-Blank 33
+    2300062: Tile-Blank 34
+    2300064: Tile-Blank 4
+    2300066: Tile-Blank 5
+    2300068: Tile-Blank 6
+    2300070: Tile-Blank 7
+    2300072: Tile-Blank 8
+    2300074: Tile-Blank 9
+    3300000: Flag-Goal
+    3300002: Flag-Spawner-5
+    3300004: Player-Spawner
+    3300006: Tile-Blank
+    3300008: Tile-Blank 1
+    3300010: Tile-Blank 10
+    3300012: Tile-Blank 11
+    3300014: Tile-Blank 12
+    3300016: Tile-Blank 13
+    3300018: Tile-Blank 14
+    3300020: Tile-Blank 15
+    3300022: Tile-Blank 16
+    3300024: Tile-Blank 17
+    3300026: Tile-Blank 18
+    3300028: Tile-Blank 19
+    3300030: Tile-Blank 2
+    3300032: Tile-Blank 20
+    3300034: Tile-Blank 21
+    3300036: Tile-Blank 22
+    3300038: Tile-Blank 23
+    3300040: Tile-Blank 24
+    3300042: Tile-Blank 25
+    3300044: Tile-Blank 26
+    3300046: Tile-Blank 27
+    3300048: Tile-Blank 28
+    3300050: Tile-Blank 29
+    3300052: Tile-Blank 3
+    3300054: Tile-Blank 30
+    3300056: Tile-Blank 31
+    3300058: Tile-Blank 32
+    3300060: Tile-Blank 33
+    3300062: Tile-Blank 34
+    3300064: Tile-Blank 4
+    3300066: Tile-Blank 5
+    3300068: Tile-Blank 6
+    3300070: Tile-Blank 7
+    3300072: Tile-Blank 8
+    3300074: Tile-Blank 9
+    4300000: Tile-Blank
+    4300002: Tile-Blank
+    4300004: Tile-Blank
+    4300006: Tile-Blank
+    4300008: Tile-Blank
+    4300010: Tile-Blank
+    4300012: Tile-Blank
+    4300014: Tile-Blank
+    4300016: Tile-Blank
+    4300018: Tile-Blank
+    4300020: Tile-Blank
+    4300022: Tile-Blank
+    4300024: Tile-Blank
+    4300026: Tile-Blank
+    4300028: Tile-Blank
+    4300030: Tile-Blank
+    4300032: Tile-Blank
+    4300034: Tile-Blank
+    4300036: Tile-Blank
+    4300038: Tile-Blank
+    4300040: Tile-Blank
+    4300042: Tile-Blank
+    4300044: Tile-Blank
+    4300046: Tile-Blank
+    4300048: Tile-Blank
+    4300050: Tile-Blank
+    4300052: Tile-Blank
+    4300054: Tile-Blank
+    4300056: Tile-Blank
+    4300058: Tile-Blank
+    4300060: Tile-Blank
+    4300062: Tile-Blank
+    4300064: Tile-Blank
+    4300066: Tile-Blank
+    4300068: Tile-Blank
+    4300070: Flag-Goal
+    4300072: Player-Spawner
+    4300074: Flag-Spawner-5
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 
