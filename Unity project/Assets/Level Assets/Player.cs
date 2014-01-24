@@ -17,25 +17,33 @@ public class Player : MonoBehaviour
 	
 	private float _heading;
 	private Tile _currentTile;
+	private bool _initialised;
 	
 	/// <summary>
 	/// do not accept any movement change commands unless we're finished moving!
 	/// </summary>
 	private float _movementTimeRemaining;
 
-	// Use this for initialization
+	// Use this for initi alization
 	void Start ()
 	{
-		gameObject.transform.position = startTile.gameObject.transform.position + new Vector3(0, 0.5f, 0);
+		gameObject.transform.position = startTile.gameObject.transform.position;
 
 		_currentTile = startTile;
 		_heading = NORTH;
 		_movementTimeRemaining = 0;
+		_initialised = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		if(!_initialised)
+		{
+			_initialised = true;
+			_currentTile.SetConnectedTilesHighlighted(true);
+		}		
+		
 		if(_movementTimeRemaining <= 0)
 		{
 			//TODO: take heading into consideration here		
@@ -70,17 +78,20 @@ public class Player : MonoBehaviour
 	
 	private void MoveTo(Tile destination)
 	{
-		/*turn off the lights on the current tile, turn em on on the new one, start movement anim, set
-		 * movement timer, etc*/
+		if(destination != null)
+		{
+			/*turn off the lights on the current tile, turn em on on the new one, start movement anim, set
+			 * movement timer, etc*/
+			
+			_currentTile.SetConnectedTilesHighlighted(false);
+			destination.SetConnectedTilesHighlighted(true);
+			
+			_currentTile = destination;
+			
+			//TODO: replace with smooth transition, animation, etc:
+			gameObject.transform.position = _currentTile.gameObject.transform.position;
 		
-		_currentTile.SetConnectedTilesHighlighted(false);
-		destination.SetConnectedTilesHighlighted(true);
-		
-		_currentTile = destination;
-		
-		//TODO: replace with smooth transition, animation, etc:
-		gameObject.transform.position = _currentTile.gameObject.transform.position + new Vector3(0, 0.5f, 0);
-	
-		_movementTimeRemaining = movementSpeed;
+			_movementTimeRemaining = movementSpeed;
+		} 
 	}
 }
