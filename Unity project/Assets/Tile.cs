@@ -9,7 +9,74 @@ public class Tile : MonoBehaviour
 	public Tile EastTile;
 	public Tile WestTile;
 	public Tile SouthTile;
+
+	public Texture2D UnpaintedTexture;
+	public Texture2D PaintedTexture;
 	
+	public Texture2D UnPaintedHighlightTexture;
+	public Texture2D PaintedHighlightTexture;
+	
+	private bool bIsPainted = false;
+	
+	void Start()
+	{
+		SetPainted(true);
+	}
+	
+	public void SetPainted(bool bPainted)
+	{
+		bIsPainted = bPainted;
+		
+		if(bIsPainted)
+		{
+			gameObject.renderer.material.mainTexture = PaintedTexture;
+		}
+		else
+		{
+			gameObject.renderer.material.mainTexture = UnpaintedTexture;
+		}
+	}
+
+	public void SetTileHighlighted(bool bHighlighted)
+	{
+		if(bHighlighted == true)
+		{
+			if(bIsPainted)
+			{
+				gameObject.renderer.material.mainTexture = PaintedHighlightTexture;
+			}
+			else
+			{
+				gameObject.renderer.material.mainTexture = UnPaintedHighlightTexture;
+			}
+		}
+		else
+		{
+			if(bIsPainted)
+			{
+				gameObject.renderer.material.mainTexture = PaintedTexture;
+			}
+			else
+			{
+				gameObject.renderer.material.mainTexture = UnpaintedTexture;
+			}
+		}
+	}
+	
+	public void SetConnectedTilesHighlighted(bool bHighlighted)
+	{
+		if(NorthTile != null)
+			NorthTile.SetTileHighlighted(bHighlighted);
+		
+		if(EastTile != null)
+			EastTile.SetTileHighlighted(bHighlighted);
+		
+		if(SouthTile != null)
+			SouthTile.SetTileHighlighted(bHighlighted);
+		
+		if(WestTile != null)
+			WestTile.SetTileHighlighted(bHighlighted);
+	}
 	
 	public void OnDrawGizmosSelected()
 	{

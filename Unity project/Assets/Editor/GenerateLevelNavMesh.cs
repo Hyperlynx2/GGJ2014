@@ -14,7 +14,7 @@ public class GenerateLevelNavMesh : Editor
 			if(obj.name.Contains("Tile-Blank"))
 			{
 				Object prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Tile.prefab", typeof(GameObject));
-				GameObject clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
+				GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
 				clone.transform.position = obj.transform.position;
 				clone.transform.rotation = obj.transform.rotation;
 				clone.name = "Tile";
