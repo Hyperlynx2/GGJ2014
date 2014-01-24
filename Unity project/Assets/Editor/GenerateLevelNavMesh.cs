@@ -8,9 +8,7 @@ public class GenerateLevelNavMesh : Editor
 	public static void GenerateLevelMesh()
 	{	
 		ReplaceObjectsWithPrefabs ();
-		
 		SetupTileConnections ();
-		
 		FindAttachedSpawnersAndGoal();
 	}
 	
@@ -93,6 +91,14 @@ public class GenerateLevelNavMesh : Editor
 
 	static void ReplaceObjectsWithPrefabs ()
 	{
+		GameObject levelObj = null;
+		//Check to make sure there is a "Level" node here - it'll be the parent of everything will be in the letter
+		if(GameObject.Find ("Level") == null)
+		{
+			levelObj = new GameObject("Level");
+		}
+		
+		
 		GameObject[] allObjects = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
 		foreach(GameObject obj in allObjects)
 		{
@@ -114,12 +120,13 @@ public class GenerateLevelNavMesh : Editor
 			
 			if(obj.name.Contains("Player-Spawner"))
 			{
-				prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Player-Spawner.prefab", typeof(GameObject));	
+				prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Player-Spawner.prefab", typeof(GameObject));
 			}
 			
 			if(prefab != null)
 			{
 				GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+				clone.transform.parent = levelObj.transform;
 				clone.transform.position = obj.transform.position;
 				clone.transform.rotation = obj.transform.rotation;
 				
@@ -186,6 +193,20 @@ public class GenerateLevelNavMesh : Editor
 						
 						connectedTile.connectedSpawner.FlagInstances.Add(clone);
 					}
+				}
+			}
+			
+			if(obj.name.Contains("Player-Spawner"))
+			{
+				Tile connectedTile = FindConnectedTile(tiles, obj);
+				if(connectedTile)
+				{
+						Object prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Player.prefab", typeof(GameObject));	
+						GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+						clone.transform.position = obj.transform.position;
+						clone.transform.rotation = obj.transform.rotation;
+					
+						clone.GetComponent<Player>().startTile = connectedTile;
 				}
 			}
 		}
