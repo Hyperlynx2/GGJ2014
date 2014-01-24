@@ -171,7 +171,7 @@ public class GenerateLevelNavMesh : Editor
 				Tile connectedTile = FindConnectedTile(tiles, obj);
 				if(connectedTile)
 				{
-					connectedTile.bFlagGoalIsHere = true;
+					connectedTile.FlagGoalIsHere = true;
 				}
 			}
 			
@@ -180,10 +180,10 @@ public class GenerateLevelNavMesh : Editor
 				Tile connectedTile = FindConnectedTile(tiles, obj);
 				if(connectedTile)
 				{
-					connectedTile.connectedSpawner = obj.GetComponent<Spawner>();
+					connectedTile.ConnectedSpawner = obj.GetComponent<Spawner>();
 					
 					//Create the flags to go here
-					for(int i = 0;i < connectedTile.connectedSpawner.NumSpawnedFlags;++i)
+					for(int i = 0;i < connectedTile.ConnectedSpawner.NumSpawnedFlags;++i)
 					{
 						Object prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Flag.prefab", typeof(GameObject));	
 						GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
@@ -191,7 +191,7 @@ public class GenerateLevelNavMesh : Editor
 						clone.transform.rotation = obj.transform.rotation * Quaternion.Euler (0, 0, Random.Range (-180, 180));
 						
 						
-						connectedTile.connectedSpawner.FlagInstances.Add(clone);
+						connectedTile.ConnectedSpawner.FlagInstances.Add(clone);
 					}
 				}
 			}
