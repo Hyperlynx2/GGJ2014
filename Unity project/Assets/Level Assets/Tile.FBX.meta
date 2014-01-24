@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 885c0e6cb8cdca94ba036fd208e5bae2
+guid: ae32b63068052384f9fe26b2a8c30bdc
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -7,7 +7,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Tile
+    4300000: Tile-Blank
     9500000: //RootNode
   materials:
     importMaterials: 1
