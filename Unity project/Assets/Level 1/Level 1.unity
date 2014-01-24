@@ -124,7 +124,6 @@ GameObject:
   - 4: {fileID: 192336659}
   - 33: {fileID: 192336658}
   - 23: {fileID: 192336657}
-  - 95: {fileID: 192336656}
   - 114: {fileID: 192336655}
   m_Layer: 0
   m_Name: Tile
@@ -148,19 +147,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &192336656
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 727277620}
-  m_GameObject: {fileID: 192336654}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &192336657
 Renderer:
   m_ObjectHideFlags: 0
@@ -209,7 +195,6 @@ GameObject:
   - 4: {fileID: 192400428}
   - 33: {fileID: 192400427}
   - 23: {fileID: 192400426}
-  - 95: {fileID: 192400425}
   - 114: {fileID: 192400424}
   m_Layer: 0
   m_Name: Tile
@@ -233,19 +218,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &192400425
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 427848546}
-  m_GameObject: {fileID: 192400423}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &192400426
 Renderer:
   m_ObjectHideFlags: 0
@@ -334,7 +306,6 @@ GameObject:
   - 4: {fileID: 346509314}
   - 33: {fileID: 346509313}
   - 23: {fileID: 346509312}
-  - 95: {fileID: 346509311}
   - 114: {fileID: 346509310}
   m_Layer: 0
   m_Name: Tile
@@ -358,19 +329,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &346509311
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 742253419}
-  m_GameObject: {fileID: 346509309}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &346509312
 Renderer:
   m_ObjectHideFlags: 0
@@ -409,6 +367,68 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &386531400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 386531402}
+  - 108: {fileID: 386531401}
+  m_Layer: 0
+  m_Name: Spotlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &386531401
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 386531400}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
+--- !u!4 &386531402
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 386531400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1780609856}
 --- !u!1001 &427848546
 Prefab:
   m_ObjectHideFlags: 0
@@ -459,7 +479,6 @@ GameObject:
   - 4: {fileID: 439267053}
   - 33: {fileID: 439267052}
   - 23: {fileID: 439267051}
-  - 95: {fileID: 439267050}
   - 114: {fileID: 439267049}
   m_Layer: 0
   m_Name: Tile
@@ -483,19 +502,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &439267050
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 597249804}
-  m_GameObject: {fileID: 439267048}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &439267051
 Renderer:
   m_ObjectHideFlags: 0
@@ -544,7 +550,6 @@ GameObject:
   - 4: {fileID: 526390766}
   - 33: {fileID: 526390765}
   - 23: {fileID: 526390764}
-  - 95: {fileID: 526390763}
   - 114: {fileID: 526390762}
   m_Layer: 0
   m_Name: Tile
@@ -568,19 +573,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &526390763
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 961649458}
-  m_GameObject: {fileID: 526390761}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &526390764
 Renderer:
   m_ObjectHideFlags: 0
@@ -659,6 +651,85 @@ Prefab:
   m_RootGameObject: {fileID: 439267048}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &723342144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 723342148}
+  - 33: {fileID: 723342147}
+  - 65: {fileID: 723342146}
+  - 23: {fileID: 723342145}
+  - 114: {fileID: 723342149}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &723342145
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723342144}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+--- !u!65 &723342146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723342144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &723342147
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723342144}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &723342148
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723342144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.07457471, y: 11.1647396, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1780609856}
+  m_Father: {fileID: 0}
+--- !u!114 &723342149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723342144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e914411cbf228714f9627b3bad8b8358, type: 3}
+  m_Name: 
+  startTile: {fileID: 526390762}
 --- !u!1001 &727277620
 Prefab:
   m_ObjectHideFlags: 0
@@ -749,7 +820,6 @@ GameObject:
   - 4: {fileID: 908363603}
   - 33: {fileID: 908363602}
   - 23: {fileID: 908363601}
-  - 95: {fileID: 908363600}
   - 114: {fileID: 908363599}
   m_Layer: 0
   m_Name: Tile
@@ -773,19 +843,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &908363600
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 2042164385}
-  m_GameObject: {fileID: 908363598}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &908363601
 Renderer:
   m_ObjectHideFlags: 0
@@ -914,7 +971,6 @@ GameObject:
   - 4: {fileID: 1127270738}
   - 33: {fileID: 1127270737}
   - 23: {fileID: 1127270736}
-  - 95: {fileID: 1127270735}
   - 114: {fileID: 1127270734}
   m_Layer: 0
   m_Name: Tile
@@ -938,19 +994,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &1127270735
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 147608525}
-  m_GameObject: {fileID: 1127270733}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &1127270736
 Renderer:
   m_ObjectHideFlags: 0
@@ -1079,7 +1122,6 @@ GameObject:
   - 4: {fileID: 1362901720}
   - 33: {fileID: 1362901719}
   - 23: {fileID: 1362901718}
-  - 95: {fileID: 1362901717}
   - 114: {fileID: 1362901716}
   m_Layer: 0
   m_Name: Tile
@@ -1103,19 +1145,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &1362901717
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 921674829}
-  m_GameObject: {fileID: 1362901715}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &1362901718
 Renderer:
   m_ObjectHideFlags: 0
@@ -1164,7 +1193,6 @@ GameObject:
   - 4: {fileID: 1483035237}
   - 33: {fileID: 1483035236}
   - 23: {fileID: 1483035235}
-  - 95: {fileID: 1483035234}
   - 114: {fileID: 1483035233}
   m_Layer: 0
   m_Name: Tile
@@ -1188,19 +1216,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &1483035234
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 1361618252}
-  m_GameObject: {fileID: 1483035232}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &1483035235
 Renderer:
   m_ObjectHideFlags: 0
@@ -1239,6 +1254,86 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &1780609851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1780609856}
+  - 20: {fileID: 1780609855}
+  - 124: {fileID: 1780609854}
+  - 92: {fileID: 1780609853}
+  - 81: {fileID: 1780609852}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1780609852
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1780609851}
+  m_Enabled: 1
+--- !u!92 &1780609853
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1780609851}
+  m_Enabled: 1
+--- !u!124 &1780609854
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1780609851}
+  m_Enabled: 1
+--- !u!20 &1780609855
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1780609851}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 100
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_HDR: 0
+--- !u!4 &1780609856
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1780609851}
+  m_LocalRotation: {x: .382683486, y: 0, z: 0, w: .923879564}
+  m_LocalPosition: {x: 0, y: 5, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 386531402}
+  m_Father: {fileID: 723342148}
 --- !u!1 &1888932955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1344,6 @@ GameObject:
   - 4: {fileID: 1888932960}
   - 33: {fileID: 1888932959}
   - 23: {fileID: 1888932958}
-  - 95: {fileID: 1888932957}
   - 114: {fileID: 1888932956}
   m_Layer: 0
   m_Name: Tile
@@ -1273,19 +1367,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &1888932957
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 1999359077}
-  m_GameObject: {fileID: 1888932955}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &1888932958
 Renderer:
   m_ObjectHideFlags: 0
@@ -1334,7 +1415,6 @@ GameObject:
   - 4: {fileID: 1893114120}
   - 33: {fileID: 1893114119}
   - 23: {fileID: 1893114118}
-  - 95: {fileID: 1893114117}
   - 114: {fileID: 1893114116}
   m_Layer: 0
   m_Name: Tile
@@ -1358,19 +1438,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &1893114117
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 1356415547}
-  m_GameObject: {fileID: 1893114115}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &1893114118
 Renderer:
   m_ObjectHideFlags: 0
@@ -1419,7 +1486,6 @@ GameObject:
   - 4: {fileID: 1980969981}
   - 33: {fileID: 1980969980}
   - 23: {fileID: 1980969979}
-  - 95: {fileID: 1980969978}
   - 114: {fileID: 1980969977}
   m_Layer: 0
   m_Name: Tile
@@ -1443,19 +1509,6 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
---- !u!95 &1980969978
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 92d90535cbdbd854b92384610a742c16,
-    type: 2}
-  m_PrefabInternal: {fileID: 307051221}
-  m_GameObject: {fileID: 1980969976}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885c0e6cb8cdca94ba036fd208e5bae2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
 --- !u!23 &1980969979
 Renderer:
   m_ObjectHideFlags: 0
