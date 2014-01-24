@@ -11,10 +11,10 @@ public class GenerateLevelNavMesh : Editor
 		GameObject[] allObjects = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
 		foreach(GameObject obj in allObjects)
 		{
-			if(obj.name == "TileBlank")
+			if(obj.name.Contains("Tile-Blank"))
 			{
 				Object prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Tile.prefab", typeof(GameObject));
-				GameObject clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
+				GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
 				clone.transform.position = obj.transform.position;
 				clone.transform.rotation = obj.transform.rotation;
 				clone.name = "Tile";
@@ -37,49 +37,70 @@ public class GenerateLevelNavMesh : Editor
 			//Find tiles "north" of us..which is less on the z axis
 			foreach(Tile otherTile in tiles)
 			{
-				if(tilePosition.x == otherTile.transform.position.x &&
-				   tilePosition.z - 4 == otherTile.transform.position.z &&
-					(Mathf.Abs(tilePosition.y - otherTile.transform.position.y) <= 1))
+				if(WithinRange(tilePosition.x, otherTile.transform.position.x, 0.5f) &&
+				   WithinRange(tilePosition.z + 4,otherTile.transform.position.z, 0.5f) &&
+					(tilePosition.y + 1.5 >= otherTile.transform.position.y))
 				{
-					t.NorthTile = otherTile;
+					if(t.NorthTile == null || (t.NorthTile.transform.position.y < otherTile.transform.position.y))
+					{
+						t.NorthTile = otherTile;
+					}
 				}
 				
 			}
 			//Find tiles "south" of us..which is less on the z axis
 			foreach(Tile otherTile in tiles)
 			{
-				if(tilePosition.x == otherTile.transform.position.x &&
-				   tilePosition.z + 4 == otherTile.transform.position.z &&
-					(Mathf.Abs(tilePosition.y - otherTile.transform.position.y) <= 1))
+				if(WithinRange(tilePosition.x, otherTile.transform.position.x, 0.5f) &&
+				   WithinRange(tilePosition.z - 4,otherTile.transform.position.z, 0.5f) &&
+					(tilePosition.y + 1.5 >= otherTile.transform.position.y))
 				{
-					t.SouthTile = otherTile;
+					if(t.SouthTile == null || (t.SouthTile.transform.position.y < otherTile.transform.position.y))
+					{
+						t.SouthTile = otherTile;
+					}
 				}
+				
 				
 			}
 			//Find tiles "west" of us..which is less on the x axis
 			foreach(Tile otherTile in tiles)
 			{
-				if(tilePosition.x - 4 == otherTile.transform.position.x &&
-				   tilePosition.z == otherTile.transform.position.z &&
-					(Mathf.Abs(tilePosition.y - otherTile.transform.position.y) <= 1))
+				if(WithinRange(tilePosition.x - 4, otherTile.transform.position.x, 0.5f) &&
+				   WithinRange(tilePosition.z, otherTile.transform.position.z, 0.5f) &&
+					(tilePosition.y + 1.5 >= otherTile.transform.position.y))
 				{
-					t.WestTile = otherTile;
+					if(t.WestTile == null || (t.WestTile.transform.position.y < otherTile.transform.position.y))
+					{
+						t.WestTile = otherTile;
+					}
 				}
+				
 				
 			}
 			
 			//Find tiles "east" of us..which is less on the x axis
 			foreach(Tile otherTile in tiles)
 			{
-				if(tilePosition.x + 4 == otherTile.transform.position.x &&
-				   tilePosition.z == otherTile.transform.position.z &&
-					(Mathf.Abs(tilePosition.y - otherTile.transform.position.y) <= 1))
+				if(WithinRange(tilePosition.x + 4, otherTile.transform.position.x, 0.5f) &&
+				   WithinRange(tilePosition.z,otherTile.transform.position.z, 0.5f) &&
+					(tilePosition.y + 1.5 >= otherTile.transform.position.y))
 				{
-					t.EastTile = otherTile;
+					if(t.EastTile == null || (t.EastTile.transform.position.y < otherTile.transform.position.y))
+					{
+						t.EastTile = otherTile;
+					}
 				}
+				
 				
 			}
 		}
+	}
+	
+	
+	public static bool WithinRange(float valOne, float valTwo, float range)
+	{
+		return Mathf.Abs (valOne - valTwo) < range;
 	}
 	
 }
