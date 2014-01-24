@@ -3,12 +3,13 @@ using System.Collections;
 
 public class Player : MonoBehaviour
  {
-	///////////
-	//
+	/********\
+	|settings|
+	\********/
+	public Tile startTile;
+	public float movementSpeed;
 	
-	
- 	public Tile startTile;
-	
+	/*other stuff*/	
 	private const float NORTH = 0f;
 	private const float EAST = 90f;
 	private const float SOUTH = 180f;
@@ -35,32 +36,51 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		//TODO: take heading into consideration here		
-		if(Input.GetAxis ("Horizontal") < 0) //left
+		if(_movementTimeRemaining <= 0)
 		{
-			MoveTo(_currentTile.WestTile);		
+			//TODO: take heading into consideration here		
+			if(Input.GetAxis ("Horizontal") < 0) //left
+			{
+				MoveTo(_currentTile.WestTile);		
+			}
+			else if(Input.GetAxis("Horizontal") > 0) //right
+			{
+				MoveTo(_currentTile.EastTile);
+			}
+			else if(Input.GetAxis("Vertical") < 0) //down
+			{
+				MoveTo(_currentTile.SouthTile);
+			}
+			else if(Input.GetAxis("Vertical") > 0) //up
+			{
+				MoveTo(_currentTile.NorthTile);
+			}
+			
+			
+			//TODO: input for changing heading
 		}
-		else if(Input.GetAxis("Horizontal") > 0) //right
+		else
 		{
-			MoveTo(_currentTile.EastTile);
+			_movementTimeRemaining -= Time.deltaTime;
+			if(_movementTimeRemaining < 0)
+				_movementTimeRemaining = 0;
 		}
-		else if(Input.GetAxis("Vertical") < 0) //down
-		{
-			MoveTo(_currentTile.SouthTile);
-		}
-		else if(Input.GetAxis("Vertical") > 0) //up
-		{
-			MoveTo(_currentTile.NorthTile);
-		}
-		
-		
-		//TODO: input for changing heading
 	
 	}
 	
 	private void MoveTo(Tile destination)
 	{
-		//turn off the lights on the current tile, turn em on on the new one, start movement anim,
+		/*turn off the lights on the current tile, turn em on on the new one, start movement anim, set
+		 * movement timer, etc*/
 		
+		_currentTile.SetConnectedTilesHighlighted(false);
+		destination.SetConnectedTilesHighlighted(true);
+		
+		_currentTile = destination;
+		
+		//TODO: replace with smooth transition, animation, etc:
+		gameObject.transform.position = _currentTile.gameObject.transform.position + new Vector3(0, 0.5f, 0);
+	
+		_movementTimeRemaining = movementSpeed;
 	}
 }
