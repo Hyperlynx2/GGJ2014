@@ -96,10 +96,16 @@ public class GenerateLevelNavMesh : Editor
 	static void ReplaceObjectsWithPrefabs ()
 	{
 		GameObject levelObj = null;
+		GameObject spawnerObj = null;
 		//Check to make sure there is a "Level" node here - it'll be the parent of everything will be in the letter
 		if(GameObject.Find ("Level") == null)
 		{
 			levelObj = new GameObject("Level");
+		}
+		
+		if(GameObject.Find ("Spawners") == null)
+		{
+			spawnerObj = new GameObject("Spawners");
 		}
 		
 		
@@ -165,6 +171,7 @@ public class GenerateLevelNavMesh : Editor
 					clone.name = "Flag-Spawner";
 					int number = int.Parse(obj.name.Substring(13));
 					clone.GetComponent<Spawner>().NumSpawnedFlags = number;
+					clone.transform.parent = spawnerObj.transform;
 				}
 				
 				if(obj.name.Contains("Player-Spawner"))
