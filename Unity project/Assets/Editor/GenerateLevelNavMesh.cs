@@ -50,7 +50,7 @@ public class GenerateLevelNavMesh : Editor
 			{
 				if(WithinRange(tilePosition.x, otherTile.transform.position.x, 0.5f) &&
 				   WithinRange(tilePosition.z + 4,otherTile.transform.position.z, 0.5f) &&
-					(tilePosition.y + 1.5 >= otherTile.transform.position.y))
+					(tilePosition.y + 3.5 >= otherTile.transform.position.y))
 				{
 					if(t.NorthTile == null || (t.NorthTile.transform.position.y < otherTile.transform.position.y))
 					{
@@ -64,7 +64,7 @@ public class GenerateLevelNavMesh : Editor
 			{
 				if(WithinRange(tilePosition.x, otherTile.transform.position.x, 0.5f) &&
 				   WithinRange(tilePosition.z - 4,otherTile.transform.position.z, 0.5f) &&
-					(tilePosition.y + 1.5 >= otherTile.transform.position.y))
+					(tilePosition.y + 3.5 >= otherTile.transform.position.y))
 				{
 					if(t.SouthTile == null || (t.SouthTile.transform.position.y < otherTile.transform.position.y))
 					{
@@ -79,7 +79,7 @@ public class GenerateLevelNavMesh : Editor
 			{
 				if(WithinRange(tilePosition.x - 4, otherTile.transform.position.x, 0.5f) &&
 				   WithinRange(tilePosition.z, otherTile.transform.position.z, 0.5f) &&
-					(tilePosition.y + 1.5 >= otherTile.transform.position.y))
+					(tilePosition.y + 3.5 >= otherTile.transform.position.y))
 				{
 					if(t.WestTile == null || (t.WestTile.transform.position.y < otherTile.transform.position.y))
 					{
@@ -95,7 +95,7 @@ public class GenerateLevelNavMesh : Editor
 			{
 				if(WithinRange(tilePosition.x + 4, otherTile.transform.position.x, 0.5f) &&
 				   WithinRange(tilePosition.z,otherTile.transform.position.z, 0.5f) &&
-					(tilePosition.y + 1.5 >= otherTile.transform.position.y))
+					(tilePosition.y + 3.5 >= otherTile.transform.position.y))
 				{
 					if(t.EastTile == null || (t.EastTile.transform.position.y < otherTile.transform.position.y))
 					{
@@ -201,8 +201,10 @@ public class GenerateLevelNavMesh : Editor
 				if(obj.name.Contains("Flag-Spawner"))
 				{
 					clone.name = "Flag-Spawner";
-					int number = int.Parse(obj.name.Substring(13));
+					int number = int.Parse(obj.name.Substring(13, 1));
 					clone.GetComponent<Spawner>().NumSpawnedFlags = number;
+					number = int.Parse(obj.name.Substring(15));
+					clone.GetComponent<Spawner>().PointsPerFlag = number;
 					clone.transform.parent = spawnerObj.transform;
 				}
 				

@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: c11f2bb47595ff64e9e9f16d6f7328c6
+guid: 37f6d7c6b1738d942b91c40eb6a6cda1
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
     100000: Flag-Goal
-    100002: Flag-Spawner-20
-    100004: Flag-Spawner-50
-    100006: Flag-Spawner-50 1
+    100002: Flag-Spawner-2-25
+    100004: Flag-Spawner-5-10
+    100006: Flag-Spawner-5-5
     100008: Jumper-A
     100010: Jumper-B
     100012: Jumper-C
@@ -142,9 +142,9 @@ ModelImporter:
     100272: Tile-Blank 98
     100274: Tile-Blank 99
     400000: Flag-Goal
-    400002: Flag-Spawner-20
-    400004: Flag-Spawner-50
-    400006: Flag-Spawner-50 1
+    400002: Flag-Spawner-2-25
+    400004: Flag-Spawner-5-10
+    400006: Flag-Spawner-5-5
     400008: Jumper-A
     400010: Jumper-B
     400012: Jumper-C
@@ -280,9 +280,9 @@ ModelImporter:
     400272: Tile-Blank 98
     400274: Tile-Blank 99
     2300000: Flag-Goal
-    2300002: Flag-Spawner-20
-    2300004: Flag-Spawner-50
-    2300006: Flag-Spawner-50 1
+    2300002: Flag-Spawner-2-25
+    2300004: Flag-Spawner-5-10
+    2300006: Flag-Spawner-5-5
     2300008: Jumper-A
     2300010: Jumper-B
     2300012: Jumper-C
@@ -417,9 +417,9 @@ ModelImporter:
     2300270: Tile-Blank 98
     2300272: Tile-Blank 99
     3300000: Flag-Goal
-    3300002: Flag-Spawner-20
-    3300004: Flag-Spawner-50
-    3300006: Flag-Spawner-50 1
+    3300002: Flag-Spawner-2-25
+    3300004: Flag-Spawner-5-10
+    3300006: Flag-Spawner-5-5
     3300008: Jumper-A
     3300010: Jumper-B
     3300012: Jumper-C
@@ -556,7 +556,7 @@ ModelImporter:
     4300000: Tile-Blank
     4300002: Player-Spawner
     4300004: Teleporter-A
-    4300006: Flag-Spawner-20
+    4300006: Flag-Spawner-5-5
     4300008: Jumper-A
     4300010: Jumper-Target-A
     4300012: Tile-Blank
@@ -682,9 +682,9 @@ ModelImporter:
     4300252: Tile-Blank
     4300254: Tile-Blank
     4300256: Flag-Goal
-    4300258: Flag-Spawner-50
+    4300258: Flag-Spawner-2-25
     4300260: Tile-Blank
-    4300262: Flag-Spawner-50
+    4300262: Flag-Spawner-5-10
     4300264: Tile-Blank
     4300266: Jumper-Target-B
     4300268: Jumper-B
