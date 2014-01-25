@@ -77,10 +77,10 @@ public class Player : MonoBehaviour
 	private AudioSource _playerCounterLoop;
 	private AudioSource _playerChangeSound;
 	
-	private bool _have5Candle;
-	private bool _have10Candle;
-	private bool _have15Candle;
-	private bool _have25Candle;
+	public bool _have5Candle;
+	public bool _have10Candle;
+	public bool _have15Candle;
+	public bool _have25Candle;
 	
 	/// <summary>
 	/// Stops multiple inputs for rotate.
@@ -464,12 +464,54 @@ public class Player : MonoBehaviour
 		}
 		else
 		{
-			_flagsCarried += scoreThisTile.CollectTileFlags();
+			int iSpawnerHere = scoreThisTile.IsSpawnerHere();
+			
+			if(iSpawnerHere == 5 && !_have5Candle)
+			{
+				_have5Candle = true;
+				scoreThisTile.CollectTileCandle();
+			}
+			if(iSpawnerHere == 10 && !_have10Candle)
+			{
+				_have10Candle = true;
+				scoreThisTile.CollectTileCandle();
+			}
+			if(iSpawnerHere == 15 && !_have15Candle)
+			{
+				_have15Candle = true;
+				scoreThisTile.CollectTileCandle();
+			}
+			if(iSpawnerHere == 25 && !_have25Candle)
+			{
+				_have25Candle = true;
+				scoreThisTile.CollectTileCandle();
+			}
 			
 			if(scoreThisTile.FlagGoalIsHere)
 			{
-				_playerScores[(int)_currentPlayer] += _flagsCarried * flagScoreValue;
-				_flagsCarried = 0;
+				if(_have5Candle)
+				{
+					_playerScores[(int)_currentPlayer] += 5;
+					_have5Candle = false;
+				}
+				
+				if(_have10Candle)
+				{
+					_playerScores[(int)_currentPlayer] += 10;
+					_have10Candle = false;
+				}
+				
+				if(_have15Candle)
+				{
+					_playerScores[(int)_currentPlayer] += 15;
+					_have15Candle = false;
+				}
+				
+				if(_have25Candle)
+				{
+					_playerScores[(int)_currentPlayer] += 25;
+					_have25Candle = false;
+				}
 			}
 		}
 	}

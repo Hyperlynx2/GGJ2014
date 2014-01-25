@@ -139,20 +139,30 @@ public class Tile : MonoBehaviour
 	
 	public bool IsPainted() { return bIsPainted; }
 	
-	public int CollectTileFlags()
+	//Returns 0 if no spawner
+	//or returns the spawner value if a spawner is available, and has candles to spare
+	public int IsSpawnerHere()
 	{
-		if(ConnectedSpawner == null)
+		
+		if(ConnectedSpawner == null || ConnectedSpawner.NumSpawnedCandles == 0)
 			return 0;
 		
-		int iNumCandles = ConnectedSpawner.NumSpawnedCandles;
-		foreach(GameObject f in ConnectedSpawner.CandleInstances)
-		{
-			DestroyObject(f);
-		}
-		ConnectedSpawner.CandleInstances.Clear();
-		ConnectedSpawner.NumSpawnedCandles = 0;
+		return ConnectedSpawner.PointsPerCandle;
+	}
+	
+	//Removes a single candle from the spawner on this tile, if there is one
+	//users should call "IsSpawnerHere" to work out if a spawner is availble
+	//here first before calling this function
+	
+	public void CollectTileCandle()
+	{
+		//Sanity check, as little as it means in this function
+		if(IsSpawnerHere() == 0)
+			return;
 		
-		return iNumCandles;
+		DestroyObject(ConnectedSpawner.CandleInstances[0]);
+		ConnectedSpawner.CandleInstances.RemoveAt(0);
+		ConnectedSpawner.NumSpawnedCandles--;
 	}
 	
 	public Tile GetConnectedTeleporterTile()

@@ -29,7 +29,6 @@ GameObject:
   - 92: {fileID: 9200000}
   - 81: {fileID: 8100000}
   - 114: {fileID: 11400000}
-  - 82: {fileID: 8200002}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -289,8 +288,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_LocalRotation: {x: -.703439891, y: .00289766816, z: -.0108497413, w: .71066606}
-  m_LocalPosition: {x: 0, y: 2, z: 8.74227837e-08}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: -41.3813019, y: 46.7568398, z: 26.2682362}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400026}
@@ -844,6 +843,7 @@ MonoBehaviour:
   - Player 1
   - Player 2
   flagScoreValue: 5
+  framesPerRotate: 5
   jumpCurve:
     serializedVersion: 2
     m_Curve:
