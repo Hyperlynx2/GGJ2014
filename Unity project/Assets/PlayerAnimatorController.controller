@@ -166,13 +166,13 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_LocalTransitions:
     data:
-      first: {fileID: 110215000}
-      second:
-      - {fileID: 110100000}
-    data:
       first: {fileID: 110200000}
       second:
       - {fileID: 110195152}
+    data:
+      first: {fileID: 110215000}
+      second:
+      - {fileID: 110100000}
     data:
       first: {fileID: 110253070}
       second:
@@ -180,16 +180,16 @@ StateMachine:
       - {fileID: 110116783}
   m_OrderedTransitions:
     data:
+      first: {fileID: 110200000}
+      second:
+      - {fileID: 110195152}
+    data:
       first: {fileID: 0}
       second: []
     data:
       first: {fileID: 110215000}
       second:
       - {fileID: 110100000}
-    data:
-      first: {fileID: 110200000}
-      second:
-      - {fileID: 110195152}
     data:
       first: {fileID: 110253070}
       second:
