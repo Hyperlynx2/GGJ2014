@@ -185,7 +185,7 @@ public class Player : MonoBehaviour
 	
 	void OnGUI()
 	{
-		//whose turn it is, time remaining:
+		//whose turn it is, time remaining before player switch:
 		GUI.Box (new Rect (500, 200,100,50), playerNames[(int)_currentPlayer] + "\n" + _playerTurnRemaining);
 		
 		string scoreText = "";
@@ -196,7 +196,7 @@ public class Player : MonoBehaviour
 		}
 		
 		//score:
-		GUI.Box (new Rect (500, 400,100,50), scoreText);
+		GUI.Box (new Rect (500, 400,150,50), scoreText);
 		
 		//candles carried:
 		float textureWidth = 32;

@@ -865,14 +865,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   turnTime: 8
-  FullCandleSlot5: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot5: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
-  FullCandleSlot10: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot10: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
-  FullCandleSlot15: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot15: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
-  FullCandleSlot25: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot25: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
+  FullCandleSlot5: {fileID: 2800000, guid: b8bd7776add43824589c06aa2b111f68, type: 3}
+  EmptyCandleSlot5: {fileID: 2800000, guid: ad1cd8c4085109a4e8433fdf82798fcb, type: 3}
+  FullCandleSlot10: {fileID: 2800000, guid: 4ea23cb6a1b8d0347ba00a442ac3a1d0, type: 3}
+  EmptyCandleSlot10: {fileID: 2800000, guid: 2d268a917dae8d54c9f97f0a2780b376, type: 3}
+  FullCandleSlot15: {fileID: 2800000, guid: 4b25c3a72e220314ca7c90770f0f8b05, type: 3}
+  EmptyCandleSlot15: {fileID: 2800000, guid: f4dbec8f95c74684793ff8e595d43ed8, type: 3}
+  FullCandleSlot25: {fileID: 2800000, guid: 64036dca98f032e408b67b5ae36e3607, type: 3}
+  EmptyCandleSlot25: {fileID: 2800000, guid: 11012426edcf4e9409940bd8c8cc96e5, type: 3}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

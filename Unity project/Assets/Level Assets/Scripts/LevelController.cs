@@ -63,8 +63,7 @@ public class LevelController : MonoBehaviour {
 		TimeSpan levelTime = new TimeSpan(0, 0, (int)_remainingTime);
 		
 		//TODO: do as percentage of screen width, not absolute pixel value.
-		GUI.Box (new Rect (400, 20,100,100), levelTime.Minutes + ":" + levelTime.Seconds);
-			
-		//GUI.Label(
+		GUI.Box (new Rect (400, 20, 100,100), levelTime.Minutes + ":" + levelTime.Seconds);
+		//TODO: BUG: seconds is single-digit when it gets under 10 seconds!
 	}
 }
