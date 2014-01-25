@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 16, y: 4, z: 0}
+  m_LocalPosition: {x: 24, y: 4.99999952, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,6 +55,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 4300000, guid: bf2611f06094ed54ba8de611133d8ea0, type: 3}
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.06425381, y: 4.05574989, z: 1.1924901}
+  m_Center: {x: -.000278353691, y: -.00327932904, z: -.499720454}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,15 +80,20 @@ MonoBehaviour:
   FlagGoalIsHere: 0
   ConnectedSpawner: {fileID: 0}
   ConnectedTeleporter: {fileID: 0}
+  ConnectedJumper: {fileID: 0}
   NorthTile: {fileID: 0}
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: c92d88ac54f72d44887cca757c339437, type: 3}
-  UnPaintedHighlightTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PaintedHighlightTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
+    type: 3}
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
+    type: 3}
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!1001 &100100000
 Prefab:

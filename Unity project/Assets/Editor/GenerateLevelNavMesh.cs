@@ -1,12 +1,28 @@
 using UnityEngine;
 using System.Collections;
 using UnityEditor;
+using System.Collections.Generic;
 
 public class GenerateLevelNavMesh : Editor 
 {
+	private static List<Color> TeleporterColourList;
+	private static int _TeleportColourIndex;
+	
 	[MenuItem("Helper Functionality/Generate Level Mesh")]
 	public static void GenerateLevelMesh()
 	{	
+		TeleporterColourList = new List<Color>();
+		TeleporterColourList.Add(new Color(1.0f, 0, 0));
+		TeleporterColourList.Add(new Color(0, 1.0f, 0));
+		TeleporterColourList.Add (new Color(0, 0.0f, 1.0f));
+		TeleporterColourList.Add (new Color(0, 1.0f, 1.0f));
+		TeleporterColourList.Add (new Color(1.0f, 0.0f, 1.0f));
+		TeleporterColourList.Add (new Color(1.0f, 1.0f, 0.0f));
+		TeleporterColourList.Add (new Color(0.7f, 0.1f, 0.5f));
+		TeleporterColourList.Add (new Color(0.2f, 0.9f, 0.3f));
+		
+		_TeleportColourIndex = 0;
+		
 		ReplaceObjectsWithPrefabs ();
 		SetupTileConnections ();
 		FindAttachedSpawnersAndGoal();
@@ -108,10 +124,26 @@ public class GenerateLevelNavMesh : Editor
 			spawnerObj = new GameObject("Spawners");
 		}
 		
+		if(GameObject.Find("LevelController") == null)
+		{
+			Object prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/LevelController.prefab", typeof(GameObject));
+			GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+			clone.name = "LevelController";
+			//clone.transform.parent = levelObj.transform;
+			//clone.transform.position = obj.transform.position;
+			//clone.transform.rotation = obj.transform.rotation;	
+		}
+		
+		
 		
 		GameObject[] allObjects = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
 		foreach(GameObject obj in allObjects)
 		{
+			if(obj.name.Contains(" "))
+			{
+				obj.name = obj.name.Substring(0, obj.name.IndexOf(" "));
+			}
+			
 			Object prefab = null;
 			if(obj.name.Contains("Tile-Blank"))
 			{
@@ -285,6 +317,12 @@ public class GenerateLevelNavMesh : Editor
 						{
 							connectedTile.ConnectedTeleporter.ConnectedTeleporter = otherTeleporter;
 							otherTeleporter.ConnectedTeleporter = connectedTile.ConnectedTeleporter;
+							
+							connectedTile.ConnectedTeleporter.TeleporterColour = TeleporterColourList[_TeleportColourIndex];
+							otherTeleporter.TeleporterColour = TeleporterColourList[_TeleportColourIndex];
+							
+							++_TeleportColourIndex;
+							if(_TeleportColourIndex >= TeleporterColourList.Count) _TeleportColourIndex = 0;
 						}
 					}
 					
