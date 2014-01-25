@@ -261,6 +261,8 @@ public class GenerateLevelNavMesh : Editor
 		{
 			GameObject obj = allObjects[i];
 			
+			
+			
 			if(obj.name.Contains("Teleporter"))
 			{
 				Tile connectedTile = FindConnectedTile(tiles, obj);
@@ -291,11 +293,22 @@ public class GenerateLevelNavMesh : Editor
 		
 		foreach(GameObject obj in allObjects)
 		{
+			
+			if(obj.name.Contains("Jumper") && !obj.name.Contains("Jumper-Target"))
+			{
+				Tile connectedTile = FindConnectedTile(tiles, obj);
+				if(connectedTile)
+				{
+					connectedTile.ConnectedJumper = obj.GetComponent<Jumper>();
+				}
+			}
+			
 			if(obj.name.Contains("Jumper-Target"))
 			{
 				Tile connectedTile = FindConnectedTile(tiles, obj);
 				if(connectedTile)
 				{	
+					
 					foreach(GameObject otherObject in allObjects)
 					{
 						Jumper jump = otherObject.GetComponent<Jumper>();
