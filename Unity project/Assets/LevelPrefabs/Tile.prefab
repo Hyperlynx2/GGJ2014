@@ -87,9 +87,13 @@ MonoBehaviour:
   SouthTile: {fileID: 0}
   UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
   PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  UnPaintedHighlightTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
     type: 3}
-  PaintedHighlightTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+    type: 3}
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+    type: 3}
+  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
     type: 3}
 --- !u!1001 &100100000
 Prefab:

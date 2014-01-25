@@ -9,7 +9,11 @@ public class ClearSight : MonoBehaviour
         RaycastHit[] hits;
         // you can also use CapsuleCastAll()
         // TODO: setup your layermask it improve performance and filter your hits.
-        hits = Physics.RaycastAll(transform.position, transform.forward, DistanceToPlayer);
+		GameObject player = GameObject.Find ("Player");
+        hits = Physics.CapsuleCastAll(transform.position - new Vector3(0, 3, 0),
+				transform.position + new Vector3(0, 3, 0), 3.0f, transform.forward,
+				(transform.position - player.transform.position).magnitude - 15);
+		
         foreach(RaycastHit hit in hits)
         {
             Renderer R = hit.collider.renderer;

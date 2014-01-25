@@ -22,7 +22,7 @@ public class Tile : MonoBehaviour
 	public Texture2D PainterHighLight_PaintedTexture;
 	
 	public Texture2D CounterHighLight_UnpaintedTexture;
-	public Texture2D CounterHighlight_PaintedTexture;
+	public Texture2D CounterHighLight_PaintedTexture;
 	
 	private bool   bIsPainted = false;
 	
@@ -50,17 +50,31 @@ public class Tile : MonoBehaviour
 		return tileWasPainted;
 	}
 	
-	public void SetTileHighlighted(bool bHighlighted)
+	public void SetTileHighlighted(Player.PLAYER_ID playerID, bool bHighlighted)
 	{
 		if(bHighlighted == true)
 		{
 			if(bIsPainted)
 			{
-				gameObject.renderer.material.mainTexture = PaintedHighlightTexture;
+				if(playerID == Player.PLAYER_ID.PAINTER)
+				{
+					gameObject.renderer.material.mainTexture = PainterHighLight_PaintedTexture;
+				}
+				else
+				{
+					gameObject.renderer.material.mainTexture = CounterHighLight_PaintedTexture;
+				}
 			}
 			else
 			{
-				gameObject.renderer.material.mainTexture = UnPaintedHighlightTexture;
+				if(playerID == Player.PLAYER_ID.PAINTER)
+				{
+					gameObject.renderer.material.mainTexture = PainterHighLight_UnpaintedTexture;
+				}
+				else
+				{
+					gameObject.renderer.material.mainTexture = CounterHighLight_UnpaintedTexture;
+				}
 			}
 		}
 		else
@@ -76,19 +90,19 @@ public class Tile : MonoBehaviour
 		}
 	}
 	
-	private void SetConnectedTilesHighlighted(bool bHighlighted)
+	private void SetConnectedTilesHighlighted(Player.PLAYER_ID playerID, bool bHighlighted)
 	{
 		if(NorthTile != null)
-			NorthTile.SetTileHighlighted(bHighlighted);
+			NorthTile.SetTileHighlighted(playerID, bHighlighted);
 		
 		if(EastTile != null)
-			EastTile.SetTileHighlighted(bHighlighted);
+			EastTile.SetTileHighlighted(playerID, bHighlighted);
 		
 		if(SouthTile != null)
-			SouthTile.SetTileHighlighted(bHighlighted);
+			SouthTile.SetTileHighlighted(playerID, bHighlighted);
 		
 		if(WestTile != null)
-			WestTile.SetTileHighlighted(bHighlighted);
+			WestTile.SetTileHighlighted(playerID, bHighlighted);
 	}
 	
 	public void OnDrawGizmosSelected()
@@ -171,7 +185,7 @@ public class Tile : MonoBehaviour
 	public void OnTileEnter(Player.PLAYER_ID playerID)
 	{
 		//TODO: change effect depending on which player 
-		SetConnectedTilesHighlighted(true);
+		SetConnectedTilesHighlighted(playerID, true);
 	}
 	
 	/// <summary>
@@ -180,7 +194,7 @@ public class Tile : MonoBehaviour
 	public void OnTileExit(Player.PLAYER_ID playerID)
 	{
 		//TODO: change effect depending on which player 
-		SetConnectedTilesHighlighted(false);
+		SetConnectedTilesHighlighted(playerID, false);
 	}
 	
 	/// <summary>

@@ -7,7 +7,7 @@ public class AutoTransparent : MonoBehaviour
     private Color m_OldColor = Color.black;
     private float m_Transparency = 0.3f;
     private const float m_TargetTransparancy = 0.3f;
-    private const float m_FallOff = 0.1f; // returns to 100% in 0.1 sec
+    private const float m_FallOff = 0.5f; // returns to 100% in 0.1 sec
  
     public void BeTransparent()
     {
