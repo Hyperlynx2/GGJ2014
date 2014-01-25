@@ -36,7 +36,10 @@ public class Player : MonoBehaviour
 	private float   _currentMoveSpeed;
 	private Vector3 _velocity;
 	
+	private bool _travelledThroughTeleporter;
+	
 	private Animator _playerAnimator;
+	private Renderer _renderer;
 	
 	/// <summary>
 	/// The _flags currently carried (not total or player score!)
@@ -73,8 +76,10 @@ public class Player : MonoBehaviour
 		_heading = NORTH;
 		_movementTimeRemaining = 0;
 		_initialised = false;
+		_travelledThroughTeleporter = false;
 		
 		_playerAnimator = GetComponentInChildren<Animator>();
+		_renderer = GetComponentInChildren<Renderer>();
 	}
 	
 	// Update is called once per frame
@@ -183,11 +188,22 @@ public class Player : MonoBehaviour
 			
 			gameObject.transform.position += toDestination.normalized * speed * Time.deltaTime;
 			
-			float fYOffset = jumpCurve.Evaluate( 1 - (_movementTimeRemaining / _currentMoveSpeed)) 
-				* Mathf.Abs (_destination.gameObject.transform.position.y - _currentTile.gameObject.transform.position.y);
+			float yMod = Mathf.Abs (_destination.gameObject.transform.position.y - _currentTile.gameObject.transform.position.y);
+			//float xMod = Mathf.Abs (_destination.gameObject.transform.position.x - _currentTile.gameObject.transform.position.x);
+			float fEvalutateValue = 1 - (_movementTimeRemaining / _currentMoveSpeed);
+			float fYOffset = jumpCurve.Evaluate(fEvalutateValue ) 
+				* (yMod);
 			gameObject.transform.position += new Vector3(0, fYOffset, 0);
 			
 			_movementTimeRemaining -= Time.deltaTime;
+			//if(fYOffset > 0)
+			//{
+			//	Debug.Log (fEvalutateValue);
+			//	Debug.Log (yMod);
+			//	//Debug.Log (xMod);
+			//	Debug.Log (fYOffset);
+			//	
+			//}
 			if(_movementTimeRemaining < 0)
 			{
 				_movementTimeRemaining = 0;
@@ -224,6 +240,8 @@ public class Player : MonoBehaviour
 		
 	private void ArriveAtDestination()
 	{
+		
+		_renderer.enabled = true;
 		_playerAnimator.SetBool("bHaveDistination", false);
 		_playerAnimator.SetBool("bJumping", false);
 		
@@ -235,23 +253,30 @@ public class Player : MonoBehaviour
 		
 		//now cope with teleporters
 		Tile specialDest = _currentTile.GetConnectedTeleporterTile();
-		if(specialDest != null)
+		if(specialDest != null && _travelledThroughTeleporter == false)
 		{
-			gameObject.transform.position = specialDest.gameObject.transform.position;
-			/*NB: DO NOT treat this as arriving at a destination. otherwise you'll infinitely
-			teleport between the two, and overflow stack space.
-			
-			a jump pad CANNOT occupuy the same space as a teleporter (which you might want
-			with the idea of teleporting onto a jump pad), because then if you were to ordinarily
-			walk onto that jump pad/teleporter what would the correct action be? to jump or to
-			teleport?*/
-			
-			_currentTile = specialDest;
-			_currentTile.OnTileSpecialEnter(_currentPlayer);
-			HandleScoring(_currentTile);
+			//gameObject.transform.position = specialDest.gameObject.transform.position;
+			///*NB: DO NOT treat this as arriving at a destination. otherwise you'll infinitely
+			//teleport between the two, and overflow stack space.
+			//
+			//a jump pad CANNOT occupuy the same space as a teleporter (which you might want
+			//with the idea of teleporting onto a jump pad), because then if you were to ordinarily
+			//walk onto that jump pad/teleporter what would the correct action be? to jump or to
+			//teleport?*/
+			//
+			//_currentTile = specialDest;
+			//_currentTile.OnTileSpecialEnter(_currentPlayer);
+			//HandleScoring(_currentTile);
+			StartMovingTo(specialDest);
+			_renderer.enabled = false;
+			_travelledThroughTeleporter = true;
 		}
 		else
 		{
+			
+			_travelledThroughTeleporter = false;
+			
+			
 			specialDest = _currentTile.GetConnectedJumperTile();
 			
 			if(specialDest != null)
@@ -260,6 +285,7 @@ public class Player : MonoBehaviour
 				_playerAnimator.SetBool("bJumping", true);
 			}
 		}
+		
 		
 	}
 	
