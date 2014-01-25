@@ -23,6 +23,8 @@ public class LevelController : MonoBehaviour {
 		
 		if(_remainingTime <= 0.0f || IsAllFlagsCollected() || IsAllTilesPainted())
 		{
+			GameManager.getInstance().OnGameOver(1,2);
+		
 			Debug.Log ("The Game is finished!");
 			//Application.LoadLevel(TransitionSceneName);
 		}
