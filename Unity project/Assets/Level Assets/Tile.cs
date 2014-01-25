@@ -120,6 +120,8 @@ public class Tile : MonoBehaviour
 		}
 	}
 	
+	public bool IsPainted() { return bIsPainted; }
+	
 	public int CollectTileFlags()
 	{
 		if(ConnectedSpawner == null)
@@ -131,6 +133,7 @@ public class Tile : MonoBehaviour
 			DestroyObject(f);
 		}
 		ConnectedSpawner.FlagInstances.Clear();
+		ConnectedSpawner.NumSpawnedFlags = 0;
 		
 		return iNumFlags;
 	}
