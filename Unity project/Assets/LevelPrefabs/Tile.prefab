@@ -53,7 +53,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300010, guid: 3c2504f1f1bcde84b9f0f287833e1536, type: 3}
+  m_Mesh: {fileID: 4300000, guid: bf2611f06094ed54ba8de611133d8ea0, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,15 +66,16 @@ MonoBehaviour:
   m_Name: 
   FlagGoalIsHere: 0
   ConnectedSpawner: {fileID: 0}
+  ConnectedTeleporter: {fileID: 0}
   NorthTile: {fileID: 0}
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 1b9a165000e26914f8b90493ddbb8f48, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 929f83021b9b536488ea48b94d406c82, type: 3}
-  UnPaintedHighlightTexture: {fileID: 2800000, guid: a636deab76b4f6a4ea19c2caffd13695,
+  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: c92d88ac54f72d44887cca757c339437, type: 3}
+  UnPaintedHighlightTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
     type: 3}
-  PaintedHighlightTexture: {fileID: 2800000, guid: b21e85acb1e37994fa8657de42a166d5,
+  PaintedHighlightTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
     type: 3}
 --- !u!1001 &100100000
 Prefab:

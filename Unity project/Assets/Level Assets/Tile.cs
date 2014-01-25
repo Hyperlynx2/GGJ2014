@@ -6,7 +6,8 @@ public class Tile : MonoBehaviour
 	//Tile Modifiers
 	public bool FlagGoalIsHere = false;
 	public Spawner ConnectedSpawner = null;
-	
+	public Teleporter ConnectedTeleporter = null;
+	public Jumper ConnectedJumper = null;
 	
 	//Exit List
 	public Tile NorthTile;
@@ -24,23 +25,28 @@ public class Tile : MonoBehaviour
 	
 	void Start()
 	{
-		SetPainted(false);
+		gameObject.renderer.material.mainTexture = UnpaintedTexture;
 	}
 	
-	public void SetPainted(bool bPainted)
+	/// <summary>
+	/// Paints the tile, if unpainted.
+	/// </summary>
+	/// <returns>
+	/// True if the tile became painted, false if it was already painted.
+	/// </returns>
+	public bool PaintTile()
 	{
-		bIsPainted = bPainted;
-		
-		if(bIsPainted)
+		bool tileWasPainted = false;
+		if(!bIsPainted)
 		{
+			bIsPainted = true;
+			tileWasPainted = true;
 			gameObject.renderer.material.mainTexture = PaintedTexture;
 		}
-		else
-		{
-			gameObject.renderer.material.mainTexture = UnpaintedTexture;
-		}
+		
+		return tileWasPainted;
 	}
-
+	
 	public void SetTileHighlighted(bool bHighlighted)
 	{
 		if(bHighlighted == true)
@@ -127,5 +133,39 @@ public class Tile : MonoBehaviour
 		ConnectedSpawner.FlagInstances.Clear();
 		
 		return iNumFlags;
+	}
+	
+	public Tile GetConnectedTeleporterTile()
+	{
+		if(ConnectedTeleporter == null)
+		{
+			return null;
+		}
+		else
+		{
+			return ConnectedTeleporter.ConnectedTile;
+		}
+	}
+	
+	public Tile GetConnectedJumperTile()
+	{
+		if(ConnectedJumper == null)
+		{
+			return null;
+		}
+		else
+		{
+			return ConnectedJumper.ConnectedTile;
+		}
+	}
+	
+	public void OnTileEnter()
+	{
+		SetConnectedTilesHighlighted(true);
+	}
+	
+	public void OnTileExit()
+	{
+		SetConnectedTilesHighlighted(false);
 	}
 }
