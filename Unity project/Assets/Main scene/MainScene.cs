@@ -6,6 +6,7 @@ public class MainScene : MonoBehaviour
 	//pass 'em straight through to GameManager
 	public string[] menuItemScenes;
 	public string[] menuItemLabels;
+	public GUISkin guiSkin;
 
 	// Use this for initialization
 	void Start ()
@@ -14,7 +15,7 @@ public class MainScene : MonoBehaviour
 		
 		instance.menuItemLabels = menuItemLabels;
 		instance.menuItemScenes = menuItemScenes;
-		
+		instance.skin = guiSkin;		
 	}
 	
 	void OnGUI()
