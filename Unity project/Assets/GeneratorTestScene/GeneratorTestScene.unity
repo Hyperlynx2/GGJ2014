@@ -381,15 +381,15 @@ MonoBehaviour:
   EastTile: {fileID: 1191234980}
   WestTile: {fileID: 1120417146}
   SouthTile: {fileID: 1098007195}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!65 &88732332
 BoxCollider:
@@ -577,15 +577,15 @@ MonoBehaviour:
   EastTile: {fileID: 1120417146}
   WestTile: {fileID: 1847738322}
   SouthTile: {fileID: 1673714773}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &116226889
 Transform:
@@ -676,15 +676,15 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 990454782}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &122998825
 Transform:
@@ -933,6 +933,70 @@ Prefab:
   m_RootGameObject: {fileID: 990454781}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &204215009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100022, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 204215010}
+  - 137: {fileID: 204215011}
+  m_Layer: 0
+  m_Name: Player-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &204215010
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400022, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 204215009}
+  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1472513891}
+--- !u!137 &204215011
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13700000, guid: 86c76bd4a88e2e04f952decf9245e577,
+    type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 204215009}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 6dd0cd2dadd882e49b2b578a0ce8d3ee, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_Mesh: {fileID: 4300000, guid: fd603a314382cc742b5003b5f8eb43e0, type: 3}
+  m_Bones:
+  - {fileID: 762735740}
+  - {fileID: 1332802929}
+  - {fileID: 2021944060}
+  - {fileID: 1153410164}
+  - {fileID: 1116267876}
+  - {fileID: 1092732325}
+  - {fileID: 1097213608}
+  - {fileID: 2107780050}
+  m_RootBone: {fileID: 1092732325}
+  m_AABB:
+    m_Center: {x: 1.49011612e-07, y: 0, z: 2.01974893}
+    m_Extent: {x: .941375732, y: .39619118, z: 2.01974893}
+  m_DirtyAABB: 0
 --- !u!1 &220471358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,15 +1203,15 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 900555004}
   SouthTile: {fileID: 1777201027}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &304521413
 Transform:
@@ -1238,15 +1302,15 @@ MonoBehaviour:
   EastTile: {fileID: 421933605}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 572570669}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &348268018
 Transform:
@@ -1484,15 +1548,15 @@ MonoBehaviour:
   EastTile: {fileID: 1853069618}
   WestTile: {fileID: 348268017}
   SouthTile: {fileID: 1440858768}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &421933606
 Transform:
@@ -1868,15 +1932,15 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 665414428}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &533344152
 Transform:
@@ -2026,15 +2090,15 @@ MonoBehaviour:
   EastTile: {fileID: 1440858768}
   WestTile: {fileID: 989904851}
   SouthTile: {fileID: 1609351066}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!65 &572570670
 BoxCollider:
@@ -2170,15 +2234,15 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 1795765549}
   SouthTile: {fileID: 900555004}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &592935460
 Transform:
@@ -2361,15 +2425,15 @@ MonoBehaviour:
   EastTile: {fileID: 533344151}
   WestTile: {fileID: 1795413110}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &665414429
 Transform:
@@ -2473,15 +2537,15 @@ MonoBehaviour:
   EastTile: {fileID: 713718474}
   WestTile: {fileID: 785736203}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!23 &674535760
 Renderer:
@@ -2570,15 +2634,15 @@ MonoBehaviour:
   EastTile: {fileID: 1777201027}
   WestTile: {fileID: 674535759}
   SouthTile: {fileID: 990454782}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!65 &713718475
 BoxCollider:
@@ -2620,6 +2684,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 115109021}
   m_GameObject: {fileID: 713718472}
   m_Mesh: {fileID: 4300000, guid: bf2611f06094ed54ba8de611133d8ea0, type: 3}
+--- !u!1 &762735739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100012, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 762735740}
+  m_Layer: 0
+  m_Name: Player-Shoulders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &762735740
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400018, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 762735739}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 1.25042534}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1153410164}
+  - {fileID: 1116267876}
+  - {fileID: 1332802929}
+  m_Father: {fileID: 2021944060}
 --- !u!1 &785736202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,15 +2751,15 @@ MonoBehaviour:
   EastTile: {fileID: 674535759}
   WestTile: {fileID: 1853069618}
   SouthTile: {fileID: 1971010458}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &785736204
 Transform:
@@ -2750,41 +2843,41 @@ Transform:
   - {fileID: 58371065}
   - {fileID: 2020689294}
   - {fileID: 528896811}
-  - {fileID: 785736204}
-  - {fileID: 665414429}
-  - {fileID: 1681589210}
-  - {fileID: 533344152}
-  - {fileID: 304521413}
-  - {fileID: 1795413111}
   - {fileID: 1853069617}
-  - {fileID: 1971010459}
-  - {fileID: 850845133}
-  - {fileID: 1098007196}
-  - {fileID: 674535762}
-  - {fileID: 1673714772}
-  - {fileID: 1480891810}
-  - {fileID: 348268018}
-  - {fileID: 88732330}
-  - {fileID: 1440858767}
-  - {fileID: 900555005}
-  - {fileID: 1120417145}
-  - {fileID: 592935460}
-  - {fileID: 1125135234}
-  - {fileID: 1777201028}
-  - {fileID: 1609351067}
-  - {fileID: 1191234981}
-  - {fileID: 1795765550}
-  - {fileID: 122998825}
-  - {fileID: 1020244973}
   - {fileID: 989904852}
-  - {fileID: 2035162890}
-  - {fileID: 990454783}
-  - {fileID: 1303163172}
-  - {fileID: 116226889}
-  - {fileID: 572570668}
-  - {fileID: 1847738323}
+  - {fileID: 304521413}
   - {fileID: 713718473}
+  - {fileID: 1120417145}
+  - {fileID: 1303163172}
+  - {fileID: 1191234981}
+  - {fileID: 990454783}
+  - {fileID: 88732330}
+  - {fileID: 1609351067}
+  - {fileID: 1673714772}
+  - {fileID: 1681589210}
+  - {fileID: 785736204}
+  - {fileID: 2035162890}
+  - {fileID: 900555005}
+  - {fileID: 850845133}
+  - {fileID: 665414429}
+  - {fileID: 1098007196}
+  - {fileID: 1480891810}
+  - {fileID: 1971010459}
+  - {fileID: 1125135234}
+  - {fileID: 1847738323}
+  - {fileID: 1020244973}
+  - {fileID: 122998825}
+  - {fileID: 533344152}
+  - {fileID: 592935460}
+  - {fileID: 674535762}
+  - {fileID: 116226889}
   - {fileID: 421933606}
+  - {fileID: 572570668}
+  - {fileID: 348268018}
+  - {fileID: 1795765550}
+  - {fileID: 1777201028}
+  - {fileID: 1440858767}
+  - {fileID: 1795413111}
   m_Father: {fileID: 0}
 --- !u!1 &803354572
 GameObject:
@@ -3053,15 +3146,15 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 1673714773}
   SouthTile: {fileID: 421933605}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &850845133
 Transform:
@@ -3153,6 +3246,10 @@ Prefab:
       propertyPath: startTile
       value: 
       objectReference: {fileID: 2035162889}
+    - target: {fileID: 9500000, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
   m_RootGameObject: {fileID: 1033356829}
@@ -3352,15 +3449,15 @@ MonoBehaviour:
   EastTile: {fileID: 304521412}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 713718474}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &900555005
 Transform:
@@ -3499,15 +3596,15 @@ MonoBehaviour:
   EastTile: {fileID: 572570669}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 1303163171}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &989904852
 Transform:
@@ -3598,15 +3695,15 @@ MonoBehaviour:
   EastTile: {fileID: 122998824}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &990454783
 Transform:
@@ -3844,15 +3941,15 @@ MonoBehaviour:
   EastTile: {fileID: 785736203}
   WestTile: {fileID: 421933605}
   SouthTile: {fileID: 2035162889}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1020244973
 Transform:
@@ -3913,8 +4010,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1033356830}
-  - 33: {fileID: 1033356833}
-  - 23: {fileID: 1033356832}
   - 114: {fileID: 1033356831}
   m_Layer: 0
   m_Name: Player
@@ -3934,6 +4029,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1817739628}
+  - {fileID: 1472513891}
   - {fileID: 1738411503}
   m_Father: {fileID: 0}
 --- !u!114 &1033356831
@@ -3958,33 +4054,6 @@ MonoBehaviour:
   - Player 2
   flagScoreValue: 5
   turnTime: 8
---- !u!23 &1033356832
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: 86c76bd4a88e2e04f952decf9245e577,
-    type: 2}
-  m_PrefabInternal: {fileID: 855525832}
-  m_GameObject: {fileID: 1033356829}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
---- !u!33 &1033356833
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: 86c76bd4a88e2e04f952decf9245e577,
-    type: 2}
-  m_PrefabInternal: {fileID: 855525832}
-  m_GameObject: {fileID: 1033356829}
-  m_Mesh: {fileID: 4300000, guid: 5b661c8b84c14db45acb922a7ed073ff, type: 3}
 --- !u!1001 &1069504528
 Prefab:
   m_ObjectHideFlags: 0
@@ -4037,6 +4106,33 @@ Prefab:
   m_RootGameObject: {fileID: 1847738321}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1092732324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100020, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1092732325}
+  m_Layer: 0
+  m_Name: Player-Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092732325
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400020, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 1092732324}
+  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2021944060}
+  m_Father: {fileID: 1472513891}
 --- !u!1001 &1094860249
 Prefab:
   m_ObjectHideFlags: 0
@@ -4093,6 +4189,32 @@ Prefab:
   m_RootGameObject: {fileID: 1020244971}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1097213607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100016, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1097213608}
+  m_Layer: 0
+  m_Name: Player-Leg-L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1097213608
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400008, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 1097213607}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.247799978, y: 1.20197683e-08, z: -.247344211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2021944060}
 --- !u!1 &1098007194
 GameObject:
   m_ObjectHideFlags: 0
@@ -4131,15 +4253,15 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 850845132}
   SouthTile: {fileID: 1020244972}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1098007196
 Transform:
@@ -4192,6 +4314,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 881089651}
   m_GameObject: {fileID: 1098007194}
   m_Mesh: {fileID: 4300000, guid: bf2611f06094ed54ba8de611133d8ea0, type: 3}
+--- !u!1 &1116267875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100008, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1116267876}
+  m_Layer: 0
+  m_Name: Player-Arm-R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1116267876
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 1116267875}
+  m_LocalRotation: {x: 0, y: .537299514, z: -0, w: .843391538}
+  m_LocalPosition: {x: .289115489, y: 5.97034884e-08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 762735740}
 --- !u!1 &1120417144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4241,15 +4389,15 @@ MonoBehaviour:
   EastTile: {fileID: 88732331}
   WestTile: {fileID: 116226888}
   SouthTile: {fileID: 850845132}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!65 &1120417147
 BoxCollider:
@@ -4340,15 +4488,15 @@ MonoBehaviour:
   EastTile: {fileID: 1673714773}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 1480891809}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!65 &1125135236
 BoxCollider:
@@ -4390,6 +4538,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1009262610}
   m_GameObject: {fileID: 1125135233}
   m_Mesh: {fileID: 4300000, guid: bf2611f06094ed54ba8de611133d8ea0, type: 3}
+--- !u!1 &1153410163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1153410164}
+  m_Layer: 0
+  m_Name: Player-Arm-L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1153410164
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400012, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 1153410163}
+  m_LocalRotation: {x: 0, y: -.537299633, z: -0, w: .843391418}
+  m_LocalPosition: {x: -.289100021, y: 5.97034884e-08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 762735740}
 --- !u!1001 &1183263228
 Prefab:
   m_ObjectHideFlags: 0
@@ -4480,15 +4654,15 @@ MonoBehaviour:
   EastTile: {fileID: 1795765549}
   WestTile: {fileID: 88732331}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1191234981
 Transform:
@@ -4631,15 +4805,15 @@ MonoBehaviour:
   EastTile: {fileID: 1609351066}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1303163172
 Transform:
@@ -4752,6 +4926,32 @@ Prefab:
   m_RootGameObject: {fileID: 2020689293}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1332802928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1332802929}
+  m_Layer: 0
+  m_Name: Player-Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1332802929
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400016, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 1332802928}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 1.20197683e-08, z: .79990083}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 762735740}
 --- !u!1001 &1407293368
 Prefab:
   m_ObjectHideFlags: 0
@@ -4849,15 +5049,15 @@ MonoBehaviour:
   EastTile: {fileID: 1681589211}
   WestTile: {fileID: 572570669}
   SouthTile: {fileID: 1795413110}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!65 &1440858769
 BoxCollider:
@@ -4899,6 +5099,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2088480879}
   m_GameObject: {fileID: 1440858766}
   m_Mesh: {fileID: 4300000, guid: bf2611f06094ed54ba8de611133d8ea0, type: 3}
+--- !u!1 &1472513890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100024, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1472513891}
+  - 95: {fileID: 1472513892}
+  m_Layer: 0
+  m_Name: Player-RIG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1472513891
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400024, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 1472513890}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 204215010}
+  - {fileID: 1092732325}
+  m_Father: {fileID: 1033356830}
+--- !u!95 &1472513892
+Animator:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9500000, guid: 86c76bd4a88e2e04f952decf9245e577,
+    type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 1472513890}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: fd603a314382cc742b5003b5f8eb43e0, type: 3}
+  m_Controller: {fileID: 9100000, guid: 501f261f453c5384b9e584657cb191f8, type: 2}
+  m_CullingMode: 1
+  m_ApplyRootMotion: 0
+  m_AnimatePhysics: 0
 --- !u!1 &1480891808
 GameObject:
   m_ObjectHideFlags: 0
@@ -4937,15 +5179,15 @@ MonoBehaviour:
   EastTile: {fileID: 348268017}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 989904851}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1480891810
 Transform:
@@ -5206,15 +5448,15 @@ MonoBehaviour:
   EastTile: {fileID: 1795413110}
   WestTile: {fileID: 1303163171}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1609351067
 Transform:
@@ -5424,15 +5666,15 @@ MonoBehaviour:
   EastTile: {fileID: 850845132}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 348268017}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!65 &1673714774
 BoxCollider:
@@ -5523,15 +5765,15 @@ MonoBehaviour:
   EastTile: {fileID: 1971010458}
   WestTile: {fileID: 1440858768}
   SouthTile: {fileID: 665414428}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!65 &1681589212
 BoxCollider:
@@ -5770,15 +6012,15 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 713718474}
   SouthTile: {fileID: 122998824}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1777201028
 Transform:
@@ -5924,15 +6166,15 @@ MonoBehaviour:
   EastTile: {fileID: 665414428}
   WestTile: {fileID: 1609351066}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1795413111
 Transform:
@@ -6023,15 +6265,15 @@ MonoBehaviour:
   EastTile: {fileID: 592935459}
   WestTile: {fileID: 1191234980}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1795765550
 Transform:
@@ -6258,15 +6500,15 @@ MonoBehaviour:
   EastTile: {fileID: 116226888}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 1125135235}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1847738323
 Transform:
@@ -6428,15 +6670,15 @@ MonoBehaviour:
   EastTile: {fileID: 785736203}
   WestTile: {fileID: 421933605}
   SouthTile: {fileID: 1681589211}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!65 &1853069619
 BoxCollider:
@@ -6608,15 +6850,15 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 1681589211}
   SouthTile: {fileID: 533344151}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &1971010459
 Transform:
@@ -6788,6 +7030,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1319527745}
   m_GameObject: {fileID: 2020689293}
   m_Mesh: {fileID: 4300000, guid: 35fe27ee4d5d6e3409771e2588a5beb8, type: 3}
+--- !u!1 &2021944059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100018, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2021944060}
+  m_Layer: 0
+  m_Name: Player-Hips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2021944060
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 2021944059}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: -5.97034884e-08, z: 1.36585653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1097213608}
+  - {fileID: 2107780050}
+  - {fileID: 762735740}
+  m_Father: {fileID: 1092732325}
 --- !u!1 &2035162888
 GameObject:
   m_ObjectHideFlags: 0
@@ -6826,15 +7097,15 @@ MonoBehaviour:
   EastTile: {fileID: 1971010458}
   WestTile: {fileID: 1440858768}
   SouthTile: {fileID: 665414428}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!4 &2035162890
 Transform:
@@ -7099,6 +7370,32 @@ Prefab:
   m_RootGameObject: {fileID: 1440858766}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &2107780049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2107780050}
+  m_Layer: 0
+  m_Name: Player-Leg-R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2107780050
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: 86c76bd4a88e2e04f952decf9245e577, type: 2}
+  m_PrefabInternal: {fileID: 855525832}
+  m_GameObject: {fileID: 2107780049}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .247793183, y: -1.0103236e-09, z: -.247344211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2021944060}
 --- !u!1001 &2111668631
 Prefab:
   m_ObjectHideFlags: 0

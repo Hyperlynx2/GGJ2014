@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
 	
 	private Vector3 _velocity;
 	
+	private Animator _playerAnimator;
+	
 	/// <summary>
 	/// The _flags currently carried (not total or player score!)
 	/// </summary>
@@ -68,6 +70,8 @@ public class Player : MonoBehaviour
 		_heading = NORTH;
 		_movementTimeRemaining = 0;
 		_initialised = false;
+		
+		_playerAnimator = GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -197,11 +201,16 @@ public class Player : MonoBehaviour
 			_destination = destination;
 				
 			_movementTimeRemaining = movementSpeed;
+			
+			_playerAnimator.SetBool("bHaveDistination", true);
 		} 
 	}
 		
 	private void ArriveAtDestination()
 	{
+		_playerAnimator.SetBool("bHaveDistination", false);
+		_playerAnimator.SetBool("bJumping", false);
+		
 		HandleScoring(_destination);
 		
 		_currentTile = _destination;
@@ -232,6 +241,7 @@ public class Player : MonoBehaviour
 			if(specialDest != null)
 			{
 				StartMovingTo(specialDest);
+				_playerAnimator.SetBool("bJumping", true);
 			}
 		}
 		

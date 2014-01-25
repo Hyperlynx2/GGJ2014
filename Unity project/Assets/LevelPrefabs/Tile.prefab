@@ -85,15 +85,15 @@ MonoBehaviour:
   EastTile: {fileID: 0}
   WestTile: {fileID: 0}
   SouthTile: {fileID: 0}
-  UnpaintedTexture: {fileID: 2800000, guid: 2b12e4de5d579724e8ee759182b1c393, type: 3}
-  PaintedTexture: {fileID: 2800000, guid: 8be823cd9a395284aa3c46b80b67b1b1, type: 3}
-  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  UnpaintedTexture: {fileID: 2800000, guid: 8e9335c7320debe42ad3b7db7fdff621, type: 3}
+  PaintedTexture: {fileID: 2800000, guid: 3cdbca5a1bcdc194c8bba6b3c1b3d07a, type: 3}
+  PainterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 61282dae8e0c09a4aad6462c30113277,
     type: 3}
-  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  PainterHighLight_PaintedTexture: {fileID: 2800000, guid: d05b6f41fe685e94a87530ef49d6b0bb,
     type: 3}
-  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 78970c318de5aaa498078397496091e0,
+  CounterHighLight_UnpaintedTexture: {fileID: 2800000, guid: 3c8ccf2fb6c48e644a50f3c5739eaa87,
     type: 3}
-  CounterHighlight_PaintedTexture: {fileID: 2800000, guid: 449af6ba33f281844a23816810c5c998,
+  CounterHighLight_PaintedTexture: {fileID: 2800000, guid: d4645b12dd8719246a15abb44321dbd8,
     type: 3}
 --- !u!1001 &100100000
 Prefab:
