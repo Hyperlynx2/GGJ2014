@@ -123,6 +123,9 @@ public class Player : MonoBehaviour
 				_currentPlayer = PLAYER_ID.PAINTER;
 			
 			_playerTurnRemaining = turnTime;
+			
+			if(_movementTimeRemaining <= 0)
+				_currentTile.OnTileEnter(_currentPlayer);
 		}
 	}
 	
