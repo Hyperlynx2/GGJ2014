@@ -18,8 +18,11 @@ public class Tile : MonoBehaviour
 	public Texture2D UnpaintedTexture;
 	public Texture2D PaintedTexture;
 	
-	public Texture2D UnPaintedHighlightTexture;
-	public Texture2D PaintedHighlightTexture;
+	public Texture2D PainterHighLight_UnpaintedTexture;
+	public Texture2D PainterHighLight_PaintedTexture;
+	
+	public Texture2D CounterHighLight_UnpaintedTexture;
+	public Texture2D CounterHighlight_PaintedTexture;
 	
 	private bool   bIsPainted = false;
 	
