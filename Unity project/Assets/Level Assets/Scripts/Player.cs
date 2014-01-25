@@ -283,7 +283,7 @@ public class Player : MonoBehaviour
 		}
 		
 		//do not accept new movement command if we're currently in the process of moving!
-		if(_movementTimeRemaining <= 0)
+		if(_destination == null)
 		{
 
 			Tile[] exits = {_currentTile.NorthTile,

@@ -12670,7 +12670,6 @@ MonoBehaviour:
   playerNames:
   - Player 1
   - Player 2
-  flagScoreValue: 5
   prefabCandleGoalParticle: {fileID: 100000, guid: ea28af5ff9ba8204e8ab0ac5910a326e,
     type: 2}
   prefabCandlePickupParticle: {fileID: 100000, guid: e08cf018e8c4baf4b8843d70ba684030,
@@ -12697,10 +12696,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   turnTime: 8
-  _have5Candle: 0
-  _have10Candle: 0
-  _have15Candle: 0
-  _have25Candle: 0
+  FullCandleSlot5: {fileID: 0}
+  EmptyCandleSlot5: {fileID: 0}
+  FullCandleSlot10: {fileID: 0}
+  EmptyCandleSlot10: {fileID: 0}
+  FullCandleSlot15: {fileID: 0}
+  EmptyCandleSlot15: {fileID: 0}
+  FullCandleSlot25: {fileID: 0}
+  EmptyCandleSlot25: {fileID: 0}
 --- !u!1 &1229816322
 GameObject:
   m_ObjectHideFlags: 0
