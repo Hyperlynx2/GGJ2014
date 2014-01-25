@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 	public string[] playerNames;
 	public int flagScoreValue = 5;
 	
+	public AnimationCurve jumpCurve;
+	
 	/// <summary>
 	/// How much time each player gets per turn.
 	/// </summary>
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour
 	private Tile _destination;
 	private bool _initialised;
 	
+	private float   _currentMoveSpeed;
 	private Vector3 _velocity;
 	
 	private Animator _playerAnimator;
@@ -172,11 +175,17 @@ public class Player : MonoBehaviour
 	{
 		if(_destination != null)
 		{
+			bool bJumping = _playerAnimator.GetBool("bJumping");
+			
 			Vector3 toDestination = (_destination.gameObject.transform.position - _currentTile.gameObject.transform.position);
 			
-			float speed = toDestination.magnitude / movementSpeed;
+			float speed = toDestination.magnitude / _currentMoveSpeed;
 			
 			gameObject.transform.position += toDestination.normalized * speed * Time.deltaTime;
+			
+			float fYOffset = jumpCurve.Evaluate( 1 - (_movementTimeRemaining / _currentMoveSpeed)) 
+				* Mathf.Abs (_destination.gameObject.transform.position.y - _currentTile.gameObject.transform.position.y);
+			gameObject.transform.position += new Vector3(0, fYOffset, 0);
 			
 			_movementTimeRemaining -= Time.deltaTime;
 			if(_movementTimeRemaining < 0)
@@ -203,7 +212,11 @@ public class Player : MonoBehaviour
 			_currentTile.OnTileExit(_currentPlayer);
 			_destination = destination;
 				
-			_movementTimeRemaining = movementSpeed;
+			Vector3 toDestination = (_destination.gameObject.transform.position - _currentTile.gameObject.transform.position);
+			_currentMoveSpeed = movementSpeed * Mathf.Pow((toDestination.magnitude / 4), 0.5f);
+
+			
+			_movementTimeRemaining = _currentMoveSpeed;
 			
 			_playerAnimator.SetBool("bHaveDistination", true);
 		} 
