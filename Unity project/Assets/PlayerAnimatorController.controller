@@ -255,7 +255,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 5cbc22c9929ab4f4897bb6437a7f6113, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 624, y: 180, z: 0}
+  m_Position: {x: 480, y: 180, z: 0}
   m_IKOnFeet: 1
   m_Mirror: 0
   m_Tag: 
@@ -285,7 +285,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 6603162f6e027484c9f0f649d84b010b, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 252, y: 180, z: 0}
+  m_Position: {x: 180, y: 180, z: 0}
   m_IKOnFeet: 1
   m_Mirror: 0
   m_Tag: 
@@ -331,7 +331,6 @@ StateMachine:
   - {fileID: 110200000}
   - {fileID: 110270911}
   - {fileID: 110218686}
-  - {fileID: 110273876}
   - {fileID: 110206990}
   - {fileID: 110285392}
   m_ChildStateMachine: []
@@ -344,20 +343,20 @@ StateMachine:
       - {fileID: 110151859}
       - {fileID: 110176883}
     data:
-      first: {fileID: 110206990}
+      first: {fileID: 110270911}
       second:
-      - {fileID: 110103369}
-      - {fileID: 110189030}
-      - {fileID: 110129909}
+      - {fileID: 110197191}
     data:
       first: {fileID: 110218686}
       second:
       - {fileID: 110132667}
       - {fileID: 110107671}
     data:
-      first: {fileID: 110270911}
+      first: {fileID: 110206990}
       second:
-      - {fileID: 110197191}
+      - {fileID: 110103369}
+      - {fileID: 110189030}
+      - {fileID: 110129909}
     data:
       first: {fileID: 110285392}
       second:
@@ -373,23 +372,20 @@ StateMachine:
       - {fileID: 110151859}
       - {fileID: 110176883}
     data:
-      first: {fileID: 110206990}
+      first: {fileID: 110270911}
       second:
-      - {fileID: 110103369}
-      - {fileID: 110189030}
-      - {fileID: 110129909}
+      - {fileID: 110197191}
     data:
       first: {fileID: 110218686}
       second:
       - {fileID: 110132667}
       - {fileID: 110107671}
     data:
-      first: {fileID: 110270911}
+      first: {fileID: 110206990}
       second:
-      - {fileID: 110197191}
-    data:
-      first: {fileID: 110273876}
-      second: []
+      - {fileID: 110103369}
+      - {fileID: 110189030}
+      - {fileID: 110129909}
     data:
       first: {fileID: 110285392}
       second:

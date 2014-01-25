@@ -282,6 +282,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &100036
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400036}
+  m_Layer: 0
+  m_Name: CandleHolster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -289,7 +304,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400026}
@@ -342,6 +357,7 @@ Transform:
   m_Children:
   - {fileID: 400034}
   - {fileID: 400010}
+  - {fileID: 400036}
   m_Father: {fileID: 400000}
 --- !u!4 &400010
 Transform:
@@ -495,6 +511,17 @@ Transform:
   m_LocalRotation: {x: 8.94069672e-08, y: 1.57626275e-07, z: 1, w: -7.27735094e-11}
   m_LocalPosition: {x: -1.20816566e-08, y: 1.18643129, z: -.277656525}
   m_LocalScale: {x: 1, y: 1.00000024, z: 1.00000048}
+  m_Children: []
+  m_Father: {fileID: 400008}
+--- !u!4 &400036
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100036}
+  m_LocalRotation: {x: 0, y: 0, z: 5.77086882e-16, w: 1}
+  m_LocalPosition: {x: .0882806778, y: 1.6046536, z: -.527621269}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
 --- !u!20 &2000000
@@ -842,8 +869,9 @@ MonoBehaviour:
   playerNames:
   - Player 1
   - Player 2
-  flagScoreValue: 5
   prefabCandleGoalParticle: {fileID: 100000, guid: ea28af5ff9ba8204e8ab0ac5910a326e,
+    type: 2}
+  prefabCandlePickupParticle: {fileID: 100000, guid: e08cf018e8c4baf4b8843d70ba684030,
     type: 2}
   framesPerRotate: 5
   jumpCurve:
@@ -875,6 +903,7 @@ MonoBehaviour:
   EmptyCandleSlot15: {fileID: 2800000, guid: f4dbec8f95c74684793ff8e595d43ed8, type: 3}
   FullCandleSlot25: {fileID: 2800000, guid: 64036dca98f032e408b67b5ae36e3607, type: 3}
   EmptyCandleSlot25: {fileID: 2800000, guid: 11012426edcf4e9409940bd8c8cc96e5, type: 3}
+  CandleBackpackPrefab: {fileID: 100006, guid: aeb39b4f14a466b478b12949883e0834, type: 2}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

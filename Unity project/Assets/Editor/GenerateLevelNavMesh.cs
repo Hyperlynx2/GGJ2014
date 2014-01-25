@@ -263,12 +263,22 @@ public class GenerateLevelNavMesh : Editor
 					connectedTile.ConnectedSpawner = obj.GetComponent<Spawner>();
 					
 					//Create the flags to go here
+					
+					float fRotationOffset = 360 / connectedTile.ConnectedSpawner.NumSpawnedCandles;
+					
+					float fCurRotate = 0;
 					for(int i = 0;i < connectedTile.ConnectedSpawner.NumSpawnedCandles;++i)
 					{
 						Object prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Flag.prefab", typeof(GameObject));	
-						GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+						GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;	
+						clone.GetComponent<Candle>().candleNum = obj.GetComponent<Spawner>().PointsPerCandle;
+						
 						clone.transform.position = obj.transform.position;
-						clone.transform.rotation = obj.transform.rotation * Quaternion.Euler (Random.Range (-30, 30), Random.Range (-30, 30),  Random.Range (-180, 180));
+						
+						
+						
+						clone.transform.rotation = obj.transform.rotation * Quaternion.Euler (0, 0, fCurRotate);
+						fCurRotate += fRotationOffset;
 						
 						
 						connectedTile.ConnectedSpawner.CandleInstances.Add(clone);

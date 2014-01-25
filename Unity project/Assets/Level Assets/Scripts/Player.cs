@@ -99,6 +99,10 @@ public class Player : MonoBehaviour
 	private bool _rotatedThisFrame;
 		
 	private bool _teleporting;
+	
+	public GameObject CandleBackpackPrefab;
+	private GameObject _candleBackpack;
+	private GameObject _candleHolster;
 		
 	/// <summary>
 	/// do not accept any movement change commands unless we're finished moving!
@@ -150,7 +154,10 @@ public class Player : MonoBehaviour
 		_have5Candle = false;
 		_have10Candle = false;
 		_have15Candle = false;
-		_have25Candle = false;		
+		_have25Candle = false;	
+		
+		_candleHolster = _playerModel.FindChild("CandleHolster").gameObject;
+		_candleBackpack = null;
 	}
 	
 	// Update is called once per frame
@@ -164,14 +171,15 @@ public class Player : MonoBehaviour
 			_currentTile.OnTileEnter(_currentPlayer);
 		}
 		
+		UpdateTurnSwitch();
+		
 		_cameraTargetRotation = Quaternion.AngleAxis(_cameraTargetHeading, Vector3.up);
 		_cameraPivot.rotation = Quaternion.Slerp(_cameraPivot.rotation, _cameraTargetRotation, Time.deltaTime * 2.5f);
 
-		UpdateTurnSwitch();
-		
+			
 		if(!_teleporting)
 		{
-			UpdateInput();	
+			UpdateInput();
 			UpdateMovement();
 		}
 	}
@@ -232,6 +240,12 @@ public class Player : MonoBehaviour
 		
 		if(_playerTurnRemaining <= 0)
 		{
+			if(_teleporting || _destination != null)
+			{
+				_playerTurnRemaining = 0.0f;
+				return; //skip the rest of the code so that we don't transition to another player until we arrive
+			}
+			
 			_playerChangeSound.Play();
 		
 			if(_currentPlayer == PLAYER_ID.PAINTER)
@@ -277,7 +291,7 @@ public class Player : MonoBehaviour
 		}
 		
 		//do not accept new movement command if we're currently in the process of moving!
-		if(_movementTimeRemaining <= 0)
+		if(_destination == null)
 		{
 
 			Tile[] exits = {_currentTile.NorthTile,
@@ -437,7 +451,7 @@ public class Player : MonoBehaviour
 		
 	private void ArriveAtDestination()
 	{
-		_renderer.enabled = true;
+		//_renderer.enabled = true;
 		_playerAnimator.SetBool("bJumping", false);
 		_playerAnimator.SetBool("bFalling", false);
 		
@@ -479,8 +493,7 @@ public class Player : MonoBehaviour
 				StartMovingTo(specialDest, _playerTargetHeading);
 				_playerAnimator.SetBool("bJumping", true);
 			}
-		}
-		
+		}	
 	}
 	
 	/// <summary>
@@ -499,32 +512,46 @@ public class Player : MonoBehaviour
 		{
 			int iSpawnerHere = scoreThisTile.IsSpawnerHere();
 			
-			if(iSpawnerHere != 0)
+			if(_candleBackpack == null && iSpawnerHere != 0)
 			{
-				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
-				obj.transform.parent = gameObject.transform;
-				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
+				_candleBackpack = Instantiate(CandleBackpackPrefab) as GameObject;
+				_candleBackpack.transform.parent = _candleHolster.transform;
+				_candleBackpack.transform.localPosition = new Vector3(0, 0, 0);
+				_candleBackpack.transform.localRotation = Quaternion.identity;
 			}
 			
 			if(iSpawnerHere == 5 && !_have5Candle)
 			{
 				_have5Candle = true;
 				scoreThisTile.CollectTileCandle();
+				
 			}
 			if(iSpawnerHere == 10 && !_have10Candle)
 			{
 				_have10Candle = true;
 				scoreThisTile.CollectTileCandle();
+				
+				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
+				obj.transform.parent = gameObject.transform;
+				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
 			}
 			if(iSpawnerHere == 15 && !_have15Candle)
 			{
 				_have15Candle = true;
 				scoreThisTile.CollectTileCandle();
+				
+				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
+				obj.transform.parent = gameObject.transform;
+				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
 			}
 			if(iSpawnerHere == 25 && !_have25Candle)
 			{
 				_have25Candle = true;
 				scoreThisTile.CollectTileCandle();
+				
+				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
+				obj.transform.parent = gameObject.transform;
+				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
 			}
 			
 			if(scoreThisTile.FlagGoalIsHere)
@@ -533,6 +560,12 @@ public class Player : MonoBehaviour
 				{
 					GameObject obj = Instantiate(prefabCandleGoalParticle) as GameObject;
 					obj.transform.position = scoreThisTile.transform.position;
+					
+					if(_candleBackpack)
+					{
+						DestroyObject(_candleBackpack);
+						_candleBackpack = null;
+					}
 				}
 				if(_have5Candle)
 				{
@@ -568,7 +601,12 @@ public class Player : MonoBehaviour
 		
 		_playerAnimator.SetBool("bTeleporting", true);
 		yield return new WaitForSeconds(0.25f);
-		_renderer.enabled = false;
+		
+		Renderer[] renderers = GetComponentsInChildren<Renderer>() as Renderer[];
+		for(int i = 0;i < renderers.Length;++i)
+		{
+			renderers[i].enabled = false;
+		}
 		
 		yield return new WaitForSeconds(0.15f);
 		
@@ -585,7 +623,12 @@ public class Player : MonoBehaviour
 		_currentTile = destination;
 		_currentTile.OnTileSpecialEnter(_currentPlayer);
 		yield return new WaitForSeconds(0.25f);
-		_renderer.enabled = true;
+		
+		for(int i = 0;i < renderers.Length;++i)
+		{
+			renderers[i].enabled = true;
+		}
+		
 		_playerAnimator.SetBool("bTeleporting", false);
 		
 		_teleporting = false;
