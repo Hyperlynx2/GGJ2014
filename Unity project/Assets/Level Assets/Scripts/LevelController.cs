@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 
 public class LevelController : MonoBehaviour {
@@ -7,8 +8,9 @@ public class LevelController : MonoBehaviour {
 	public float MaxLevelTime = 100;
 	public string TransitionSceneName = "EndGame";
 	
-	private float _remainingTime;
+	public GUISkin HUDSkin;
 	
+	private float _remainingTime;
 	
 	void Start()
 	{
@@ -21,23 +23,22 @@ public class LevelController : MonoBehaviour {
 		
 		if(_remainingTime <= 0.0f || IsAllFlagsCollected() || IsAllTilesPainted())
 		{
-			Debug.Log ("The Game is finished!");
+			GameManager.GetInstance().OnGameOver();
 			//Application.LoadLevel(TransitionSceneName);
 		}
 	}
-	
 	
 	private bool IsAllFlagsCollected()
 	{
 		Spawner[] allSpawners = GameObject.Find("Spawners").GetComponentsInChildren<Spawner>();
 		
-		int iNumberFlagsRemaining = 0;
+		int iNumberCandlesRemaining = 0;
 		foreach(Spawner sp in allSpawners)
 		{
-			iNumberFlagsRemaining += sp.NumSpawnedFlags;
+			iNumberCandlesRemaining += sp.NumSpawnedCandles;
 		}
 		
-		return iNumberFlagsRemaining == 0;
+		return iNumberCandlesRemaining == 0;
 	}
 	
 	private bool IsAllTilesPainted()
@@ -53,5 +54,17 @@ public class LevelController : MonoBehaviour {
 		}
 		
 		return true;
+	}
+	
+	void OnGUI()
+	{
+		GUI.skin = HUDSkin;
+		
+		TimeSpan levelTime = new TimeSpan(0, 0, (int)_remainingTime);
+		
+		//TODO: do as percentage of screen width, not absolute pixel value.
+		GUI.Box (new Rect (400, 20, 100, 60), levelTime.Minutes + ":" + levelTime.Seconds);
+		//TODO: BUG: seconds is single-digit when it gets under 10 seconds!
+		//TODO: switch to a label?
 	}
 }

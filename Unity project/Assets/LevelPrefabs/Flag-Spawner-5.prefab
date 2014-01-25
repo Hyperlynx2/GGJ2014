@@ -8,9 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
+  - 33: {fileID: 3300000}
+  - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: LevelController
+  m_Name: Flag-Spawner-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22,11 +24,36 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .375462085, y: 1.0809623, z: -3.48952866}
+  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!23 &2300000
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 6b2de2266a00771439771da63c475887, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+--- !u!33 &3300000
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Mesh: {fileID: 4300000, guid: 583a5fafde5913b46a7af516459a2e3f, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -35,19 +62,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68b96189da696ab4fb825b18c61c6932, type: 3}
+  m_Script: {fileID: 11500000, guid: 02175c2f62dec4742b2cd536600f782a, type: 3}
   m_Name: 
-  MaxLevelTime: 100
-  TransitionSceneName: EndGame
-  HUDSkin: {fileID: 11400000, guid: 9dc692aaf93dfdd47bc48b7c06e4b02f, type: 2}
-  FullCandleSlot5: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot5: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
-  FullCandleSlot10: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot10: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
-  FullCandleSlot15: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot15: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
-  FullCandleSlot25: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot25: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
+  NumSpawnedCandles: 0
+  PointsPerCandle: 5
+  CandleInstances: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

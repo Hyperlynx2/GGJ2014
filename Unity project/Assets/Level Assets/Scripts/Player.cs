@@ -15,7 +15,9 @@ public class Player : MonoBehaviour
 	public string player1RotateAxis;
 	public string player2RotateAxis;
 	public string[] playerNames;
-	public int flagScoreValue = 5;
+		
+	public GameObject prefabCandleGoalParticle;
+	public GameObject prefabCandlePickupParticle;
 	
 	/// <summary>
 	/// How many frames rotating the player model should take up.
@@ -77,21 +79,29 @@ public class Player : MonoBehaviour
 	private AudioSource _playerCounterLoop;
 	private AudioSource _playerChangeSound;
 	
+	private bool _have5Candle;		
+	private bool _have10Candle;		
+	private bool _have15Candle;		
+	private bool _have25Candle;
+		
+	public Texture FullCandleSlot5;
+	public Texture EmptyCandleSlot5;
+	public Texture FullCandleSlot10;
+	public Texture EmptyCandleSlot10;
+	public Texture FullCandleSlot15;
+	public Texture EmptyCandleSlot15;
+	public Texture FullCandleSlot25;
+	public Texture EmptyCandleSlot25;
+	
+	private GameManager _gameManager;
+	
 	/// <summary>
 	/// Stops multiple inputs for rotate.
 	/// </summary>	
 	private bool _rotatedThisFrame;
-	
-	
+		
 	private bool _teleporting;
-	
-	/// <summary>
-	/// The _flags currently carried (not total or player score!)
-	/// </summary>
-	private int _flagsCarried = 0;
-	
-	private int[] _playerScores = {0,0};
-	
+		
 	/// <summary>
 	/// do not accept any movement change commands unless we're finished moving!
 	/// </summary>
@@ -138,6 +148,14 @@ public class Player : MonoBehaviour
 		_playerPainterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerOneLoop").GetComponent<AudioSource>();
 		_playerCounterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerTwoLoop").GetComponent<AudioSource>();
 		_playerChangeSound = transform.FindChild ("Sounds").transform.FindChild("PlayerChange").GetComponent<AudioSource>();
+		
+		_have5Candle = false;
+		_have10Candle = false;
+		_have15Candle = false;
+		_have25Candle = false;
+		
+		_gameManager = GameManager.GetInstance();
+		
 	}
 	
 	// Update is called once per frame
@@ -165,18 +183,49 @@ public class Player : MonoBehaviour
 	
 	void OnGUI()
 	{
-		//whose turn it is, time remaining:
+		//whose turn it is, time remaining before player switch:
 		GUI.Box (new Rect (500, 200,100,50), playerNames[(int)_currentPlayer] + "\n" + _playerTurnRemaining);
 		
-		string scoreText = "";
+		//TODO: remove playerNames array. replace it with two variables, or stick it in GameManager
 		
-		for(int i = 0; i < playerNames.Length; ++i)
-		{
-			scoreText += playerNames[i] + ": " + _playerScores[i] + "\n";
-		}		
+		string scoreText = playerNames[0] + ": " + GameManager.GetInstance().Player1Score + "\n"
+			+ playerNames[1] + ": " + GameManager.GetInstance().Player2Score;		
 		
 		//score:
-		GUI.Box (new Rect (500, 400,100,50), scoreText);
+		GUI.Box (new Rect (500, 400,150,50), scoreText);
+		
+		//candles carried:
+		float textureWidth = 32;
+		float margin = 5;
+		
+				
+		//5 candle
+		GUI.Label(new Rect(Screen.width - (textureWidth + margin),
+			Screen.height - 4*(textureWidth + margin),
+			textureWidth,
+			textureWidth),
+			_have5Candle?FullCandleSlot5:EmptyCandleSlot5);
+		
+		//10 candle
+		GUI.Label(new Rect(Screen.width - (textureWidth + margin),
+			Screen.height - 3*(textureWidth + margin),
+			textureWidth,
+			textureWidth),
+			_have10Candle?FullCandleSlot10:EmptyCandleSlot10);
+		
+		//15 candle
+		GUI.Label(new Rect(Screen.width - (textureWidth + margin),
+			Screen.height - 2*(textureWidth + margin),
+			textureWidth,
+			textureWidth),
+			_have15Candle?FullCandleSlot15:EmptyCandleSlot15);
+		
+		//25 candle
+		GUI.Label(new Rect(Screen.width - (textureWidth + margin),
+			Screen.height - (textureWidth + margin),
+			textureWidth,
+			textureWidth),
+			_have25Candle?FullCandleSlot25:EmptyCandleSlot25);
 	}
 
 	/// <summary>
@@ -448,41 +497,96 @@ public class Player : MonoBehaviour
 		{
 			if(scoreThisTile.PaintTile())
 			{
-				++_playerScores[(int)_currentPlayer];
+				_gameManager.Player1Score++; //TODO: enum vs hardcoded? terrible, clean up if time.
 			}
 		}
 		else
 		{
-			_flagsCarried += scoreThisTile.CollectTileFlags();
+			int iSpawnerHere = scoreThisTile.IsSpawnerHere();
+			
+			if(iSpawnerHere != 0)
+			{
+				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
+				obj.transform.parent = gameObject.transform;
+				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
+			}
+			
+			if(iSpawnerHere == 5 && !_have5Candle)
+			{
+				_have5Candle = true;
+				scoreThisTile.CollectTileCandle();
+			}
+			if(iSpawnerHere == 10 && !_have10Candle)
+			{
+				_have10Candle = true;
+				scoreThisTile.CollectTileCandle();
+			}
+			if(iSpawnerHere == 15 && !_have15Candle)
+			{
+				_have15Candle = true;
+				scoreThisTile.CollectTileCandle();
+			}
+			if(iSpawnerHere == 25 && !_have25Candle)
+			{
+				_have25Candle = true;
+				scoreThisTile.CollectTileCandle();
+			}
 			
 			if(scoreThisTile.FlagGoalIsHere)
 			{
-				_playerScores[(int)_currentPlayer] += _flagsCarried * flagScoreValue;
-				_flagsCarried = 0;
+				if(_have5Candle || _have10Candle || _have15Candle || _have25Candle)
+				{
+					GameObject obj = Instantiate(prefabCandleGoalParticle) as GameObject;
+					obj.transform.position = scoreThisTile.transform.position;
+				}
+				if(_have5Candle)
+				{
+					_gameManager.Player2Score += 5;
+					_have5Candle = false;
+				}
+				
+				if(_have10Candle)
+				{
+					_gameManager.Player2Score += 10;
+					_have10Candle = false;
+				}
+				
+				if(_have15Candle)
+				{
+					_gameManager.Player2Score += 15;
+					_have15Candle = false;
+				}
+				
+				if(_have25Candle)
+				{
+					_gameManager.Player2Score += 25;
+					_have25Candle = false;
+				}
 			}
 		}
 	}
 	
 	private IEnumerator DoTeleport(Tile destination)
 	{
+		
 		_teleporting = true;
 		
 		_playerAnimator.SetBool("bTeleporting", true);
 		yield return new WaitForSeconds(0.25f);
 		_renderer.enabled = false;
 		
-		yield return new WaitForSeconds(0.5f);
-		gameObject.transform.position = destination.gameObject.transform.position;
+		yield return new WaitForSeconds(0.15f);
 		
-		//float fDistFromTarget = (destination.transform.position - transform.position).magnitude;
-		//while(fDistFromTarget > 1)
-		//{
-		//	
-		//	gameObject.transform.position = Mathf.Lerp(
-		//	
-		//	yield return new WaitForSeconds(1.0f);
-		//}
+		float fDistFromTarget = (destination.transform.position - transform.position).magnitude;
+		while(fDistFromTarget > 1)
+		{
+			
+			gameObject.transform.position += (destination.transform.position - transform.position).normalized;
+			fDistFromTarget = (destination.transform.position - transform.position).magnitude;
+			yield return new WaitForSeconds(0.001f);
+		}
 		
+		gameObject.transform.position = destination.transform.position;
 		_currentTile = destination;
 		_currentTile.OnTileSpecialEnter(_currentPlayer);
 		yield return new WaitForSeconds(0.25f);

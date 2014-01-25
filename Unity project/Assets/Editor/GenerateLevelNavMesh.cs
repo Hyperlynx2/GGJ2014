@@ -157,7 +157,8 @@ public class GenerateLevelNavMesh : Editor
 			
 			if(obj.name.Contains("Flag-Spawner"))
 			{
-				prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Flag-Spawner.prefab", typeof(GameObject));	
+				int number = int.Parse(obj.name.Substring(15));
+				prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Flag-Spawner-" + number.ToString() + ".prefab", typeof(GameObject));	
 			}
 			
 			if(obj.name.Contains("Player-Spawner"))
@@ -202,9 +203,7 @@ public class GenerateLevelNavMesh : Editor
 				{
 					clone.name = "Flag-Spawner";
 					int number = int.Parse(obj.name.Substring(13, 1));
-					clone.GetComponent<Spawner>().NumSpawnedFlags = number;
-					number = int.Parse(obj.name.Substring(15));
-					clone.GetComponent<Spawner>().PointsPerFlag = number;
+					clone.GetComponent<Spawner>().NumSpawnedCandles = number;
 					clone.transform.parent = spawnerObj.transform;
 				}
 				
@@ -264,15 +263,15 @@ public class GenerateLevelNavMesh : Editor
 					connectedTile.ConnectedSpawner = obj.GetComponent<Spawner>();
 					
 					//Create the flags to go here
-					for(int i = 0;i < connectedTile.ConnectedSpawner.NumSpawnedFlags;++i)
+					for(int i = 0;i < connectedTile.ConnectedSpawner.NumSpawnedCandles;++i)
 					{
 						Object prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Flag.prefab", typeof(GameObject));	
 						GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
 						clone.transform.position = obj.transform.position;
-						clone.transform.rotation = obj.transform.rotation * Quaternion.Euler (0, 0, Random.Range (-180, 180));
+						clone.transform.rotation = obj.transform.rotation * Quaternion.Euler (Random.Range (-30, 30), Random.Range (-30, 30),  Random.Range (-180, 180));
 						
 						
-						connectedTile.ConnectedSpawner.FlagInstances.Add(clone);
+						connectedTile.ConnectedSpawner.CandleInstances.Add(clone);
 					}
 				}
 			}

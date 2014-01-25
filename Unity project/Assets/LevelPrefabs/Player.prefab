@@ -29,7 +29,6 @@ GameObject:
   - 92: {fileID: 9200000}
   - 81: {fileID: 8100000}
   - 114: {fileID: 11400000}
-  - 82: {fileID: 8200002}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -289,8 +288,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_LocalRotation: {x: -.703439891, y: .00289766816, z: -.0108497413, w: .71066606}
-  m_LocalPosition: {x: 0, y: 2, z: 8.74227837e-08}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400026}
@@ -844,6 +843,9 @@ MonoBehaviour:
   - Player 1
   - Player 2
   flagScoreValue: 5
+  prefabCandleGoalParticle: {fileID: 100000, guid: ea28af5ff9ba8204e8ab0ac5910a326e,
+    type: 2}
+  framesPerRotate: 5
   jumpCurve:
     serializedVersion: 2
     m_Curve:
@@ -865,6 +867,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   turnTime: 8
+  FullCandleSlot5: {fileID: 2800000, guid: b8bd7776add43824589c06aa2b111f68, type: 3}
+  EmptyCandleSlot5: {fileID: 2800000, guid: ad1cd8c4085109a4e8433fdf82798fcb, type: 3}
+  FullCandleSlot10: {fileID: 2800000, guid: 4ea23cb6a1b8d0347ba00a442ac3a1d0, type: 3}
+  EmptyCandleSlot10: {fileID: 2800000, guid: 2d268a917dae8d54c9f97f0a2780b376, type: 3}
+  FullCandleSlot15: {fileID: 2800000, guid: 4b25c3a72e220314ca7c90770f0f8b05, type: 3}
+  EmptyCandleSlot15: {fileID: 2800000, guid: f4dbec8f95c74684793ff8e595d43ed8, type: 3}
+  FullCandleSlot25: {fileID: 2800000, guid: 64036dca98f032e408b67b5ae36e3607, type: 3}
+  EmptyCandleSlot25: {fileID: 2800000, guid: 11012426edcf4e9409940bd8c8cc96e5, type: 3}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
