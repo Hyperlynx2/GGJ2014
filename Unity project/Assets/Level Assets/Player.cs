@@ -17,6 +17,13 @@ public class Player : MonoBehaviour
 	public string[] playerNames;
 	public int flagScoreValue = 5;
 	
+	/// <summary>
+	/// How many frames rotating the player model should take up.
+	/// </summary>
+	public int framesPerRotate = 5;
+	
+	private int _rotationFramesRemaining = 0;
+	
 	public AnimationCurve jumpCurve;
 	
 	/// <summary>
@@ -24,7 +31,23 @@ public class Player : MonoBehaviour
 	/// </summary>
 	public float turnTime;
 	
-	private int _heading;
+	/// <summary>
+	/// Used to determine input directions. This is what direction the camera is facing,
+	/// or currently rotating to face.
+	/// </summary>
+	private int _cameraTargetHeading;
+	
+	/// <summary>
+	/// Used to determine what direction to face the player model ONLY. Camera heading
+	/// handled seperately.
+	/// </summary>
+	private int _playerTargetHeading;
+	
+	/// <summary>
+	/// How much to rotate the player model, in degrees, each frame (if currently rotating).
+	/// </summary>
+	private float _rotateModelThisAmount;
+	
 	private Tile _currentTile;
 	private Tile _destination;
 	private bool _initialised;
@@ -37,16 +60,26 @@ public class Player : MonoBehaviour
 	private Animator _playerAnimator;
 	private Renderer _renderer;
 	
-	
 	private Camera _camera;
 	private Quaternion _cameraTargetRotation;
+	
+	/// <summary>
+	/// child
+	/// </summary>	
 	private Transform _cameraPivot;
 	
+	/// <summary>
+	/// child
+	/// </summary>
+	private Transform _playerModel;	
 	
 	private AudioSource _playerPainterLoop;
 	private AudioSource _playerCounterLoop;
 	private AudioSource _playerChangeSound;
 	
+	/// <summary>
+	/// Stops multiple inputs for rotate.
+	/// </summary>	
 	private bool _rotatedThisFrame;
 	
 	
@@ -86,18 +119,21 @@ public class Player : MonoBehaviour
 		_currentPlayer = PLAYER_ID.COLLECTOR;
 
 		_currentTile = startTile;
-		_heading = 0;
+		_cameraTargetHeading = 0;
+		_playerTargetHeading = _cameraTargetHeading;
 		_movementTimeRemaining = 0;
 		_initialised = false;
 		_travelledThroughTeleporter = false;
 		
-		_heading = 0;
+		_cameraTargetHeading = 0;
 		
 		_playerAnimator = GetComponentInChildren<Animator>();
 		_camera = GetComponentInChildren<Camera>();
 		_renderer = GetComponentInChildren<Renderer>();
 		
 		_cameraPivot = gameObject.transform.FindChild("CameraPivot");
+		
+		_playerModel = gameObject.transform.FindChild("Player-RIG");
 		
 		_playerPainterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerOneLoop").GetComponent<AudioSource>();
 		_playerCounterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerTwoLoop").GetComponent<AudioSource>();
@@ -107,30 +143,29 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		/*no guaruntees that Start will get called only after the tiles have been generated, so
+		/*no guarantees that Start will get called only after the tiles have been generated, so
 		initialise here on the first frame*/
-		
 		if(!_initialised)
 		{
 			_initialised = true;
 			_currentTile.OnTileEnter(_currentPlayer);
 		}
 		
-		_cameraTargetRotation = Quaternion.AngleAxis(  _heading, Vector3.up);
+		_cameraTargetRotation = Quaternion.AngleAxis(_cameraTargetHeading, Vector3.up);
 		_cameraPivot.rotation = Quaternion.Slerp(_cameraPivot.rotation, _cameraTargetRotation, Time.deltaTime * 2.5f);
 
 		UpdateTurnSwitch();
 		
-		if(_teleporting) return;
-		
-		UpdateInput();	
-		UpdateMovement();
+		if(!_teleporting)
+		{
+			UpdateInput();	
+			UpdateMovement();
+		}
 	}
 	
 	void OnGUI()
 	{
 		//whose turn it is, time remaining:
-		//TODO: make time remaining be formatted in minutes:seconds
 		GUI.Box (new Rect (500, 200,100,50), playerNames[(int)_currentPlayer] + "\n" + _playerTurnRemaining);
 		
 		string scoreText = "";
@@ -177,110 +212,95 @@ public class Player : MonoBehaviour
 			_playerTurnRemaining = turnTime;
 			
 			if(_movementTimeRemaining <= 0)
-				_currentTile.OnTileEnter(_currentPlayer);
+			{
+				_destination = _currentTile;
+				ArriveAtDestination();
+			}
 		}
 	}
 	
 	private void UpdateInput()
 	{
+		string horz = player1HorizontalAxis;
+		string vert = player1VerticalAxis;
+		string rotate = player1RotateAxis;
+		
+		if(_currentPlayer == PLAYER_ID.COLLECTOR)
+		{
+			horz = player2HorizontalAxis;
+			vert = player2VerticalAxis;
+			rotate = player2RotateAxis;
+		}
+		
 		//do not accept new movement command if we're currently in the process of moving!
 		if(_movementTimeRemaining <= 0)
 		{
-			string horz = player1HorizontalAxis;
-			string vert = player1VerticalAxis;
-			string rotate = player1RotateAxis;
-			
-			if(_currentPlayer == PLAYER_ID.COLLECTOR)
-			{
-				horz = player2HorizontalAxis;
-				vert = player2VerticalAxis;
-				rotate = player2RotateAxis;
-			}
-			
+
 			Tile[] exits = {_currentTile.NorthTile,
 							_currentTile.EastTile,
 							_currentTile.SouthTile,
 							_currentTile.WestTile};
 			
-			int headingOffset = _heading / 90;
+			int headingOffset = _cameraTargetHeading / 90;
 			
 			if(Input.GetAxis(vert) > 0) //up
 			{
-				StartMovingTo(exits[headingOffset]);
+				StartMovingTo(exits[headingOffset], (_cameraTargetHeading + 0) % 360);
 			}
 			else if(Input.GetAxis(horz) > 0) //right
 			{
-				StartMovingTo(exits[(headingOffset + 1) % 4]);
+				StartMovingTo(exits[(headingOffset + 1) % 4], (_cameraTargetHeading + 90) % 360);
 			}
 			else if(Input.GetAxis(vert) < 0) //down
 			{
-				StartMovingTo(exits[(headingOffset + 2) % 4]);
+				StartMovingTo(exits[(headingOffset + 2) % 4], (_cameraTargetHeading + 180) % 360);
 			}
 			else if(Input.GetAxis(horz) < 0) //left
 			{
-				StartMovingTo(exits[(headingOffset + 3) % 4]);
+				StartMovingTo(exits[(headingOffset + 3) % 4],(_cameraTargetHeading + 270) % 360);
 			}
 			else
 			{
 				_playerAnimator.SetBool("bHaveDestination", false);
 			}
 			
-			
-			
-			
-			/*for camera rotation, use transform.rotatearound to make it look nice.
-			(http://docs.unity3d.com/Documentation/ScriptReference/Transform.RotateAround.html)
-			
-			From a mechanical point of view, I think the change of control orientation should be
-			instantaneous, ie before the camera has finished rotating.
-			
-			Can do the rotating in a script on the camera, in its update()... but might as well do it
-			here.
-			*/
-			
-			/*TODO: regarding the camera rotation, cheat the same way I did with the player movement.
-			find and store the 90 degree points at start, have a setting for time to rotate 90
-			degrees, while rotating rotate that amount * deltaTime and decrement deltaTime from
-			current rotation time remaining, when rotation time <=0 translate straight to the
-			precalculated point. That way it won't go out of synch.*/
-			
-			
-				
-			if(Input.GetAxis(rotate) < 0)
-			{
-				if(!_rotatedThisFrame)
-				{
-					//_camera.transform.RotateAround(gameObject.transform.position, Vector3.up,  -90);
-					_rotatedThisFrame = true;
-					
-					_heading -= 90;
-					
-					if(_heading < 0)
-						_heading = 270;
-				}
-			}
-			else if(Input.GetAxis(rotate) > 0)
-			{
-				if(!_rotatedThisFrame)
-				{
-					//_camera.transform.RotateAround(gameObject.transform.position, Vector3.up,  90);
-					_rotatedThisFrame = true;
-					
-					_heading += 90;
-					if(_heading >= 360)
-						_heading = 0;
-				}
-			}
-			else
-			{
-				_rotatedThisFrame = false;
-			}
-			
 		}
+		
+		_cameraTargetRotation = Quaternion.AngleAxis(_cameraTargetHeading, Vector3.up);
+		_cameraPivot.rotation = Quaternion.Slerp(_cameraPivot.rotation, _cameraTargetRotation, Time.deltaTime * 2.5f);
+		
+		if(Input.GetAxis(rotate) < 0)
+		{
+			if(!_rotatedThisFrame)
+			{
+				_rotatedThisFrame = true;
+				
+				_cameraTargetHeading -= 90;
+				
+				if(_cameraTargetHeading < 0)
+					_cameraTargetHeading = 270;
+			}
+		}
+		else if(Input.GetAxis(rotate) > 0)
+		{
+			if(!_rotatedThisFrame)
+			{
+				_rotatedThisFrame = true;
+				
+				_cameraTargetHeading += 90;
+				if(_cameraTargetHeading >= 360)
+					_cameraTargetHeading = 0;
+			}
+		}
+		else
+		{
+			_rotatedThisFrame = false;
+		}
+		
 	}
 	
 	/// <summary>
-	/// Abstract movement, in case we want to do fancy things with trajectory later.
+	/// Handle movement, including rotating player model.
 	/// </summary>
 	private void UpdateMovement()
 	{
@@ -317,26 +337,33 @@ public class Player : MonoBehaviour
 				gameObject.transform.position = _destination.gameObject.transform.position;
 				ArriveAtDestination();				
 			}
+		}
+
+		if(_rotationFramesRemaining > 1)
+		{
+			_playerModel.Rotate(new Vector3(0, _rotateModelThisAmount, 0));
 			
+			_rotationFramesRemaining--;
+		}
+		else
+		{
+			_playerModel.rotation = Quaternion.AngleAxis(_playerTargetHeading, Vector3.up);
 		}
 	}
 	
 	/// <summary>
-	/// Begin movement to destination tile
+	/// Begin movement to destination tile. Turn if necessary.
 	/// </summary>
-	private void StartMovingTo(Tile destination)
+	private void StartMovingTo(Tile destination, int newPlayerHeading)
 	{
 		if(destination != null)
 		{
-			//TODO: start playing movement anim
-			
 			_currentTile.OnTileExit(_currentPlayer);
 			_destination = destination;
 				
 			Vector3 toDestination = (_destination.gameObject.transform.position - _currentTile.gameObject.transform.position);
 			_currentMoveSpeed = movementSpeed * Mathf.Pow((toDestination.magnitude / 4), 0.5f);
 
-			
 			_movementTimeRemaining = _currentMoveSpeed;
 			
 			_playerAnimator.SetBool("bHaveDestination", true);
@@ -346,12 +373,26 @@ public class Player : MonoBehaviour
 				_playerAnimator.SetBool("bHaveDestination", false);
 				_playerAnimator.SetBool("bFalling", true);
 			}
+			
+			//if not heading the same way as last time, start to rotate the player model.
+			if(_playerTargetHeading != newPlayerHeading)
+			{
+				_rotateModelThisAmount = newPlayerHeading - _playerTargetHeading;
+				if(_rotateModelThisAmount > 180)
+				{
+					_rotateModelThisAmount *= -1; //turn left instead of right.
+				}
+				
+				_rotateModelThisAmount /= framesPerRotate;
+				
+				_rotationFramesRemaining = framesPerRotate;					
+			}
+			_playerTargetHeading = newPlayerHeading;
 		} 
 	}
 		
 	private void ArriveAtDestination()
 	{
-		
 		_renderer.enabled = true;
 		_playerAnimator.SetBool("bJumping", false);
 		_playerAnimator.SetBool("bFalling", false);
@@ -370,7 +411,7 @@ public class Player : MonoBehaviour
 			///*NB: DO NOT treat this as arriving at a destination. otherwise you'll infinitely
 			//teleport between the two, and overflow stack space.
 			//
-			//a jump pad CANNOT occupuy the same space as a teleporter (which you might want
+			//a jump pad CANNOT occupy the same space as a teleporter (which you might want
 			//with the idea of teleporting onto a jump pad), because then if you were to ordinarily
 			//walk onto that jump pad/teleporter what would the correct action be? to jump or to
 			//teleport?*/
@@ -387,16 +428,14 @@ public class Player : MonoBehaviour
 			
 			_travelledThroughTeleporter = false;
 			
-			
 			specialDest = _currentTile.GetConnectedJumperTile();
 			
 			if(specialDest != null)
 			{
-				StartMovingTo(specialDest);
+				StartMovingTo(specialDest, _playerTargetHeading);
 				_playerAnimator.SetBool("bJumping", true);
 			}
 		}
-		
 		
 	}
 	

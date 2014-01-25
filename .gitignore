@@ -1,5 +1,9 @@
 /Unity project/Unity project.userprefs
 /Unity project/*.pidb
 /Unity project/*.sln
+/Unity project/Library
+/Unity project/Temp
 *.csproj
 *.sln
+/Unity project/Assets/Level Assets/Materials/Tile-Painted.mat
+/Unity project/Assets/Level Assets/Materials/Tile-Painted.mat.meta
