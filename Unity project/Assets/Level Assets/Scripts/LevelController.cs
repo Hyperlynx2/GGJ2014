@@ -9,6 +9,9 @@ public class LevelController : MonoBehaviour {
 	public string TransitionSceneName = "EndGame";
 	
 	public GUISkin HUDSkin;
+	float timerBoxWidth = 200;
+	float timerBoxHeight = 55;
+	float hudMargin = 10;
 	
 	private float _remainingTime;
 	
@@ -64,8 +67,6 @@ public class LevelController : MonoBehaviour {
 		TimeSpan levelTime = new TimeSpan(0, 0, (int)_remainingTime);
 		
 		//TODO: do as percentage of screen width, not absolute pixel value.
-		GUI.Box (new Rect (400, 20, 110, 60), levelTime.Minutes + ":" + levelTime.Seconds.ToString().PadLeft(2,'0'));
-		//TODO: BUG: seconds is single-digit when it gets under 10 seconds!
-		//TODO: switch to a label?
+		GUI.Label (new Rect (Screen.width /2 - timerBoxWidth/2, hudMargin, timerBoxWidth, timerBoxHeight), levelTime.Minutes + ":" + levelTime.Seconds.ToString().PadLeft(2,'0'));
 	}
 }
