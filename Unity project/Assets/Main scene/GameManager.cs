@@ -1,12 +1,15 @@
 using UnityEngine;
 using System;
 
-public class GameManager : MonoBehaviour
+public class GameManager
 {
 	private static GameManager _instance = null;
 	
 	public static GameManager GetInstance()
 	{
+		if(_instance == null)
+			_instance = new GameManager();
+		
 		return _instance;
 	}
 	
@@ -18,7 +21,7 @@ public class GameManager : MonoBehaviour
 	/// <summary>
 	/// Gap between buttons
 	/// </summary>
-	public float separation;
+	public float separation = 5;
 	
 	public string[] menuItemScenes;
 	public string[] menuItemLabels;
@@ -60,28 +63,12 @@ public class GameManager : MonoBehaviour
 		_state = STATE.GAMEOVER;
 	}
 	
-	public GameManager()
+	private GameManager()
 	{
-		if(_instance == null)
-		{
-			_instance = this;
-			_state = STATE.MENU;
-		}
-		/*TODO: this is not the right way to do this, and it won't work. it complains that it can't do the
-		comparator. if I don't put this in, though, it will create more than one GameManager, and it'll set the
-		state to menu, so it'll render the menu GUI stuff and ALSO the "game over" GUI stuff.
-		
-		Halp, Matt! Brain no worky no more.
-		 */
+		_state = STATE.MENU;
 	}
 	
-	// Use this for initialization
-	void Start ()
-	{
-		DontDestroyOnLoad(gameObject);
-	}
-	
-	void OnGUI()
+	public void OnGUI()
 	{
 		GUI.skin = skin;
 
