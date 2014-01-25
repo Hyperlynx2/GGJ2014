@@ -28,7 +28,10 @@ public class Player : MonoBehaviour
 	
 	private float _heading;
 	private Tile _currentTile;
+	private Tile _destination;
 	private bool _initialised;
+	
+	private Vector3 _velocity;
 	
 	/// <summary>
 	/// The _flags currently carried (not total or player score!)
@@ -75,11 +78,12 @@ public class Player : MonoBehaviour
 		if(!_initialised)
 		{
 			_initialised = true;
-			_currentTile.SetConnectedTilesHighlighted(true);
+			_currentTile.OnTileEnter();
 		}
 		
 		UpdateTurnSwitch();
 		UpdateInput();	
+		UpdateMovement();
 	}
 	
 	void OnGUI()
@@ -120,6 +124,7 @@ public class Player : MonoBehaviour
 	
 	private void UpdateInput()
 	{
+		//do not accept new movement command if we're currently in the process of moving!
 		if(_movementTimeRemaining <= 0)
 		{
 			string horz = player1HorizontalAxis;
@@ -134,70 +139,126 @@ public class Player : MonoBehaviour
 			//TODO: take heading into consideration here		
 			if(Input.GetAxis (horz) < 0) //left
 			{
-				MoveTo(_currentTile.WestTile);		
+				StartMovingTo(_currentTile.WestTile);		
 			}
 			else if(Input.GetAxis(horz) > 0) //right
 			{
-				MoveTo(_currentTile.EastTile);
+				StartMovingTo(_currentTile.EastTile);
 			}
 			else if(Input.GetAxis(vert) < 0) //down
 			{
-				MoveTo(_currentTile.SouthTile);
+				StartMovingTo(_currentTile.SouthTile);
 			}
 			else if(Input.GetAxis(vert) > 0) //up
 			{
-				MoveTo(_currentTile.NorthTile);
+				StartMovingTo(_currentTile.NorthTile);
 			}
 			
-			
 			//TODO: input for changing heading
-		}
-		else
-		{
-			_movementTimeRemaining -= Time.deltaTime;
-			if(_movementTimeRemaining < 0)
-				_movementTimeRemaining = 0;
 		}
 	}
 	
 	/// <summary>
-	/// Handle movement to the destination tile.
+	/// Abstract movement, in case we want to do fancy things with trajectory later.
 	/// </summary>
-	private void MoveTo(Tile destination)
+	private void UpdateMovement()
+	{
+		if(_destination != null)
+		{
+			Vector3 toDestination = (_destination.gameObject.transform.position - _currentTile.gameObject.transform.position);
+			
+			float speed = toDestination.magnitude / movementSpeed;
+			
+			gameObject.transform.position += toDestination.normalized * speed * Time.deltaTime;
+			
+			_movementTimeRemaining -= Time.deltaTime;
+			if(_movementTimeRemaining < 0)
+			{
+				_movementTimeRemaining = 0;
+				
+				//cheating, just in case things don't line up:
+				gameObject.transform.position = _destination.gameObject.transform.position;
+				ArriveAtDestination();				
+			}
+			
+		}
+	}
+	
+	/// <summary>
+	/// Begin movement to destination tile
+	/// </summary>
+	private void StartMovingTo(Tile destination)
 	{
 		if(destination != null)
 		{
-			/*turn off the lights on the current tile, turn em on on the new one, start movement anim, set
-			 * movement timer, etc*/
+			//TODO: start playing movement anim
 			
-			_currentTile.SetConnectedTilesHighlighted(false);
-			destination.SetConnectedTilesHighlighted(true);
-
-			if(_currentPlayer == PLAYER_NUM.PAINTER)
-			{
-				if(destination.PaintTile())
-				{
-					++_playerScores[(int)_currentPlayer];
-				}
-			}
-			else
-			{
-				_flagsCarried += destination.CollectTileFlags();
+			_currentTile.OnTileExit();
+			_destination = destination;
 				
-				if(destination.FlagGoalIsHere)
-				{
-					_playerScores[(int)_currentPlayer] = _flagsCarried * flagScoreValue;
-					_flagsCarried = 0;
-				}
-			}
-			
-			_currentTile = destination;
-			
-			//TODO: replace with smooth transition, animation, etc:
-			gameObject.transform.position = _currentTile.gameObject.transform.position;
-		
 			_movementTimeRemaining = movementSpeed;
 		} 
 	}
+		
+	private void ArriveAtDestination()
+	{
+		HandleScoring(_destination);
+		
+		_currentTile = _destination;
+		_destination = null;
+		_currentTile.OnTileEnter(); //if the current tile is a teleporter, this should start the TP anim
+		
+		//now cope with teleporters
+		Tile specialDest = _currentTile.GetConnectedTeleporterTile();
+		if(specialDest != null)
+		{
+			gameObject.transform.position = specialDest.gameObject.transform.position;
+			/*NB: DO NOT treat this as arriving at a destination. otherwise you'll infinitely
+			teleport between the two, and overflow stack space.
+			
+			a jump pad CANNOT occupuy the same space as a teleporter (which you might want
+			with the idea of teleporting onto a jump pad), because then if you were to ordinarily
+			walk onto that jump pad/teleporter what would the correct action be? to jump or to
+			teleport?*/
+			
+			_currentTile = specialDest;
+			_currentTile.OnTileSpecialEnter();
+			HandleScoring(_currentTile);
+		}
+		else
+		{
+			specialDest = _currentTile.GetConnectedJumperTile();
+			
+			if(specialDest != null)
+			{
+				StartMovingTo(specialDest);
+			}
+		}
+		
+	}
 	
+	/// <summary>
+	/// Paint the tile/pick up flags/score flags etc.
+	/// </summary>
+	private void HandleScoring(Tile scoreThisTile)
+	{
+		if(_currentPlayer == PLAYER_NUM.PAINTER)
+		{
+			if(scoreThisTile.PaintTile())
+			{
+				++_playerScores[(int)_currentPlayer];
+			}
+		}
+		else
+		{
+			_flagsCarried += scoreThisTile.CollectTileFlags();
+			
+			if(scoreThisTile.FlagGoalIsHere)
+			{
+				_playerScores[(int)_currentPlayer] = _flagsCarried * flagScoreValue;
+				_flagsCarried = 0;
+			}
+		}
+	}
+		
 }
