@@ -143,7 +143,7 @@ public class Tile : MonoBehaviour
 		}
 		else
 		{
-			return ConnectedTeleporter.ConnectedTile;
+			return ConnectedTeleporter.ConnectedTeleporter.ConnectedTile;
 		}
 	}
 	
@@ -159,13 +159,27 @@ public class Tile : MonoBehaviour
 		}
 	}
 	
+	/// <summary>
+	/// Play visual effects when walking or jumping onto this tile.
+	/// </summary>
 	public void OnTileEnter()
 	{
 		SetConnectedTilesHighlighted(true);
 	}
 	
+	/// <summary>
+	/// Play visual effects when walking off this tile.
+	/// </summary>
 	public void OnTileExit()
 	{
 		SetConnectedTilesHighlighted(false);
+	}
+	
+	/// <summary>
+	/// Play visual effects when arriving at this via teleport
+	/// </summary>
+	public void OnTileSpecialEnter()
+	{
+		//TODO: OnTileSpecialEnter
 	}
 }

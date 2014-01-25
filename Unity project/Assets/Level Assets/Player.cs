@@ -202,27 +202,63 @@ public class Player : MonoBehaviour
 		
 	private void ArriveAtDestination()
 	{
+		HandleScoring(_destination);
+		
+		_currentTile = _destination;
+		_destination = null;
+		_currentTile.OnTileEnter(); //if the current tile is a teleporter, this should start the TP anim
+		
+		//now cope with teleporters
+		Tile specialDest = _currentTile.GetConnectedTeleporterTile();
+		if(specialDest != null)
+		{
+			gameObject.transform.position = specialDest.gameObject.transform.position;
+			/*NB: DO NOT treat this as arriving at a destination. otherwise you'll infinitely
+			teleport between the two, and overflow stack space.
+			
+			a jump pad CANNOT occupuy the same space as a teleporter (which you might want
+			with the idea of teleporting onto a jump pad), because then if you were to ordinarily
+			walk onto that jump pad/teleporter what would the correct action be? to jump or to
+			teleport?*/
+			
+			_currentTile = specialDest;
+			_currentTile.OnTileSpecialEnter();
+			HandleScoring(_currentTile);
+		}
+		else
+		{
+			specialDest = _currentTile.GetConnectedJumperTile();
+			
+			if(specialDest != null)
+			{
+				StartMovingTo(specialDest);
+			}
+		}
+		
+	}
+	
+	/// <summary>
+	/// Paint the tile/pick up flags/score flags etc.
+	/// </summary>
+	private void HandleScoring(Tile scoreThisTile)
+	{
 		if(_currentPlayer == PLAYER_NUM.PAINTER)
 		{
-			if(_destination.PaintTile())
+			if(scoreThisTile.PaintTile())
 			{
 				++_playerScores[(int)_currentPlayer];
 			}
 		}
 		else
 		{
-			_flagsCarried += _destination.CollectTileFlags();
+			_flagsCarried += scoreThisTile.CollectTileFlags();
 			
-			if(_destination.FlagGoalIsHere)
+			if(scoreThisTile.FlagGoalIsHere)
 			{
 				_playerScores[(int)_currentPlayer] = _flagsCarried * flagScoreValue;
 				_flagsCarried = 0;
 			}
 		}
-		
-		_currentTile = _destination;
-		_destination = null;
-		_currentTile.OnTileEnter();
 	}
 		
 }
