@@ -24,21 +24,27 @@ public class Tile : MonoBehaviour
 	
 	void Start()
 	{
-		SetPainted(false);
+		gameObject.renderer.material.mainTexture = UnpaintedTexture;
 	}
 	
-	public void SetPainted(bool bPainted)
-	{
-		bIsPainted = bPainted;
 		
-		if(bIsPainted)
+	/// <summary>
+	/// Paints the tile, if unpainted.
+	/// </summary>
+	/// <returns>
+	/// True if the tile became painted, false if it was already painted.
+	/// </returns>
+	public bool PaintTile()
+	{
+		bool tileWasPainted = false;
+		if(!bIsPainted)
 		{
+			bIsPainted = true;
+			tileWasPainted = true;
 			gameObject.renderer.material.mainTexture = PaintedTexture;
 		}
-		else
-		{
-			gameObject.renderer.material.mainTexture = UnpaintedTexture;
-		}
+		
+		return tileWasPainted;
 	}
 
 	public void SetTileHighlighted(bool bHighlighted)

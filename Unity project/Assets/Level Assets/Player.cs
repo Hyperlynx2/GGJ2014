@@ -13,14 +13,12 @@ public class Player : MonoBehaviour
 	public string player2HorizontalAxis;
 	public string player2VerticalAxis;
 	public string[] playerNames;
+	public int flagScoreValue = 5;
 	
 	/// <summary>
 	/// How much time each player gets per turn.
 	/// </summary>
 	public float turnTime;
-	
-	
-	public int playerScore = 0;
 	
 	/*other stuff*/	
 	private const float NORTH = 0f;
@@ -32,7 +30,12 @@ public class Player : MonoBehaviour
 	private Tile _currentTile;
 	private bool _initialised;
 	
-	private int _flagsCollected = 0;
+	/// <summary>
+	/// The _flags currently carried (not total or player score!)
+	/// </summary>
+	private int _flagsCarried = 0;
+	
+	private int[] _playerScores = {0,0};
 	
 	/// <summary>
 	/// do not accept any movement change commands unless we're finished moving!
@@ -46,8 +49,8 @@ public class Player : MonoBehaviour
 	
 	public enum PLAYER_NUM
 	{
-		P1,
-		P2
+		PAINTER,
+		COLLECTOR
 	}
 	
 	private PLAYER_NUM _currentPlayer;
@@ -56,14 +59,12 @@ public class Player : MonoBehaviour
 	void Start ()
 	{
 		gameObject.transform.position = startTile.gameObject.transform.position;
-		_currentPlayer = PLAYER_NUM.P2;
+		_currentPlayer = PLAYER_NUM.COLLECTOR;
 
 		_currentTile = startTile;
 		_heading = NORTH;
 		_movementTimeRemaining = 0;
 		_initialised = false;
-		
-		playerScore = 0;
 	}
 	
 	// Update is called once per frame
@@ -83,8 +84,19 @@ public class Player : MonoBehaviour
 	
 	void OnGUI()
 	{
+		//whose turn it is, time remaining:
 		//TODO: make time remaining be formatted in minutes:seconds
 		GUI.Box (new Rect (500, 200,100,50), playerNames[(int)_currentPlayer] + "\n" + _playerTurnRemaining);
+		
+		string scoreText = "";
+		
+		for(int i = 0; i < playerNames.Length; ++i)
+		{
+			scoreText += playerNames[i] + ": " + _playerScores[i] + "\n";
+		}		
+		
+		//score:
+		GUI.Box (new Rect (500, 400,100,50), scoreText);
 	}
 
 	/// <summary>
@@ -97,10 +109,10 @@ public class Player : MonoBehaviour
 		if(_playerTurnRemaining <= 0)
 		{
 		
-			if(_currentPlayer == PLAYER_NUM.P1)
-				_currentPlayer = PLAYER_NUM.P2;
+			if(_currentPlayer == PLAYER_NUM.PAINTER)
+				_currentPlayer = PLAYER_NUM.COLLECTOR;
 			else
-				_currentPlayer = PLAYER_NUM.P1;
+				_currentPlayer = PLAYER_NUM.PAINTER;
 			
 			_playerTurnRemaining = turnTime;
 		}
@@ -113,7 +125,7 @@ public class Player : MonoBehaviour
 			string horz = player1HorizontalAxis;
 			string vert = player1VerticalAxis;
 			
-			if(_currentPlayer == PLAYER_NUM.P2)
+			if(_currentPlayer == PLAYER_NUM.COLLECTOR)
 			{
 				horz = player2HorizontalAxis;
 				vert = player2VerticalAxis;
@@ -161,18 +173,21 @@ public class Player : MonoBehaviour
 			_currentTile.SetConnectedTilesHighlighted(false);
 			destination.SetConnectedTilesHighlighted(true);
 
-			if(_currentPlayer == PLAYER_NUM.P1)
+			if(_currentPlayer == PLAYER_NUM.PAINTER)
 			{
-				destination.SetPainted(true);
+				if(destination.PaintTile())
+				{
+					++_playerScores[(int)_currentPlayer];
+				}
 			}
 			else
 			{
-							
-				_flagsCollected += destination.CollectTileFlags();
+				_flagsCarried += destination.CollectTileFlags();
 				
 				if(destination.FlagGoalIsHere)
 				{
-					ScoreFlagsCollected();
+					_playerScores[(int)_currentPlayer] = _flagsCarried * flagScoreValue;
+					_flagsCarried = 0;
 				}
 			}
 			
@@ -183,17 +198,6 @@ public class Player : MonoBehaviour
 		
 			_movementTimeRemaining = movementSpeed;
 		} 
-	}
-	
-	public void AddCollectedFlags(int numberFlags)
-	{
-		_flagsCollected = numberFlags;
-	}
-	
-	public void ScoreFlagsCollected()
-	{
-		playerScore = _flagsCollected * 5;
-		_flagsCollected = 0;
 	}
 	
 }
