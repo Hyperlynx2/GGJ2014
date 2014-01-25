@@ -223,7 +223,10 @@ public class Player : MonoBehaviour
 			_playerTurnRemaining = turnTime;
 			
 			if(_movementTimeRemaining <= 0)
-				_currentTile.OnTileEnter(_currentPlayer);
+			{
+				_destination = _currentTile;
+				ArriveAtDestination();
+			}
 		}
 	}
 	
@@ -347,8 +350,6 @@ public class Player : MonoBehaviour
 			}
 		}
 
-		//TODO: BUG: camera rotation is affecting the player model rotation
-		
 		if(_rotationFramesRemaining > 1)
 		{
 			_playerModel.Rotate(new Vector3(0, _rotateModelThisAmount, 0));
@@ -368,8 +369,6 @@ public class Player : MonoBehaviour
 	{
 		if(destination != null)
 		{
-			//TODO: start playing movement anim
-			
 			_currentTile.OnTileExit(_currentPlayer);
 			_destination = destination;
 				
@@ -405,7 +404,6 @@ public class Player : MonoBehaviour
 		
 	private void ArriveAtDestination()
 	{
-		
 		_renderer.enabled = true;
 		_playerAnimator.SetBool("bJumping", false);
 		_playerAnimator.SetBool("bFalling", false);
@@ -424,7 +422,7 @@ public class Player : MonoBehaviour
 			///*NB: DO NOT treat this as arriving at a destination. otherwise you'll infinitely
 			//teleport between the two, and overflow stack space.
 			//
-			//a jump pad CANNOT occupuy the same space as a teleporter (which you might want
+			//a jump pad CANNOT occupy the same space as a teleporter (which you might want
 			//with the idea of teleporting onto a jump pad), because then if you were to ordinarily
 			//walk onto that jump pad/teleporter what would the correct action be? to jump or to
 			//teleport?*/
@@ -449,7 +447,6 @@ public class Player : MonoBehaviour
 				_playerAnimator.SetBool("bJumping", true);
 			}
 		}
-		
 		
 	}
 	

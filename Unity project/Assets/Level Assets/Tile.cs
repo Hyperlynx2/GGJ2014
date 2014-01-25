@@ -184,7 +184,6 @@ public class Tile : MonoBehaviour
 	/// </summary>
 	public void OnTileEnter(Player.PLAYER_ID playerID)
 	{
-		//TODO: change effect depending on which player 
 		SetConnectedTilesHighlighted(playerID, true);
 	}
 	
@@ -193,7 +192,6 @@ public class Tile : MonoBehaviour
 	/// </summary>
 	public void OnTileExit(Player.PLAYER_ID playerID)
 	{
-		//TODO: change effect depending on which player 
 		SetConnectedTilesHighlighted(playerID, false);
 	}
 	
@@ -202,9 +200,5 @@ public class Tile : MonoBehaviour
 	/// </summary>
 	public void OnTileSpecialEnter(Player.PLAYER_ID playerID)
 	{
-		//TODO: OnTileSpecialEnter
-		
-		/*TODO: differnet effect for different player? probably not
-		necessary.*/
 	}
 }
