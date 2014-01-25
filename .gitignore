@@ -5,3 +5,5 @@
 /Unity project/Temp
 *.csproj
 *.sln
+/Unity project/Assets/Level Assets/Materials/Tile-Painted.mat
+/Unity project/Assets/Level Assets/Materials/Tile-Painted.mat.meta
