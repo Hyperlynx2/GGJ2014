@@ -24,9 +24,21 @@ public class GameManager : MonoBehaviour
 	public string[] menuItemLabels;
 	public GUISkin skin;
 	
-	/*TODO: GameManager might as well take over full responsibility for these, rather than the
-	player storing them. At the moment, they're just storing the values from OnGameOver so that
-	OnGUI can use them.*/
+	//scores are properties so that the inspector can't get at them. they're otherwise public.
+	public float Player1Score
+	{
+		get { return _player1Score;}
+		
+		set {_player1Score = value;}
+	}
+	
+	public float Player2Score
+	{
+		get { return _player2Score;}
+		
+		set {_player2Score = value;}
+	}
+	
 	private float _player1Score;
 	private float _player2Score;
 	
@@ -42,28 +54,30 @@ public class GameManager : MonoBehaviour
 	/// <summary>
 	/// Call from levels when it's game over to transition to "game over!" screen.
 	/// </summary>
-	public void OnGameOver(float player1Score, float player2Score)
+	public void OnGameOver()
 	{
 		Application.LoadLevel("mainScene");		
 		_state = STATE.GAMEOVER;
-		_player1Score = player1Score;
-		_player2Score = player2Score;
+	}
+	
+	public GameManager()
+	{
+		if(_instance == null)
+		{
+			_instance = this;
+			_state = STATE.MENU;
+		}
+		/*TODO: this is not the right way to do this, and it won't work. it complains that it can't do the
+		comparator. if I don't put this in, though, it will create more than one GameManager, and it'll set the
+		state to menu, so it'll render the menu GUI stuff and ALSO the "game over" GUI stuff.
+		
+		Halp, Matt! Brain no worky no more.
+		 */
 	}
 	
 	// Use this for initialization
 	void Start ()
 	{
-		if(_instance == null)
-		{
-			_instance = this;
-		}
-		else
-		{
-			throw new Exception("More than one GameManager instance! Very bad!");
-		}
-		
-		_state = STATE.MENU;
-		
 		DontDestroyOnLoad(gameObject);
 	}
 	

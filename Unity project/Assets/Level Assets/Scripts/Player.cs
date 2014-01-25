@@ -15,9 +15,7 @@ public class Player : MonoBehaviour
 	public string player1RotateAxis;
 	public string player2RotateAxis;
 	public string[] playerNames;
-	public int flagScoreValue = 5;
-	
-	
+		
 	public GameObject prefabCandleGoalParticle;
 	public GameObject prefabCandlePickupParticle;
 	
@@ -95,6 +93,7 @@ public class Player : MonoBehaviour
 	public Texture FullCandleSlot25;
 	public Texture EmptyCandleSlot25;
 	
+	private GameManager _gameManager;
 	
 	/// <summary>
 	/// Stops multiple inputs for rotate.
@@ -102,14 +101,7 @@ public class Player : MonoBehaviour
 	private bool _rotatedThisFrame;
 		
 	private bool _teleporting;
-	
-	/// <summary>
-	/// The _flags currently carried (not total or player score!)
-	/// </summary>
-	private int _flagsCarried = 0;
-	
-	private int[] _playerScores = {0,0};
-	
+		
 	/// <summary>
 	/// do not accept any movement change commands unless we're finished moving!
 	/// </summary>
@@ -162,6 +154,8 @@ public class Player : MonoBehaviour
 		_have15Candle = false;
 		_have25Candle = false;
 		
+		_gameManager = GameManager.GetInstance();
+		
 	}
 	
 	// Update is called once per frame
@@ -192,12 +186,11 @@ public class Player : MonoBehaviour
 		//whose turn it is, time remaining before player switch:
 		GUI.Box (new Rect (500, 200,100,50), playerNames[(int)_currentPlayer] + "\n" + _playerTurnRemaining);
 		
-		string scoreText = "";
+		//TODO: remove playerNames array. replace it with two variables, or stick it in GameManager
 		
-		for(int i = 0; i < playerNames.Length; ++i)
-		{
-			scoreText += playerNames[i] + ": " + _playerScores[i] + "\n";
-		}
+		string scoreText = playerNames[0] + ": " + _gameManager.Player1Score + "\n"
+			+ playerNames[1] + ": " + _gameManager.Player2Score;
+		
 		
 		//score:
 		GUI.Box (new Rect (500, 400,150,50), scoreText);
@@ -505,7 +498,7 @@ public class Player : MonoBehaviour
 		{
 			if(scoreThisTile.PaintTile())
 			{
-				++_playerScores[(int)_currentPlayer];
+				_gameManager.Player1Score++; //TODO: enum vs hardcoded? terrible, clean up if time.
 			}
 		}
 		else
@@ -549,25 +542,25 @@ public class Player : MonoBehaviour
 				}
 				if(_have5Candle)
 				{
-					_playerScores[(int)_currentPlayer] += 5;
+					_gameManager.Player2Score += 5;
 					_have5Candle = false;
 				}
 				
 				if(_have10Candle)
 				{
-					_playerScores[(int)_currentPlayer] += 10;
+					_gameManager.Player2Score += 10;
 					_have10Candle = false;
 				}
 				
 				if(_have15Candle)
 				{
-					_playerScores[(int)_currentPlayer] += 15;
+					_gameManager.Player2Score += 15;
 					_have15Candle = false;
 				}
 				
 				if(_have25Candle)
 				{
-					_playerScores[(int)_currentPlayer] += 25;
+					_gameManager.Player2Score += 25;
 					_have25Candle = false;
 				}
 			}

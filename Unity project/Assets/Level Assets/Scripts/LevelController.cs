@@ -14,7 +14,8 @@ public class LevelController : MonoBehaviour {
 	
 	void Start()
 	{
-		_remainingTime = MaxLevelTime;
+		//_remainingTime = MaxLevelTime;
+		_remainingTime = 4;
 	}
 	
 	void Update()
@@ -23,9 +24,7 @@ public class LevelController : MonoBehaviour {
 		
 		if(_remainingTime <= 0.0f || IsAllFlagsCollected() || IsAllTilesPainted())
 		{
-			GameManager.getInstance().OnGameOver(1,2);
-		
-			Debug.Log ("The Game is finished!");
+			GameManager.GetInstance().OnGameOver();
 			//Application.LoadLevel(TransitionSceneName);
 		}
 	}
