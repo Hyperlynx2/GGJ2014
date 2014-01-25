@@ -1,5 +1,7 @@
 /Unity project/Unity project.userprefs
 /Unity project/*.pidb
 /Unity project/*.sln
+/Unity project/Library
+/Unity project/Temp
 *.csproj
 *.sln
