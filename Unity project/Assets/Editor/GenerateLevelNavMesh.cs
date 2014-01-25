@@ -124,6 +124,17 @@ public class GenerateLevelNavMesh : Editor
 			spawnerObj = new GameObject("Spawners");
 		}
 		
+		if(GameObject.Find("LevelController") == null)
+		{
+			Object prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/LevelController.prefab", typeof(GameObject));
+			GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+			clone.name = "LevelController";
+			//clone.transform.parent = levelObj.transform;
+			//clone.transform.position = obj.transform.position;
+			//clone.transform.rotation = obj.transform.rotation;	
+		}
+		
+		
 		
 		GameObject[] allObjects = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
 		foreach(GameObject obj in allObjects)
