@@ -14,7 +14,8 @@ public class LevelController : MonoBehaviour {
 	
 	void Start()
 	{
-		_remainingTime = MaxLevelTime;
+		//_remainingTime = MaxLevelTime;
+		_remainingTime = 2;
 	}
 	
 	void Update()
