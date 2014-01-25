@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 	
 	
 	public GameObject prefabCandleGoalParticle;
+	public GameObject prefabCandlePickupParticle;
 	
 	/// <summary>
 	/// How many frames rotating the player model should take up.
@@ -468,6 +469,13 @@ public class Player : MonoBehaviour
 		else
 		{
 			int iSpawnerHere = scoreThisTile.IsSpawnerHere();
+			
+			if(iSpawnerHere != 0)
+			{
+				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
+				obj.transform.parent = gameObject.transform;
+				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
+			}
 			
 			if(iSpawnerHere == 5 && !_have5Candle)
 			{
