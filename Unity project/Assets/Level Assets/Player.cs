@@ -468,24 +468,25 @@ public class Player : MonoBehaviour
 	
 	private IEnumerator DoTeleport(Tile destination)
 	{
+		
 		_teleporting = true;
 		
 		_playerAnimator.SetBool("bTeleporting", true);
 		yield return new WaitForSeconds(0.25f);
 		_renderer.enabled = false;
 		
-		yield return new WaitForSeconds(0.5f);
-		gameObject.transform.position = destination.gameObject.transform.position;
+		yield return new WaitForSeconds(0.15f);
 		
-		//float fDistFromTarget = (destination.transform.position - transform.position).magnitude;
-		//while(fDistFromTarget > 1)
-		//{
-		//	
-		//	gameObject.transform.position = Mathf.Lerp(
-		//	
-		//	yield return new WaitForSeconds(1.0f);
-		//}
+		float fDistFromTarget = (destination.transform.position - transform.position).magnitude;
+		while(fDistFromTarget > 1)
+		{
+			
+			gameObject.transform.position += (destination.transform.position - transform.position).normalized;
+			fDistFromTarget = (destination.transform.position - transform.position).magnitude;
+			yield return new WaitForSeconds(0.001f);
+		}
 		
+		gameObject.transform.position = destination.transform.position;
 		_currentTile = destination;
 		_currentTile.OnTileSpecialEnter(_currentPlayer);
 		yield return new WaitForSeconds(0.25f);
