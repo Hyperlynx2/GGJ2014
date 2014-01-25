@@ -212,7 +212,10 @@ public class Player : MonoBehaviour
 			_playerTurnRemaining = turnTime;
 			
 			if(_movementTimeRemaining <= 0)
-				_currentTile.OnTileEnter(_currentPlayer);
+			{
+				_destination = _currentTile;
+				ArriveAtDestination();
+			}
 		}
 	}
 	
@@ -390,7 +393,6 @@ public class Player : MonoBehaviour
 		
 	private void ArriveAtDestination()
 	{
-		
 		_renderer.enabled = true;
 		_playerAnimator.SetBool("bJumping", false);
 		_playerAnimator.SetBool("bFalling", false);
@@ -434,7 +436,6 @@ public class Player : MonoBehaviour
 				_playerAnimator.SetBool("bJumping", true);
 			}
 		}
-		
 		
 	}
 	
