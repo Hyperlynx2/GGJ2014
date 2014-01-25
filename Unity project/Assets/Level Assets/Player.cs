@@ -101,6 +101,10 @@ public class Player : MonoBehaviour
 			_currentTile.OnTileEnter(_currentPlayer);
 		}
 		
+		_cameraTargetRotation = Quaternion.AngleAxis(  _heading, Vector3.up);
+		_cameraPivot.rotation = Quaternion.Slerp(_cameraPivot.rotation, _cameraTargetRotation, Time.deltaTime * 2.5f);
+		
+		
 		UpdateTurnSwitch();
 		UpdateInput();	
 		UpdateMovement();
@@ -205,9 +209,7 @@ public class Player : MonoBehaviour
 			precalculated point. That way it won't go out of synch.*/
 			
 			
-			_cameraTargetRotation = Quaternion.AngleAxis(  _heading, Vector3.up);
-			_cameraPivot.rotation = Quaternion.Slerp(_cameraPivot.rotation, _cameraTargetRotation, Time.deltaTime * 2.5f);
-			
+				
 			if(Input.GetAxis(rotate) < 0)
 			{
 				if(!_rotatedThisFrame)
