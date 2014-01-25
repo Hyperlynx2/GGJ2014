@@ -21,4 +21,10 @@ public class MainScene : MonoBehaviour
 	{
 		GameManager.GetInstance().OnGUI();
 	}
+	
+	void Update()
+	{
+		GameManager.GetInstance().Update();
+	}
+	
 }

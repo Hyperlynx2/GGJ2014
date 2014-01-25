@@ -12,12 +12,7 @@ public class GameManager
 		
 		return _instance;
 	}
-	
-	public float left;
-	public float top;
-	public float width = 100;
-	public float height = 100;
-	
+		
 	/// <summary>
 	/// Gap between buttons
 	/// </summary>
@@ -71,6 +66,10 @@ public class GameManager
 	public void OnGUI()
 	{
 		GUI.skin = skin;
+		
+		float heightOffset = 10;
+		const float height = 50;
+		const float width = 200;
 
 		switch(_state)
 		{
@@ -79,7 +78,7 @@ public class GameManager
 			for(int i = 0; i < menuItemLabels.Length; ++i)
 			{
 				//TODO: change to be percentage of screen rather than absolute position.
-				if(GUI.Button(new Rect(left, top + i*(height + separation), width, height), menuItemLabels[i]))
+				if(GUI.Button(new Rect(Screen.width /2 - width/2, 10 + i*(height + separation), width, height), menuItemLabels[i]))
 				{
 					_state = STATE.INGAME;
 					Application.LoadLevel(menuItemScenes[i]);
@@ -91,7 +90,8 @@ public class GameManager
 			//nothing to do. player GUI and level GUI take over.
 			break;
 		case STATE.GAMEOVER:
-			GUI.Label(new Rect(Screen.width /2, 10, 200, 50), "Game over!");
+			GUI.Box(new Rect(Screen.width /2 - width/2, heightOffset, width, height), "Game over!");
+			heightOffset += height;
 			
 			string victoryText = "Player 1 wins!";
 			
@@ -104,13 +104,28 @@ public class GameManager
 				victoryText = "Draw!";
 			}
 			
-			GUI.Label(new Rect(Screen.width /2, 70, 200, 50), victoryText);
+			GUI.Box(new Rect(Screen.width /2 - width/2, heightOffset, width, height), victoryText);
+			heightOffset += height;
+			
+			GUI.Box(new Rect(Screen.width /2 - width/2, heightOffset, width, height), _player1Score + " vs " + _player2Score);
+			heightOffset += height;
+			
+			GUI.Box(new Rect(Screen.width /2 - width/2, Screen.height - (height+10), width, height), "Press start");
+			
 			
 			break;
 		}
-		
-		
 	}
 	
+	public void Update()
+	{
+		if(_state == STATE.GAMEOVER)
+		{
+			if(Input.GetAxis("Start") > 0)
+			{
+				_state = STATE.MENU;
+			}
+		}		
+	}
 	
 }
