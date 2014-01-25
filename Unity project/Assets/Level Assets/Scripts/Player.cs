@@ -169,14 +169,15 @@ public class Player : MonoBehaviour
 			_currentTile.OnTileEnter(_currentPlayer);
 		}
 		
+		UpdateTurnSwitch();
+		
 		_cameraTargetRotation = Quaternion.AngleAxis(_cameraTargetHeading, Vector3.up);
 		_cameraPivot.rotation = Quaternion.Slerp(_cameraPivot.rotation, _cameraTargetRotation, Time.deltaTime * 2.5f);
 
-		UpdateTurnSwitch();
-		
+			
 		if(!_teleporting)
 		{
-			UpdateInput();	
+			UpdateInput();
 			UpdateMovement();
 		}
 	}
@@ -237,6 +238,12 @@ public class Player : MonoBehaviour
 		
 		if(_playerTurnRemaining <= 0)
 		{
+			if(_teleporting || _destination != null)
+			{
+				_playerTurnRemaining = 0.0f;
+				return; //skip the rest of the code so that we don't transition to another player until we arrive
+			}
+			
 			_playerChangeSound.Play();
 		
 			if(_currentPlayer == PLAYER_ID.PAINTER)
@@ -442,7 +449,7 @@ public class Player : MonoBehaviour
 		
 	private void ArriveAtDestination()
 	{
-		_renderer.enabled = true;
+		//_renderer.enabled = true;
 		_playerAnimator.SetBool("bJumping", false);
 		_playerAnimator.SetBool("bFalling", false);
 		
@@ -484,8 +491,7 @@ public class Player : MonoBehaviour
 				StartMovingTo(specialDest, _playerTargetHeading);
 				_playerAnimator.SetBool("bJumping", true);
 			}
-		}
-		
+		}	
 	}
 	
 	/// <summary>
@@ -506,30 +512,41 @@ public class Player : MonoBehaviour
 			
 			if(iSpawnerHere != 0)
 			{
-				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
-				obj.transform.parent = gameObject.transform;
-				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
+				
 			}
 			
 			if(iSpawnerHere == 5 && !_have5Candle)
 			{
 				_have5Candle = true;
 				scoreThisTile.CollectTileCandle();
+				
 			}
 			if(iSpawnerHere == 10 && !_have10Candle)
 			{
 				_have10Candle = true;
 				scoreThisTile.CollectTileCandle();
+				
+				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
+				obj.transform.parent = gameObject.transform;
+				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
 			}
 			if(iSpawnerHere == 15 && !_have15Candle)
 			{
 				_have15Candle = true;
 				scoreThisTile.CollectTileCandle();
+				
+				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
+				obj.transform.parent = gameObject.transform;
+				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
 			}
 			if(iSpawnerHere == 25 && !_have25Candle)
 			{
 				_have25Candle = true;
 				scoreThisTile.CollectTileCandle();
+				
+				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
+				obj.transform.parent = gameObject.transform;
+				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
 			}
 			
 			if(scoreThisTile.FlagGoalIsHere)
@@ -573,7 +590,12 @@ public class Player : MonoBehaviour
 		
 		_playerAnimator.SetBool("bTeleporting", true);
 		yield return new WaitForSeconds(0.25f);
-		_renderer.enabled = false;
+		
+		Renderer[] renderers = GetComponentsInChildren<Renderer>() as Renderer[];
+		for(int i = 0;i < renderers.Length;++i)
+		{
+			renderers[i].enabled = false;
+		}
 		
 		yield return new WaitForSeconds(0.15f);
 		
@@ -590,7 +612,12 @@ public class Player : MonoBehaviour
 		_currentTile = destination;
 		_currentTile.OnTileSpecialEnter(_currentPlayer);
 		yield return new WaitForSeconds(0.25f);
-		_renderer.enabled = true;
+		
+		for(int i = 0;i < renderers.Length;++i)
+		{
+			renderers[i].enabled = true;
+		}
+		
 		_playerAnimator.SetBool("bTeleporting", false);
 		
 		_teleporting = false;
