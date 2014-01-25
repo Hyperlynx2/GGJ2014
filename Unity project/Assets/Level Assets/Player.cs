@@ -50,19 +50,19 @@ public class Player : MonoBehaviour
 	/// </summary>
 	private float _playerTurnRemaining;
 	
-	public enum PLAYER_NUM
+	public enum PLAYER_ID
 	{
 		PAINTER,
 		COLLECTOR
 	}
 	
-	private PLAYER_NUM _currentPlayer;
+	private PLAYER_ID _currentPlayer;
 	
 	// Use this for initialization
 	void Start ()
 	{
 		gameObject.transform.position = startTile.gameObject.transform.position;
-		_currentPlayer = PLAYER_NUM.COLLECTOR;
+		_currentPlayer = PLAYER_ID.COLLECTOR;
 
 		_currentTile = startTile;
 		_heading = NORTH;
@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
 		if(!_initialised)
 		{
 			_initialised = true;
-			_currentTile.OnTileEnter();
+			_currentTile.OnTileEnter(_currentPlayer);
 		}
 		
 		UpdateTurnSwitch();
@@ -113,10 +113,10 @@ public class Player : MonoBehaviour
 		if(_playerTurnRemaining <= 0)
 		{
 		
-			if(_currentPlayer == PLAYER_NUM.PAINTER)
-				_currentPlayer = PLAYER_NUM.COLLECTOR;
+			if(_currentPlayer == PLAYER_ID.PAINTER)
+				_currentPlayer = PLAYER_ID.COLLECTOR;
 			else
-				_currentPlayer = PLAYER_NUM.PAINTER;
+				_currentPlayer = PLAYER_ID.PAINTER;
 			
 			_playerTurnRemaining = turnTime;
 		}
@@ -130,7 +130,7 @@ public class Player : MonoBehaviour
 			string horz = player1HorizontalAxis;
 			string vert = player1VerticalAxis;
 			
-			if(_currentPlayer == PLAYER_NUM.COLLECTOR)
+			if(_currentPlayer == PLAYER_ID.COLLECTOR)
 			{
 				horz = player2HorizontalAxis;
 				vert = player2VerticalAxis;
@@ -193,7 +193,7 @@ public class Player : MonoBehaviour
 		{
 			//TODO: start playing movement anim
 			
-			_currentTile.OnTileExit();
+			_currentTile.OnTileExit(_currentPlayer);
 			_destination = destination;
 				
 			_movementTimeRemaining = movementSpeed;
@@ -206,7 +206,7 @@ public class Player : MonoBehaviour
 		
 		_currentTile = _destination;
 		_destination = null;
-		_currentTile.OnTileEnter(); //if the current tile is a teleporter, this should start the TP anim
+		_currentTile.OnTileEnter(_currentPlayer); //if the current tile is a teleporter, this should start the TP anim
 		
 		//now cope with teleporters
 		Tile specialDest = _currentTile.GetConnectedTeleporterTile();
@@ -222,7 +222,7 @@ public class Player : MonoBehaviour
 			teleport?*/
 			
 			_currentTile = specialDest;
-			_currentTile.OnTileSpecialEnter();
+			_currentTile.OnTileSpecialEnter(_currentPlayer);
 			HandleScoring(_currentTile);
 		}
 		else
@@ -242,7 +242,7 @@ public class Player : MonoBehaviour
 	/// </summary>
 	private void HandleScoring(Tile scoreThisTile)
 	{
-		if(_currentPlayer == PLAYER_NUM.PAINTER)
+		if(_currentPlayer == PLAYER_ID.PAINTER)
 		{
 			if(scoreThisTile.PaintTile())
 			{
@@ -255,7 +255,7 @@ public class Player : MonoBehaviour
 			
 			if(scoreThisTile.FlagGoalIsHere)
 			{
-				_playerScores[(int)_currentPlayer] = _flagsCarried * flagScoreValue;
+				_playerScores[(int)_currentPlayer] += _flagsCarried * flagScoreValue;
 				_flagsCarried = 0;
 			}
 		}
