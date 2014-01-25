@@ -22,13 +22,7 @@ public class Player : MonoBehaviour
 	/// </summary>
 	public float turnTime;
 	
-	/*other stuff*/	
-	private const float NORTH = 0f;
-	private const float EAST = 90f;
-	private const float SOUTH = 180f;
-	private const float WEST = 270f;
-	
-	private float _heading;
+	private int _heading;
 	private Tile _currentTile;
 	private Tile _destination;
 	private bool _initialised;
@@ -73,9 +67,11 @@ public class Player : MonoBehaviour
 		_currentPlayer = PLAYER_ID.COLLECTOR;
 
 		_currentTile = startTile;
-		_heading = NORTH;
+		_heading = 0;
 		_movementTimeRemaining = 0;
 		_initialised = false;
+		
+		_heading = 0;
 		
 		_playerAnimator = GetComponentInChildren<Animator>();
 		_camera = GetComponentInChildren<Camera>();
@@ -152,25 +148,32 @@ public class Player : MonoBehaviour
 				rotate = player2RotateAxis;
 			}
 			
-			//TODO: take heading into consideration here		
-			if(Input.GetAxis (horz) < 0) //left
+			Tile[] exits = {_currentTile.NorthTile,
+							_currentTile.EastTile,
+							_currentTile.SouthTile,
+							_currentTile.WestTile};
+			
+			int headingOffset = _heading / 90;
+			
+			if(Input.GetAxis(vert) > 0) //up
 			{
-				StartMovingTo(_currentTile.WestTile);		
+				StartMovingTo(exits[headingOffset]);
 			}
 			else if(Input.GetAxis(horz) > 0) //right
 			{
-				StartMovingTo(_currentTile.EastTile);
+				StartMovingTo(exits[(headingOffset + 1) % 4]);
 			}
 			else if(Input.GetAxis(vert) < 0) //down
 			{
-				StartMovingTo(_currentTile.SouthTile);
+				StartMovingTo(exits[(headingOffset + 2) % 4]);
 			}
-			else if(Input.GetAxis(vert) > 0) //up
+			else if(Input.GetAxis(horz) < 0) //left
 			{
-				StartMovingTo(_currentTile.NorthTile);
+				StartMovingTo(exits[(headingOffset + 3) % 4]);
 			}
 			
-			//TODO: input for changing heading			
+			
+			
 			
 			/*for camera rotation, use transform.rotatearound to make it look nice.
 			(http://docs.unity3d.com/Documentation/ScriptReference/Transform.RotateAround.html)
@@ -187,14 +190,18 @@ public class Player : MonoBehaviour
 			degrees, while rotating rotate that amount * deltaTime and decrement deltaTime from
 			current rotation time remaining, when rotation time <=0 translate straight to the
 			precalculated point. That way it won't go out of synch.*/
-			
-			//TEST:
+
 			if(Input.GetAxis(rotate) < 0)
 			{
 				if(!_rotatedThisFrame)
 				{
 					_camera.transform.RotateAround(gameObject.transform.position, Vector3.up,  -90);
 					_rotatedThisFrame = true;
+					
+					_heading -= 90;
+					
+					if(_heading < 0)
+						_heading = 270;
 				}
 			}
 			else if(Input.GetAxis(rotate) > 0)
@@ -203,6 +210,10 @@ public class Player : MonoBehaviour
 				{
 					_camera.transform.RotateAround(gameObject.transform.position, Vector3.up,  90);
 					_rotatedThisFrame = true;
+					
+					_heading += 90;
+					if(_heading >= 360)
+						_heading = 0;
 				}
 			}
 			else
