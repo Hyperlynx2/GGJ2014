@@ -242,19 +242,19 @@ public class Player : MonoBehaviour
 			
 			if(Input.GetAxis(vert) > 0) //up
 			{
-				StartMovingTo(exits[headingOffset], 0);
+				StartMovingTo(exits[headingOffset], (_cameraTargetHeading + 0) % 360);
 			}
 			else if(Input.GetAxis(horz) > 0) //right
 			{
-				StartMovingTo(exits[(headingOffset + 1) % 4], 90);
+				StartMovingTo(exits[(headingOffset + 1) % 4], (_cameraTargetHeading + 90) % 360);
 			}
 			else if(Input.GetAxis(vert) < 0) //down
 			{
-				StartMovingTo(exits[(headingOffset + 2) % 4], 180);
+				StartMovingTo(exits[(headingOffset + 2) % 4], (_cameraTargetHeading + 180) % 360);
 			}
 			else if(Input.GetAxis(horz) < 0) //left
 			{
-				StartMovingTo(exits[(headingOffset + 3) % 4], 270);
+				StartMovingTo(exits[(headingOffset + 3) % 4],(_cameraTargetHeading + 270) % 360);
 			}
 			else
 			{
@@ -335,10 +335,11 @@ public class Player : MonoBehaviour
 				ArriveAtDestination();				
 			}
 		}
+
+		//TODO: BUG: camera rotation is affecting the player model rotation
 		
 		if(_rotationFramesRemaining > 1)
 		{
-			//TODO: increment the rotation by rotateThisAmount
 			_playerModel.Rotate(new Vector3(0, _rotateModelThisAmount, 0));
 			
 			_rotationFramesRemaining--;
