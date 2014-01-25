@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
 	/// </summary>
 	public float turnTime;
 	
+	
+	public int PlayerScore = 0;
+	
 	/*other stuff*/	
 	private const float NORTH = 0f;
 	private const float EAST = 90f;
@@ -28,6 +31,8 @@ public class Player : MonoBehaviour
 	private float _heading;
 	private Tile _currentTile;
 	private bool _initialised;
+	
+	private int _flagsCollected = 0;
 	
 	/// <summary>
 	/// do not accept any movement change commands unless we're finished moving!
@@ -57,6 +62,8 @@ public class Player : MonoBehaviour
 		_heading = NORTH;
 		_movementTimeRemaining = 0;
 		_initialised = false;
+		
+		PlayerScore = 0;
 	}
 	
 	// Update is called once per frame
@@ -151,8 +158,20 @@ public class Player : MonoBehaviour
 			/*turn off the lights on the current tile, turn em on on the new one, start movement anim, set
 			 * movement timer, etc*/
 			
+			
+			destination.SetPainted(true);
+			
 			_currentTile.SetConnectedTilesHighlighted(false);
 			destination.SetConnectedTilesHighlighted(true);
+			
+			//Testing
+			
+			_flagsCollected += destination.CollectTileFlags();
+			
+			if(destination.FlagGoalIsHere)
+			{
+				ScoreFlagsCollected();
+			}
 			
 			_currentTile = destination;
 			
@@ -162,4 +181,16 @@ public class Player : MonoBehaviour
 			_movementTimeRemaining = movementSpeed;
 		} 
 	}
+	
+	public void AddCollectedFlags(int iNumberFlags)
+	{
+		_flagsCollected = iNumberFlags;
+	}
+	
+	public void ScoreFlagsCollected()
+	{
+		PlayerScore = _flagsCollected * 5;
+		_flagsCollected = 0;
+	}
+	
 }

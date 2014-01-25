@@ -3,6 +3,10 @@ using System.Collections;
 
 public class Tile : MonoBehaviour
 {
+	//Tile Modifiers
+	public bool FlagGoalIsHere = false;
+	public Spawner ConnectedSpawner = null;
+	
 	
 	//Exit List
 	public Tile NorthTile;
@@ -16,14 +20,11 @@ public class Tile : MonoBehaviour
 	public Texture2D UnPaintedHighlightTexture;
 	public Texture2D PaintedHighlightTexture;
 	
-	private bool bIsPainted = false;
-	
-	public bool bFlagGoalIsHere = false;
-	public Spawner connectedSpawner = null;
+	private bool   bIsPainted = false;
 	
 	void Start()
 	{
-		SetPainted(true);
+		SetPainted(false);
 	}
 	
 	public void SetPainted(bool bPainted)
@@ -111,5 +112,20 @@ public class Tile : MonoBehaviour
 			Gizmos.DrawWireCube(WestTile.transform.position + new Vector3(0, 0.25f, 0), new Vector3(4, 1, 4));
 			Gizmos.color = prevColour;
 		}
+	}
+	
+	public int CollectTileFlags()
+	{
+		if(ConnectedSpawner == null)
+			return 0;
+		
+		int iNumFlags = ConnectedSpawner.NumSpawnedFlags;
+		foreach(GameObject f in ConnectedSpawner.FlagInstances)
+		{
+			DestroyObject(f);
+		}
+		ConnectedSpawner.FlagInstances.Clear();
+		
+		return iNumFlags;
 	}
 }
