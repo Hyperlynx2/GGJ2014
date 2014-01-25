@@ -31,13 +31,13 @@ public class LevelController : MonoBehaviour {
 	{
 		Spawner[] allSpawners = GameObject.Find("Spawners").GetComponentsInChildren<Spawner>();
 		
-		int iNumberFlagsRemaining = 0;
+		int iNumberCandlesRemaining = 0;
 		foreach(Spawner sp in allSpawners)
 		{
-			iNumberFlagsRemaining += sp.NumSpawnedFlags;
+			iNumberCandlesRemaining += sp.NumSpawnedCandles;
 		}
 		
-		return iNumberFlagsRemaining == 0;
+		return iNumberCandlesRemaining == 0;
 	}
 	
 	private bool IsAllTilesPainted()

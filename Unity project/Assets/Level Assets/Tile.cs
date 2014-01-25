@@ -144,15 +144,15 @@ public class Tile : MonoBehaviour
 		if(ConnectedSpawner == null)
 			return 0;
 		
-		int iNumFlags = ConnectedSpawner.NumSpawnedFlags;
-		foreach(GameObject f in ConnectedSpawner.FlagInstances)
+		int iNumCandles = ConnectedSpawner.NumSpawnedCandles;
+		foreach(GameObject f in ConnectedSpawner.CandleInstances)
 		{
 			DestroyObject(f);
 		}
-		ConnectedSpawner.FlagInstances.Clear();
-		ConnectedSpawner.NumSpawnedFlags = 0;
+		ConnectedSpawner.CandleInstances.Clear();
+		ConnectedSpawner.NumSpawnedCandles = 0;
 		
-		return iNumFlags;
+		return iNumCandles;
 	}
 	
 	public Tile GetConnectedTeleporterTile()

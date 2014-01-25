@@ -202,9 +202,9 @@ public class GenerateLevelNavMesh : Editor
 				{
 					clone.name = "Flag-Spawner";
 					int number = int.Parse(obj.name.Substring(13, 1));
-					clone.GetComponent<Spawner>().NumSpawnedFlags = number;
+					clone.GetComponent<Spawner>().NumSpawnedCandles = number;
 					number = int.Parse(obj.name.Substring(15));
-					clone.GetComponent<Spawner>().PointsPerFlag = number;
+					clone.GetComponent<Spawner>().PointsPerCandle = number;
 					clone.transform.parent = spawnerObj.transform;
 				}
 				
@@ -264,7 +264,7 @@ public class GenerateLevelNavMesh : Editor
 					connectedTile.ConnectedSpawner = obj.GetComponent<Spawner>();
 					
 					//Create the flags to go here
-					for(int i = 0;i < connectedTile.ConnectedSpawner.NumSpawnedFlags;++i)
+					for(int i = 0;i < connectedTile.ConnectedSpawner.NumSpawnedCandles;++i)
 					{
 						Object prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Flag.prefab", typeof(GameObject));	
 						GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
@@ -272,7 +272,7 @@ public class GenerateLevelNavMesh : Editor
 						clone.transform.rotation = obj.transform.rotation * Quaternion.Euler (0, 0, Random.Range (-180, 180));
 						
 						
-						connectedTile.ConnectedSpawner.FlagInstances.Add(clone);
+						connectedTile.ConnectedSpawner.CandleInstances.Add(clone);
 					}
 				}
 			}

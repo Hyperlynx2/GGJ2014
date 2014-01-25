@@ -77,6 +77,11 @@ public class Player : MonoBehaviour
 	private AudioSource _playerCounterLoop;
 	private AudioSource _playerChangeSound;
 	
+	private bool _have5Candle;
+	private bool _have10Candle;
+	private bool _have15Candle;
+	private bool _have25Candle;
+	
 	/// <summary>
 	/// Stops multiple inputs for rotate.
 	/// </summary>	
@@ -138,6 +143,12 @@ public class Player : MonoBehaviour
 		_playerPainterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerOneLoop").GetComponent<AudioSource>();
 		_playerCounterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerTwoLoop").GetComponent<AudioSource>();
 		_playerChangeSound = transform.FindChild ("Sounds").transform.FindChild("PlayerChange").GetComponent<AudioSource>();
+		
+		_have5Candle = false;
+		_have10Candle = false;
+		_have15Candle = false;
+		_have25Candle = false;
+		
 	}
 	
 	// Update is called once per frame

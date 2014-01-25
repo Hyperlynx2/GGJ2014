@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour {
 
-	public int NumSpawnedFlags = 0;
-	public int PointsPerFlag = 0;
+	public int NumSpawnedCandles = 0;
+	public int PointsPerCandle = 0;
 	
-	public List<GameObject> FlagInstances = new List<GameObject>();
+	public List<GameObject> CandleInstances = new List<GameObject>();
 }
