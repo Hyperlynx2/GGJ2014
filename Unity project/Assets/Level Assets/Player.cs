@@ -37,7 +37,10 @@ public class Player : MonoBehaviour
 	private Animator _playerAnimator;
 	private Renderer _renderer;
 	
+	
 	private Camera _camera;
+	private Quaternion _cameraTargetRotation;
+	private Transform _cameraPivot;
 	
 	private bool _rotatedThisFrame;
 	
@@ -83,6 +86,8 @@ public class Player : MonoBehaviour
 		_playerAnimator = GetComponentInChildren<Animator>();
 		_camera = GetComponentInChildren<Camera>();
 		_renderer = GetComponentInChildren<Renderer>();
+		
+		_cameraPivot = gameObject.transform.FindChild("CameraPivot");
 	}
 	
 	// Update is called once per frame
@@ -198,12 +203,16 @@ public class Player : MonoBehaviour
 			degrees, while rotating rotate that amount * deltaTime and decrement deltaTime from
 			current rotation time remaining, when rotation time <=0 translate straight to the
 			precalculated point. That way it won't go out of synch.*/
-
+			
+			
+			_cameraTargetRotation = Quaternion.AngleAxis(  _heading, Vector3.up);
+			_cameraPivot.rotation = Quaternion.Slerp(_cameraPivot.rotation, _cameraTargetRotation, Time.deltaTime * 2.5f);
+			
 			if(Input.GetAxis(rotate) < 0)
 			{
 				if(!_rotatedThisFrame)
 				{
-					_camera.transform.RotateAround(gameObject.transform.position, Vector3.up,  -90);
+					//_camera.transform.RotateAround(gameObject.transform.position, Vector3.up,  -90);
 					_rotatedThisFrame = true;
 					
 					_heading -= 90;
@@ -216,7 +225,7 @@ public class Player : MonoBehaviour
 			{
 				if(!_rotatedThisFrame)
 				{
-					_camera.transform.RotateAround(gameObject.transform.position, Vector3.up,  90);
+					//_camera.transform.RotateAround(gameObject.transform.position, Vector3.up,  90);
 					_rotatedThisFrame = true;
 					
 					_heading += 90;
