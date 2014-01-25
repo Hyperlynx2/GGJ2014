@@ -10,6 +10,10 @@ public class GenerateLevelNavMesh : Editor
 		ReplaceObjectsWithPrefabs ();
 		SetupTileConnections ();
 		FindAttachedSpawnersAndGoal();
+		
+		FindAttachedTeleporters();
+		
+		FindJumpers();
 	}
 	
 	static void SetupTileConnections ()
@@ -123,6 +127,21 @@ public class GenerateLevelNavMesh : Editor
 				prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Player-Spawner.prefab", typeof(GameObject));
 			}
 			
+			if(obj.name.Contains("Teleporter"))
+			{
+				prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Teleporter.prefab", typeof(GameObject));
+			}
+			
+			if(obj.name.Contains("Jumper"))
+			{
+				prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Jumper.prefab", typeof(GameObject));
+			}
+			if(obj.name.Contains("Jumper-Target"))
+			{
+				prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Jumper-Target.prefab", typeof(GameObject));
+			}
+			
+			
 			if(prefab != null)
 			{
 				GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
@@ -151,6 +170,27 @@ public class GenerateLevelNavMesh : Editor
 				if(obj.name.Contains("Player-Spawner"))
 				{
 					clone.name = "Player-Spawner";	
+				}
+				
+				if(obj.name.Contains("Teleporter"))
+				{
+					string teleporterID = obj.name.Substring(11, 1);
+					clone.name = "Teleporter";	
+					clone.GetComponent<Teleporter>().TeleporterID = teleporterID;
+				}
+				
+				if(obj.name.Contains("Jumper") && !obj.name.Contains("Jumper-Target"))
+				{
+					string JumperID = obj.name.Substring(7, 1);
+					clone.name = "Jumper";	
+					clone.GetComponent<Jumper>().JumperID = JumperID;
+				}
+				
+				if(obj.name.Contains("Jumper-Target"))
+				{
+					string JumperID = obj.name.Substring(14, 1);
+					clone.name = "Jumper-Target";	
+					clone.GetComponent<JumperTarget>().JumperID = JumperID;
 				}
 				
 				DestroyImmediate(obj);
@@ -207,6 +247,77 @@ public class GenerateLevelNavMesh : Editor
 						clone.transform.rotation = obj.transform.rotation;
 					
 						clone.GetComponent<Player>().startTile = connectedTile;
+				}
+			}
+		}
+	}
+	
+	static void FindAttachedTeleporters()
+	{
+		Tile[] tiles = GameObject.FindObjectsOfType(typeof(Tile)) as Tile[];
+		GameObject[] allObjects = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
+		
+		for(int i = 0;i < allObjects.Length;++i)
+		{
+			GameObject obj = allObjects[i];
+			
+			
+			
+			if(obj.name.Contains("Teleporter"))
+			{
+				Tile connectedTile = FindConnectedTile(tiles, obj);
+				if(connectedTile)
+				{
+					connectedTile.ConnectedTeleporter = obj.GetComponent<Teleporter>();
+					connectedTile.ConnectedTeleporter.ConnectedTile = connectedTile;
+					
+					for(int j = i + 1;j < allObjects.Length;++j)
+					{
+						Teleporter otherTeleporter = allObjects[j].GetComponent<Teleporter>();
+						if(otherTeleporter  && otherTeleporter.TeleporterID == connectedTile.ConnectedTeleporter.TeleporterID)
+						{
+							connectedTile.ConnectedTeleporter.ConnectedTeleporter = otherTeleporter;
+							otherTeleporter.ConnectedTeleporter = connectedTile.ConnectedTeleporter;
+						}
+					}
+					
+				}
+			}
+		}
+	}
+	
+	static void FindJumpers()
+	{
+		Tile[] tiles = GameObject.FindObjectsOfType(typeof(Tile)) as Tile[];
+		GameObject[] allObjects = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
+		
+		foreach(GameObject obj in allObjects)
+		{
+			
+			if(obj.name.Contains("Jumper") && !obj.name.Contains("Jumper-Target"))
+			{
+				Tile connectedTile = FindConnectedTile(tiles, obj);
+				if(connectedTile)
+				{
+					connectedTile.ConnectedJumper = obj.GetComponent<Jumper>();
+				}
+			}
+			
+			if(obj.name.Contains("Jumper-Target"))
+			{
+				Tile connectedTile = FindConnectedTile(tiles, obj);
+				if(connectedTile)
+				{	
+					
+					foreach(GameObject otherObject in allObjects)
+					{
+						Jumper jump = otherObject.GetComponent<Jumper>();
+						if(jump && jump.JumperID == obj.GetComponent<JumperTarget>().JumperID)
+						{
+							jump.ConnectedTile = connectedTile;
+						}
+					}
+					
 				}
 			}
 		}

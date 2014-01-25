@@ -6,7 +6,8 @@ public class Tile : MonoBehaviour
 	//Tile Modifiers
 	public bool FlagGoalIsHere = false;
 	public Spawner ConnectedSpawner = null;
-	
+	public Teleporter ConnectedTeleporter = null;
+	public Jumper ConnectedJumper = null;
 	
 	//Exit List
 	public Tile NorthTile;
@@ -27,7 +28,6 @@ public class Tile : MonoBehaviour
 		gameObject.renderer.material.mainTexture = UnpaintedTexture;
 	}
 	
-		
 	/// <summary>
 	/// Paints the tile, if unpainted.
 	/// </summary>
@@ -46,7 +46,7 @@ public class Tile : MonoBehaviour
 		
 		return tileWasPainted;
 	}
-
+	
 	public void SetTileHighlighted(bool bHighlighted)
 	{
 		if(bHighlighted == true)
@@ -133,5 +133,39 @@ public class Tile : MonoBehaviour
 		ConnectedSpawner.FlagInstances.Clear();
 		
 		return iNumFlags;
+	}
+	
+	public Tile GetConnectedTeleporterTile()
+	{
+		if(ConnectedTeleporter == null)
+		{
+			return null;
+		}
+		else
+		{
+			return ConnectedTeleporter.ConnectedTile;
+		}
+	}
+	
+	public Tile GetConnectedJumperTile()
+	{
+		if(ConnectedJumper == null)
+		{
+			return null;
+		}
+		else
+		{
+			return ConnectedJumper.ConnectedTile;
+		}
+	}
+	
+	public void OnTileEnter()
+	{
+		SetConnectedTilesHighlighted(true);
+	}
+	
+	public void OnTileExit()
+	{
+		SetConnectedTilesHighlighted(false);
 	}
 }
