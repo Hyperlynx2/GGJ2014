@@ -99,6 +99,10 @@ public class Player : MonoBehaviour
 	private bool _rotatedThisFrame;
 		
 	private bool _teleporting;
+	
+	public GameObject CandleBackpackPrefab;
+	private GameObject _candleBackpack;
+	private GameObject _candleHolster;
 		
 	/// <summary>
 	/// do not accept any movement change commands unless we're finished moving!
@@ -150,7 +154,10 @@ public class Player : MonoBehaviour
 		_have5Candle = false;
 		_have10Candle = false;
 		_have15Candle = false;
-		_have25Candle = false;		
+		_have25Candle = false;	
+		
+		_candleHolster = _playerModel.FindChild("CandleHolster").gameObject;
+		_candleBackpack = null;
 	}
 	
 	// Update is called once per frame
@@ -505,9 +512,12 @@ public class Player : MonoBehaviour
 		{
 			int iSpawnerHere = scoreThisTile.IsSpawnerHere();
 			
-			if(iSpawnerHere != 0)
+			if(_candleBackpack == null && iSpawnerHere != 0)
 			{
-				
+				_candleBackpack = Instantiate(CandleBackpackPrefab) as GameObject;
+				_candleBackpack.transform.parent = _candleHolster.transform;
+				_candleBackpack.transform.localPosition = new Vector3(0, 0, 0);
+				_candleBackpack.transform.localRotation = Quaternion.identity;
 			}
 			
 			if(iSpawnerHere == 5 && !_have5Candle)
@@ -550,6 +560,12 @@ public class Player : MonoBehaviour
 				{
 					GameObject obj = Instantiate(prefabCandleGoalParticle) as GameObject;
 					obj.transform.position = scoreThisTile.transform.position;
+					
+					if(_candleBackpack)
+					{
+						DestroyObject(_candleBackpack);
+						_candleBackpack = null;
+					}
 				}
 				if(_have5Candle)
 				{
