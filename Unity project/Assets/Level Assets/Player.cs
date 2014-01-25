@@ -255,7 +255,7 @@ public class Player : MonoBehaviour
 			
 			if(scoreThisTile.FlagGoalIsHere)
 			{
-				_playerScores[(int)_currentPlayer] = _flagsCarried * flagScoreValue;
+				_playerScores[(int)_currentPlayer] += _flagsCarried * flagScoreValue;
 				_flagsCarried = 0;
 			}
 		}
