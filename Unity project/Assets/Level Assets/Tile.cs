@@ -168,24 +168,29 @@ public class Tile : MonoBehaviour
 	/// <summary>
 	/// Play visual effects when walking or jumping onto this tile.
 	/// </summary>
-	public void OnTileEnter()
+	public void OnTileEnter(Player.PLAYER_ID playerID)
 	{
+		//TODO: change effect depending on which player 
 		SetConnectedTilesHighlighted(true);
 	}
 	
 	/// <summary>
 	/// Play visual effects when walking off this tile.
 	/// </summary>
-	public void OnTileExit()
+	public void OnTileExit(Player.PLAYER_ID playerID)
 	{
+		//TODO: change effect depending on which player 
 		SetConnectedTilesHighlighted(false);
 	}
 	
 	/// <summary>
 	/// Play visual effects when arriving at this via teleport
 	/// </summary>
-	public void OnTileSpecialEnter()
+	public void OnTileSpecialEnter(Player.PLAYER_ID playerID)
 	{
 		//TODO: OnTileSpecialEnter
+		
+		/*TODO: differnet effect for different player? probably not
+		necessary.*/
 	}
 }
