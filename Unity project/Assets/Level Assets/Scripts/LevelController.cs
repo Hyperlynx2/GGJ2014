@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 
 public class LevelController : MonoBehaviour {
@@ -6,6 +7,8 @@ public class LevelController : MonoBehaviour {
 	//Level Control Settings
 	public float MaxLevelTime = 100;
 	public string TransitionSceneName = "EndGame";
+	
+	public GUISkin HUDSkin;
 	
 	private float _remainingTime;
 	
@@ -25,7 +28,6 @@ public class LevelController : MonoBehaviour {
 			//Application.LoadLevel(TransitionSceneName);
 		}
 	}
-	
 	
 	private bool IsAllFlagsCollected()
 	{
@@ -53,5 +55,16 @@ public class LevelController : MonoBehaviour {
 		}
 		
 		return true;
+	}
+	
+	void OnGUI()
+	{
+		GUI.skin = HUDSkin;
+		
+		TimeSpan levelTime = new TimeSpan(0, 0, (int)_remainingTime);
+		
+		//TODO: do as percentage of screen width, not absolute pixel value.
+		GUI.Box (new Rect (400, 20,100,50), levelTime.Minutes + ":" + levelTime.Seconds);
+			
 	}
 }
