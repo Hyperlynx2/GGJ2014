@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: b0bef79da0f36ac4ba5c35ca136c830c
+guid: 6e61f16f6cd72114c8f8841bd9d212fd
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: Player-2
+    100000: Player
     100002: //RootNode
     100004: Player-Arm-L
     100006: Player-Arm-R
@@ -13,7 +13,7 @@ ModelImporter:
     100014: Player-Leg-R
     100016: Player-Root
     100018: Player-Shoulders
-    400000: Player-2
+    400000: Player
     400002: //RootNode
     400004: Player-Arm-L
     400006: Player-Arm-R
@@ -23,11 +23,10 @@ ModelImporter:
     400014: Player-Leg-R
     400016: Player-Root
     400018: Player-Shoulders
-    4300000: Player-2
-    7400000: Jump
-    7400002: Idle
+    4300000: Player
+    7400000: Fall
     9500000: //RootNode
-    13700000: Player-2
+    13700000: Player
   materials:
     importMaterials: 1
     materialName: 0
@@ -41,31 +40,10 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     clipAnimations:
-    - name: Jump
+    - name: Fall
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 14
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      transformMask: []
-    - name: Idle
-      takeName: Take 001
-      firstFrame: 13.8999996
-      lastFrame: 15
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -86,7 +64,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .100000001
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
