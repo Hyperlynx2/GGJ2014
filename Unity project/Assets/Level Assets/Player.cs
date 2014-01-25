@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
 	public string[] playerNames;
 	public int flagScoreValue = 5;
 	
+	
+	public GameObject prefabCandleGoalParticle;
+	
 	/// <summary>
 	/// How many frames rotating the player model should take up.
 	/// </summary>
@@ -489,6 +492,11 @@ public class Player : MonoBehaviour
 			
 			if(scoreThisTile.FlagGoalIsHere)
 			{
+				if(_have5Candle || _have10Candle || _have15Candle || _have25Candle)
+				{
+					GameObject obj = Instantiate(prefabCandleGoalParticle) as GameObject;
+					obj.transform.position = scoreThisTile.transform.position;
+				}
 				if(_have5Candle)
 				{
 					_playerScores[(int)_currentPlayer] += 5;
