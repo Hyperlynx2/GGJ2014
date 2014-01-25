@@ -289,7 +289,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: -41.3813019, y: 46.7568398, z: 26.2682362}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400026}
@@ -843,6 +843,8 @@ MonoBehaviour:
   - Player 1
   - Player 2
   flagScoreValue: 5
+  prefabCandleGoalParticle: {fileID: 100000, guid: ea28af5ff9ba8204e8ab0ac5910a326e,
+    type: 2}
   framesPerRotate: 5
   jumpCurve:
     serializedVersion: 2

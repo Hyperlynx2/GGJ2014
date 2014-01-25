@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
 	public string[] playerNames;
 	public int flagScoreValue = 5;
 	
+	
+	public GameObject prefabCandleGoalParticle;
+	public GameObject prefabCandlePickupParticle;
+	
 	/// <summary>
 	/// How many frames rotating the player model should take up.
 	/// </summary>
@@ -508,6 +512,13 @@ public class Player : MonoBehaviour
 		{
 			int iSpawnerHere = scoreThisTile.IsSpawnerHere();
 			
+			if(iSpawnerHere != 0)
+			{
+				GameObject obj = Instantiate(prefabCandlePickupParticle) as GameObject;
+				obj.transform.parent = gameObject.transform;
+				obj.transform.localPosition = new Vector3(0.0f, 0.0f, 5.0f);
+			}
+			
 			if(iSpawnerHere == 5 && !_have5Candle)
 			{
 				_have5Candle = true;
@@ -531,6 +542,11 @@ public class Player : MonoBehaviour
 			
 			if(scoreThisTile.FlagGoalIsHere)
 			{
+				if(_have5Candle || _have10Candle || _have15Candle || _have25Candle)
+				{
+					GameObject obj = Instantiate(prefabCandleGoalParticle) as GameObject;
+					obj.transform.position = scoreThisTile.transform.position;
+				}
 				if(_have5Candle)
 				{
 					_playerScores[(int)_currentPlayer] += 5;
