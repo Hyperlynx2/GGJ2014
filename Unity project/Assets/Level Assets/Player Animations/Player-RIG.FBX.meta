@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: fd603a314382cc742b5003b5f8eb43e0
+guid: 07aa566df4efe604094f961f6c38c2e4
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: Player-2
+    100000: Player
     100002: Player-Arm-L
     100004: Player-Arm-R
     100006: Player-Head
@@ -13,7 +13,7 @@ ModelImporter:
     100014: //RootNode
     100016: Player-Root
     100018: Player-Shoulders
-    400000: Player-2
+    400000: Player
     400002: Player-Arm-L
     400004: Player-Arm-R
     400006: Player-Head
@@ -23,9 +23,9 @@ ModelImporter:
     400014: //RootNode
     400016: Player-Root
     400018: Player-Shoulders
-    4300000: Player-2
+    4300000: Player
     9500000: //RootNode
-    13700000: Player-2
+    13700000: Player
   materials:
     importMaterials: 1
     materialName: 0

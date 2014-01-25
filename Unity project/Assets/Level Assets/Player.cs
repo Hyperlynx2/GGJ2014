@@ -42,7 +42,15 @@ public class Player : MonoBehaviour
 	private Quaternion _cameraTargetRotation;
 	private Transform _cameraPivot;
 	
+	
+	private AudioSource _playerPainterLoop;
+	private AudioSource _playerCounterLoop;
+	private AudioSource _playerChangeSound;
+	
 	private bool _rotatedThisFrame;
+	
+	
+	private bool _teleporting;
 	
 	/// <summary>
 	/// The _flags currently carried (not total or player score!)
@@ -72,6 +80,8 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		_teleporting = false;
+		
 		gameObject.transform.position = startTile.gameObject.transform.position;
 		_currentPlayer = PLAYER_ID.COLLECTOR;
 
@@ -88,6 +98,10 @@ public class Player : MonoBehaviour
 		_renderer = GetComponentInChildren<Renderer>();
 		
 		_cameraPivot = gameObject.transform.FindChild("CameraPivot");
+		
+		_playerPainterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerOneLoop").GetComponent<AudioSource>();
+		_playerCounterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerTwoLoop").GetComponent<AudioSource>();
+		_playerChangeSound = transform.FindChild ("Sounds").transform.FindChild("PlayerChange").GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -95,13 +109,20 @@ public class Player : MonoBehaviour
 	{
 		/*no guaruntees that Start will get called only after the tiles have been generated, so
 		initialise here on the first frame*/
+		
 		if(!_initialised)
 		{
 			_initialised = true;
 			_currentTile.OnTileEnter(_currentPlayer);
 		}
 		
+		_cameraTargetRotation = Quaternion.AngleAxis(  _heading, Vector3.up);
+		_cameraPivot.rotation = Quaternion.Slerp(_cameraPivot.rotation, _cameraTargetRotation, Time.deltaTime * 2.5f);
+
 		UpdateTurnSwitch();
+		
+		if(_teleporting) return;
+		
 		UpdateInput();	
 		UpdateMovement();
 	}
@@ -132,11 +153,26 @@ public class Player : MonoBehaviour
 		
 		if(_playerTurnRemaining <= 0)
 		{
+			_playerChangeSound.Play();
 		
 			if(_currentPlayer == PLAYER_ID.PAINTER)
+			{
 				_currentPlayer = PLAYER_ID.COLLECTOR;
+				
+				float fMusicTime = _playerPainterLoop.time;
+				_playerPainterLoop.Stop();
+				_playerCounterLoop.time = fMusicTime;
+				_playerCounterLoop.Play();
+			}
 			else
+			{
 				_currentPlayer = PLAYER_ID.PAINTER;
+				
+				float fMusicTime = _playerCounterLoop.time;
+				_playerCounterLoop.Stop();
+				_playerPainterLoop.time = fMusicTime;
+				_playerPainterLoop.Play();
+			}
 			
 			_playerTurnRemaining = turnTime;
 			
@@ -184,6 +220,10 @@ public class Player : MonoBehaviour
 			{
 				StartMovingTo(exits[(headingOffset + 3) % 4]);
 			}
+			else
+			{
+				_playerAnimator.SetBool("bHaveDestination", false);
+			}
 			
 			
 			
@@ -205,9 +245,7 @@ public class Player : MonoBehaviour
 			precalculated point. That way it won't go out of synch.*/
 			
 			
-			_cameraTargetRotation = Quaternion.AngleAxis(  _heading, Vector3.up);
-			_cameraPivot.rotation = Quaternion.Slerp(_cameraPivot.rotation, _cameraTargetRotation, Time.deltaTime * 2.5f);
-			
+				
 			if(Input.GetAxis(rotate) < 0)
 			{
 				if(!_rotatedThisFrame)
@@ -248,7 +286,6 @@ public class Player : MonoBehaviour
 	{
 		if(_destination != null)
 		{
-			bool bJumping = _playerAnimator.GetBool("bJumping");
 			
 			Vector3 toDestination = (_destination.gameObject.transform.position - _currentTile.gameObject.transform.position);
 			
@@ -302,7 +339,13 @@ public class Player : MonoBehaviour
 			
 			_movementTimeRemaining = _currentMoveSpeed;
 			
-			_playerAnimator.SetBool("bHaveDistination", true);
+			_playerAnimator.SetBool("bHaveDestination", true);
+			
+			if(_destination.transform.position.y < _currentTile.transform.position.y)
+			{
+				_playerAnimator.SetBool("bHaveDestination", false);
+				_playerAnimator.SetBool("bFalling", true);
+			}
 		} 
 	}
 		
@@ -310,8 +353,8 @@ public class Player : MonoBehaviour
 	{
 		
 		_renderer.enabled = true;
-		_playerAnimator.SetBool("bHaveDistination", false);
 		_playerAnimator.SetBool("bJumping", false);
+		_playerAnimator.SetBool("bFalling", false);
 		
 		HandleScoring(_destination);
 		
@@ -335,8 +378,8 @@ public class Player : MonoBehaviour
 			//_currentTile = specialDest;
 			//_currentTile.OnTileSpecialEnter(_currentPlayer);
 			//HandleScoring(_currentTile);
-			StartMovingTo(specialDest);
-			_renderer.enabled = false;
+			_playerAnimator.SetBool("bHaveDestination", false);
+			StartCoroutine(DoTeleport(specialDest));
 			_travelledThroughTeleporter = true;
 		}
 		else
@@ -379,6 +422,35 @@ public class Player : MonoBehaviour
 				_flagsCarried = 0;
 			}
 		}
+	}
+	
+	private IEnumerator DoTeleport(Tile destination)
+	{
+		_teleporting = true;
+		
+		_playerAnimator.SetBool("bTeleporting", true);
+		yield return new WaitForSeconds(0.25f);
+		_renderer.enabled = false;
+		
+		yield return new WaitForSeconds(0.5f);
+		gameObject.transform.position = destination.gameObject.transform.position;
+		
+		//float fDistFromTarget = (destination.transform.position - transform.position).magnitude;
+		//while(fDistFromTarget > 1)
+		//{
+		//	
+		//	gameObject.transform.position = Mathf.Lerp(
+		//	
+		//	yield return new WaitForSeconds(1.0f);
+		//}
+		
+		_currentTile = destination;
+		_currentTile.OnTileSpecialEnter(_currentPlayer);
+		yield return new WaitForSeconds(0.25f);
+		_renderer.enabled = true;
+		_playerAnimator.SetBool("bTeleporting", false);
+		
+		_teleporting = false;
 	}
 		
 }

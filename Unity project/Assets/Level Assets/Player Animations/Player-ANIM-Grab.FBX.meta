@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: ef3a5675284ac7c46a0a228799c4c765
+guid: d1d18be5f447307469affe6f70d0c26d
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: Player-2
+    100000: Player
     100002: //RootNode
     100004: Player-Arm-L
     100006: Player-Arm-R
@@ -13,7 +13,7 @@ ModelImporter:
     100014: Player-Leg-R
     100016: Player-Root
     100018: Player-Shoulders
-    400000: Player-2
+    400000: Player
     400002: //RootNode
     400004: Player-Arm-L
     400006: Player-Arm-R
@@ -23,10 +23,10 @@ ModelImporter:
     400014: Player-Leg-R
     400016: Player-Root
     400018: Player-Shoulders
-    4300000: Player-2
-    7400000: Walk
+    4300000: Player
+    7400000: Grab
     9500000: //RootNode
-    13700000: Player-2
+    13700000: Player
   materials:
     importMaterials: 1
     materialName: 0
@@ -40,7 +40,7 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     clipAnimations:
-    - name: Walk
+    - name: Grab
       takeName: Take 001
       firstFrame: 0
       lastFrame: 29
@@ -49,7 +49,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -64,7 +64,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .100000001
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
