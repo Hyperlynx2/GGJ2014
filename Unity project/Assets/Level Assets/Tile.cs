@@ -73,7 +73,7 @@ public class Tile : MonoBehaviour
 		}
 	}
 	
-	public void SetConnectedTilesHighlighted(bool bHighlighted)
+	private void SetConnectedTilesHighlighted(bool bHighlighted)
 	{
 		if(NorthTile != null)
 			NorthTile.SetTileHighlighted(bHighlighted);

@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
 		if(!_initialised)
 		{
 			_initialised = true;
-			_currentTile.SetConnectedTilesHighlighted(true);
+			_currentTile.OnTileEnter();
 		}
 		
 		UpdateTurnSwitch();
@@ -191,11 +191,9 @@ public class Player : MonoBehaviour
 	{
 		if(destination != null)
 		{
-			//TODO: call "OnLeaveTile" callback on the source tile, when Matt adds it.
-			
 			//TODO: start playing movement anim
 			
-			_currentTile.SetConnectedTilesHighlighted(false);
+			_currentTile.OnTileExit();
 			_destination = destination;
 				
 			_movementTimeRemaining = movementSpeed;
@@ -224,7 +222,7 @@ public class Player : MonoBehaviour
 		
 		_currentTile = _destination;
 		_destination = null;
-		//TODO: call "OnEnterTile" on current tile, when Matt adds it. 
+		_currentTile.OnTileEnter();
 	}
 		
 }
