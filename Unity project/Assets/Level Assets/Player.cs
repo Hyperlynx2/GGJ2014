@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 	public string player1VerticalAxis;
 	public string player2HorizontalAxis;
 	public string player2VerticalAxis;
+	public string player1RotateAxis;
+	public string player2RotateAxis;
 	public string[] playerNames;
 	public int flagScoreValue = 5;
 	
@@ -34,6 +36,10 @@ public class Player : MonoBehaviour
 	private Vector3 _velocity;
 	
 	private Animator _playerAnimator;
+	
+	private Camera _camera;
+	
+	private bool _rotatedThisFrame;
 	
 	/// <summary>
 	/// The _flags currently carried (not total or player score!)
@@ -72,6 +78,7 @@ public class Player : MonoBehaviour
 		_initialised = false;
 		
 		_playerAnimator = GetComponentInChildren<Animator>();
+		_camera = GetComponentInChildren<Camera>();
 	}
 	
 	// Update is called once per frame
@@ -136,11 +143,13 @@ public class Player : MonoBehaviour
 		{
 			string horz = player1HorizontalAxis;
 			string vert = player1VerticalAxis;
+			string rotate = player1RotateAxis;
 			
 			if(_currentPlayer == PLAYER_ID.COLLECTOR)
 			{
 				horz = player2HorizontalAxis;
 				vert = player2VerticalAxis;
+				rotate = player2RotateAxis;
 			}
 			
 			//TODO: take heading into consideration here		
@@ -161,7 +170,46 @@ public class Player : MonoBehaviour
 				StartMovingTo(_currentTile.NorthTile);
 			}
 			
-			//TODO: input for changing heading
+			//TODO: input for changing heading			
+			
+			/*for camera rotation, use transform.rotatearound to make it look nice.
+			(http://docs.unity3d.com/Documentation/ScriptReference/Transform.RotateAround.html)
+			
+			From a mechanical point of view, I think the change of control orientation should be
+			instantaneous, ie before the camera has finished rotating.
+			
+			Can do the rotating in a script on the camera, in its update()... but might as well do it
+			here.
+			*/
+			
+			/*TODO: regarding the camera rotation, cheat the same way I did with the player movement.
+			find and store the 90 degree points at start, have a setting for time to rotate 90
+			degrees, while rotating rotate that amount * deltaTime and decrement deltaTime from
+			current rotation time remaining, when rotation time <=0 translate straight to the
+			precalculated point. That way it won't go out of synch.*/
+			
+			//TEST:
+			if(Input.GetAxis(rotate) < 0)
+			{
+				if(!_rotatedThisFrame)
+				{
+					_camera.transform.RotateAround(gameObject.transform.position, Vector3.up,  -90);
+					_rotatedThisFrame = true;
+				}
+			}
+			else if(Input.GetAxis(rotate) > 0)
+			{
+				if(!_rotatedThisFrame)
+				{
+					_camera.transform.RotateAround(gameObject.transform.position, Vector3.up,  90);
+					_rotatedThisFrame = true;
+				}
+			}
+			else
+			{
+				_rotatedThisFrame = false;
+			}
+			
 		}
 	}
 	

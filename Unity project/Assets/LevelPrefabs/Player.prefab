@@ -211,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -.762117028, y: -3.25022745, z: -4.16859341}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -411,7 +411,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: fd603a314382cc742b5003b5f8eb43e0, type: 3}
   m_Controller: {fileID: 9100000, guid: 501f261f453c5384b9e584657cb191f8, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
 --- !u!108 &10800000
 Light:
@@ -475,6 +475,8 @@ MonoBehaviour:
   player1VerticalAxis: P1Vertical
   player2HorizontalAxis: P2Horizontal
   player2VerticalAxis: P2Vertical
+  player1RotateAxis: P1Rotate
+  player2RotateAxis: P2Rotate
   playerNames:
   - Player 1
   - Player 2
