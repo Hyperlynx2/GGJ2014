@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 661706527}
-  - 114: {fileID: 661706528}
+  - 114: {fileID: 661706529}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -101,7 +101,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &661706528
+--- !u!114 &661706529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -109,20 +109,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 661706526}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c78bcde8818eed341b72a3304005903a, type: 3}
+  m_Script: {fileID: 11500000, guid: 647555b8b74fa0c45b5adf90c18d9eda, type: 3}
   m_Name: 
-  left: 300
-  top: 20
-  width: 100
-  height: 50
-  separation: 5
   menuItemScenes:
-  - Level 2
   - Level 2
   menuItemLabels:
   - Start
-  - Also start
-  skin: {fileID: 0}
 --- !u!1 &780352448
 GameObject:
   m_ObjectHideFlags: 0

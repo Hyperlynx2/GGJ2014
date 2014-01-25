@@ -188,9 +188,8 @@ public class Player : MonoBehaviour
 		
 		//TODO: remove playerNames array. replace it with two variables, or stick it in GameManager
 		
-		string scoreText = playerNames[0] + ": " + _gameManager.Player1Score + "\n"
-			+ playerNames[1] + ": " + _gameManager.Player2Score;
-		
+		string scoreText = playerNames[0] + ": " + GameManager.GetInstance().Player1Score + "\n"
+			+ playerNames[1] + ": " + GameManager.GetInstance().Player2Score;		
 		
 		//score:
 		GUI.Box (new Rect (500, 400,150,50), scoreText);
