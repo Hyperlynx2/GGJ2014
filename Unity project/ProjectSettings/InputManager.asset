@@ -88,8 +88,8 @@ InputManager:
     m_Name: P2Rotate
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: delete
-    positiveButton: page down
+    negativeButton: page down
+    positiveButton: delete
     altNegativeButton: 
     altPositiveButton: 
     gravity: 300

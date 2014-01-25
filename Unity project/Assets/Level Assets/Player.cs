@@ -42,6 +42,11 @@ public class Player : MonoBehaviour
 	private Quaternion _cameraTargetRotation;
 	private Transform _cameraPivot;
 	
+	
+	private AudioSource _playerPainterLoop;
+	private AudioSource _playerCounterLoop;
+	private AudioSource _playerChangeSound;
+	
 	private bool _rotatedThisFrame;
 	
 	/// <summary>
@@ -88,6 +93,10 @@ public class Player : MonoBehaviour
 		_renderer = GetComponentInChildren<Renderer>();
 		
 		_cameraPivot = gameObject.transform.FindChild("CameraPivot");
+		
+		_playerPainterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerOneLoop").GetComponent<AudioSource>();
+		_playerCounterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerTwoLoop").GetComponent<AudioSource>();
+		_playerChangeSound = transform.FindChild ("Sounds").transform.FindChild("PlayerChange").GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -136,11 +145,26 @@ public class Player : MonoBehaviour
 		
 		if(_playerTurnRemaining <= 0)
 		{
+			_playerChangeSound.Play();
 		
 			if(_currentPlayer == PLAYER_ID.PAINTER)
+			{
 				_currentPlayer = PLAYER_ID.COLLECTOR;
+				
+				float fMusicTime = _playerPainterLoop.time;
+				_playerPainterLoop.Stop();
+				_playerCounterLoop.time = fMusicTime;
+				_playerCounterLoop.Play();
+			}
 			else
+			{
 				_currentPlayer = PLAYER_ID.PAINTER;
+				
+				float fMusicTime = _playerCounterLoop.time;
+				_playerCounterLoop.Stop();
+				_playerPainterLoop.time = fMusicTime;
+				_playerPainterLoop.Play();
+			}
 			
 			_playerTurnRemaining = turnTime;
 			
