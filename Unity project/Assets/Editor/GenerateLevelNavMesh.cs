@@ -10,6 +10,8 @@ public class GenerateLevelNavMesh : Editor
 		ReplaceObjectsWithPrefabs ();
 		SetupTileConnections ();
 		FindAttachedSpawnersAndGoal();
+		
+		FindAttachedTeleportersAndStuff();
 	}
 	
 	static void SetupTileConnections ()
@@ -123,6 +125,11 @@ public class GenerateLevelNavMesh : Editor
 				prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Player-Spawner.prefab", typeof(GameObject));
 			}
 			
+			if(obj.name.Contains("Teleporter"))
+			{
+				prefab = AssetDatabase.LoadAssetAtPath("Assets/LevelPrefabs/Teleporter.prefab", typeof(GameObject));
+			}
+			
 			if(prefab != null)
 			{
 				GameObject clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
@@ -151,6 +158,13 @@ public class GenerateLevelNavMesh : Editor
 				if(obj.name.Contains("Player-Spawner"))
 				{
 					clone.name = "Player-Spawner";	
+				}
+				
+				if(obj.name.Contains("Teleporter"))
+				{
+					string teleporterID = obj.name.Substring(11, 1);
+					clone.name = "Teleporter";	
+					clone.GetComponent<Teleporter>().TeleporterID = teleporterID;
 				}
 				
 				DestroyImmediate(obj);
@@ -211,6 +225,39 @@ public class GenerateLevelNavMesh : Editor
 			}
 		}
 	}
+	
+	
+	static void FindAttachedTeleportersAndStuff()
+	{
+		Tile[] tiles = GameObject.FindObjectsOfType(typeof(Tile)) as Tile[];
+		GameObject[] allObjects = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
+		
+		for(int i = 0;i < allObjects.Length;++i)
+		{
+			GameObject obj = allObjects[i];
+			
+			if(obj.name.Contains("Teleporter"))
+			{
+				Tile connectedTile = FindConnectedTile(tiles, obj);
+				if(connectedTile)
+				{
+					connectedTile.ConnectedTeleporter = obj.GetComponent<Teleporter>();
+					
+					for(int j = i + 1;j < allObjects.Length;++j)
+					{
+						Teleporter otherTeleporter = allObjects[j].GetComponent<Teleporter>();
+						if(otherTeleporter  && otherTeleporter.TeleporterID == connectedTile.ConnectedTeleporter.TeleporterID)
+						{
+							connectedTile.ConnectedTeleporter.ConnectedTeleporter = otherTeleporter;
+							otherTeleporter.ConnectedTeleporter = connectedTile.ConnectedTeleporter;
+						}
+					}
+					
+				}
+			}
+		}
+	}
+	
 	
 	static bool WithinRange(float valOne, float valTwo, float range)
 	{

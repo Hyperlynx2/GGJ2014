@@ -6,7 +6,7 @@ public class Tile : MonoBehaviour
 	//Tile Modifiers
 	public bool FlagGoalIsHere = false;
 	public Spawner ConnectedSpawner = null;
-	
+	public Teleporter ConnectedTeleporter = null;
 	
 	//Exit List
 	public Tile NorthTile;
