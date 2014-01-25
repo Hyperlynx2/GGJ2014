@@ -77,17 +77,26 @@ public class Player : MonoBehaviour
 	private AudioSource _playerCounterLoop;
 	private AudioSource _playerChangeSound;
 	
-	public bool _have5Candle;
-	public bool _have10Candle;
-	public bool _have15Candle;
-	public bool _have25Candle;
+	private bool _have5Candle;		
+	private bool _have10Candle;		
+	private bool _have15Candle;		
+	private bool _have25Candle;
+		
+	public Texture FullCandleSlot5;
+	public Texture EmptyCandleSlot5;
+	public Texture FullCandleSlot10;
+	public Texture EmptyCandleSlot10;
+	public Texture FullCandleSlot15;
+	public Texture EmptyCandleSlot15;
+	public Texture FullCandleSlot25;
+	public Texture EmptyCandleSlot25;
+	
 	
 	/// <summary>
 	/// Stops multiple inputs for rotate.
 	/// </summary>	
 	private bool _rotatedThisFrame;
-	
-	
+		
 	private bool _teleporting;
 	
 	/// <summary>
@@ -184,10 +193,43 @@ public class Player : MonoBehaviour
 		for(int i = 0; i < playerNames.Length; ++i)
 		{
 			scoreText += playerNames[i] + ": " + _playerScores[i] + "\n";
-		}		
+		}
 		
 		//score:
 		GUI.Box (new Rect (500, 400,100,50), scoreText);
+		
+		//candles carried:
+		float textureWidth = 32;
+		float margin = 5;
+		
+				
+		//5 candle
+		GUI.Label(new Rect(Screen.width - (textureWidth + margin),
+			Screen.height - 4*(textureWidth + margin),
+			textureWidth,
+			textureWidth),
+			_have5Candle?FullCandleSlot5:EmptyCandleSlot5);
+		
+		//10 candle
+		GUI.Label(new Rect(Screen.width - (textureWidth + margin),
+			Screen.height - 3*(textureWidth + margin),
+			textureWidth,
+			textureWidth),
+			_have10Candle?FullCandleSlot10:EmptyCandleSlot10);
+		
+		//15 candle
+		GUI.Label(new Rect(Screen.width - (textureWidth + margin),
+			Screen.height - 2*(textureWidth + margin),
+			textureWidth,
+			textureWidth),
+			_have15Candle?FullCandleSlot15:EmptyCandleSlot15);
+		
+		//25 candle
+		GUI.Label(new Rect(Screen.width - (textureWidth + margin),
+			Screen.height - (textureWidth + margin),
+			textureWidth,
+			textureWidth),
+			_have25Candle?FullCandleSlot25:EmptyCandleSlot25);
 	}
 
 	/// <summary>

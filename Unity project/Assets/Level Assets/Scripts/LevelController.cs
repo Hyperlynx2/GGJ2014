@@ -12,7 +12,6 @@ public class LevelController : MonoBehaviour {
 	
 	private float _remainingTime;
 	
-	
 	void Start()
 	{
 		_remainingTime = MaxLevelTime;
@@ -64,7 +63,8 @@ public class LevelController : MonoBehaviour {
 		TimeSpan levelTime = new TimeSpan(0, 0, (int)_remainingTime);
 		
 		//TODO: do as percentage of screen width, not absolute pixel value.
-		GUI.Box (new Rect (400, 20,100,50), levelTime.Minutes + ":" + levelTime.Seconds);
+		GUI.Box (new Rect (400, 20,100,100), levelTime.Minutes + ":" + levelTime.Seconds);
 			
+		//GUI.Label(
 	}
 }

@@ -865,6 +865,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   turnTime: 8
+  FullCandleSlot5: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
+  EmptyCandleSlot5: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
+  FullCandleSlot10: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
+  EmptyCandleSlot10: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
+  FullCandleSlot15: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
+  EmptyCandleSlot15: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
+  FullCandleSlot25: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
+  EmptyCandleSlot25: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
