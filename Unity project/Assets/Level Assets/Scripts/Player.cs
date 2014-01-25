@@ -93,8 +93,6 @@ public class Player : MonoBehaviour
 	public Texture FullCandleSlot25;
 	public Texture EmptyCandleSlot25;
 	
-	private GameManager _gameManager;
-	
 	/// <summary>
 	/// Stops multiple inputs for rotate.
 	/// </summary>	
@@ -152,10 +150,7 @@ public class Player : MonoBehaviour
 		_have5Candle = false;
 		_have10Candle = false;
 		_have15Candle = false;
-		_have25Candle = false;
-		
-		_gameManager = GameManager.GetInstance();
-		
+		_have25Candle = false;		
 	}
 	
 	// Update is called once per frame
@@ -497,7 +492,7 @@ public class Player : MonoBehaviour
 		{
 			if(scoreThisTile.PaintTile())
 			{
-				_gameManager.Player1Score++; //TODO: enum vs hardcoded? terrible, clean up if time.
+				GameManager.GetInstance().Player1Score++; //TODO: enum vs hardcoded? terrible, clean up if time.
 			}
 		}
 		else
@@ -541,25 +536,25 @@ public class Player : MonoBehaviour
 				}
 				if(_have5Candle)
 				{
-					_gameManager.Player2Score += 5;
+					GameManager.GetInstance().Player2Score += 5;
 					_have5Candle = false;
 				}
 				
 				if(_have10Candle)
 				{
-					_gameManager.Player2Score += 10;
+					GameManager.GetInstance().Player2Score += 10;
 					_have10Candle = false;
 				}
 				
 				if(_have15Candle)
 				{
-					_gameManager.Player2Score += 15;
+					GameManager.GetInstance().Player2Score += 15;
 					_have15Candle = false;
 				}
 				
 				if(_have25Candle)
 				{
-					_gameManager.Player2Score += 25;
+					GameManager.GetInstance().Player2Score += 25;
 					_have25Candle = false;
 				}
 			}

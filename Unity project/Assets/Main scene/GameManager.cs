@@ -13,10 +13,8 @@ public class GameManager
 		return _instance;
 	}
 	
-	public float left;
-	public float top;
 	public float width = 100;
-	public float height = 100;
+	public float height = 50;
 	
 	/// <summary>
 	/// Gap between buttons
@@ -79,7 +77,7 @@ public class GameManager
 			for(int i = 0; i < menuItemLabels.Length; ++i)
 			{
 				//TODO: change to be percentage of screen rather than absolute position.
-				if(GUI.Button(new Rect(left, top + i*(height + separation), width, height), menuItemLabels[i]))
+				if(GUI.Button(new Rect(Screen.width /2, 10 + i*(height + separation), width, height), menuItemLabels[i]))
 				{
 					_state = STATE.INGAME;
 					Application.LoadLevel(menuItemScenes[i]);
