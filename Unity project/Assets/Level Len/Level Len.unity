@@ -778,6 +778,14 @@ MonoBehaviour:
   m_Name: 
   startTile: {fileID: 1987080433}
   movementSpeed: .300000012
+  player1HorizontalAxis: P1Horizontal
+  player1VerticalAxis: P1Vertical
+  player2HorizontalAxis: P2Horizontal
+  player2VerticalAxis: P2Vertical
+  playerNames:
+  - Player 1
+  - Player 2
+  turnTime: 3
 --- !u!1 &616815643
 GameObject:
   m_ObjectHideFlags: 0
