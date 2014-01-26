@@ -1,0 +1,850 @@
+fileFormatVersion: 2
+guid: c2181d20bee04574c8b51233c4aed302
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Flag-Goal
+    100002: Flag-Goal 1
+    100004: Flag-Spawner-2-25
+    100006: Flag-Spawner-4-10
+    100008: Flag-Spawner-5-5
+    100010: Jumper-A
+    100012: Jumper-F
+    100014: Jumper-G
+    100016: Jumper-H
+    100018: Jumper-Target-A
+    100020: Jumper-Target-F
+    100022: Jumper-Target-G
+    100024: Jumper-Target-H
+    100026: //RootNode
+    100028: Player-Spawner
+    100030: Teleporter-A
+    100032: Teleporter-A 1
+    100034: Teleporter-B
+    100036: Teleporter-B 1
+    100038: Tile-Blank
+    100040: Tile-Blank 1
+    100042: Tile-Blank 10
+    100044: Tile-Blank 100
+    100046: Tile-Blank 101
+    100048: Tile-Blank 102
+    100050: Tile-Blank 103
+    100052: Tile-Blank 104
+    100054: Tile-Blank 105
+    100056: Tile-Blank 106
+    100058: Tile-Blank 107
+    100060: Tile-Blank 108
+    100062: Tile-Blank 109
+    100064: Tile-Blank 11
+    100066: Tile-Blank 110
+    100068: Tile-Blank 111
+    100070: Tile-Blank 112
+    100072: Tile-Blank 113
+    100074: Tile-Blank 114
+    100076: Tile-Blank 115
+    100078: Tile-Blank 116
+    100080: Tile-Blank 117
+    100082: Tile-Blank 118
+    100084: Tile-Blank 119
+    100086: Tile-Blank 12
+    100088: Tile-Blank 120
+    100090: Tile-Blank 121
+    100092: Tile-Blank 122
+    100094: Tile-Blank 123
+    100096: Tile-Blank 124
+    100098: Tile-Blank 125
+    100100: Tile-Blank 126
+    100102: Tile-Blank 127
+    100104: Tile-Blank 128
+    100106: Tile-Blank 129
+    100108: Tile-Blank 13
+    100110: Tile-Blank 130
+    100112: Tile-Blank 131
+    100114: Tile-Blank 132
+    100116: Tile-Blank 133
+    100118: Tile-Blank 134
+    100120: Tile-Blank 135
+    100122: Tile-Blank 136
+    100124: Tile-Blank 137
+    100126: Tile-Blank 138
+    100128: Tile-Blank 139
+    100130: Tile-Blank 14
+    100132: Tile-Blank 15
+    100134: Tile-Blank 16
+    100136: Tile-Blank 17
+    100138: Tile-Blank 18
+    100140: Tile-Blank 19
+    100142: Tile-Blank 2
+    100144: Tile-Blank 20
+    100146: Tile-Blank 21
+    100148: Tile-Blank 22
+    100150: Tile-Blank 23
+    100152: Tile-Blank 24
+    100154: Tile-Blank 25
+    100156: Tile-Blank 26
+    100158: Tile-Blank 27
+    100160: Tile-Blank 28
+    100162: Tile-Blank 29
+    100164: Tile-Blank 3
+    100166: Tile-Blank 30
+    100168: Tile-Blank 31
+    100170: Tile-Blank 32
+    100172: Tile-Blank 33
+    100174: Tile-Blank 34
+    100176: Tile-Blank 35
+    100178: Tile-Blank 36
+    100180: Tile-Blank 37
+    100182: Tile-Blank 38
+    100184: Tile-Blank 39
+    100186: Tile-Blank 4
+    100188: Tile-Blank 40
+    100190: Tile-Blank 41
+    100192: Tile-Blank 42
+    100194: Tile-Blank 43
+    100196: Tile-Blank 44
+    100198: Tile-Blank 45
+    100200: Tile-Blank 46
+    100202: Tile-Blank 47
+    100204: Tile-Blank 48
+    100206: Tile-Blank 49
+    100208: Tile-Blank 5
+    100210: Tile-Blank 50
+    100212: Tile-Blank 51
+    100214: Tile-Blank 52
+    100216: Tile-Blank 53
+    100218: Tile-Blank 54
+    100220: Tile-Blank 55
+    100222: Tile-Blank 56
+    100224: Tile-Blank 57
+    100226: Tile-Blank 58
+    100228: Tile-Blank 59
+    100230: Tile-Blank 6
+    100232: Tile-Blank 60
+    100234: Tile-Blank 61
+    100236: Tile-Blank 62
+    100238: Tile-Blank 63
+    100240: Tile-Blank 64
+    100242: Tile-Blank 65
+    100244: Tile-Blank 66
+    100246: Tile-Blank 67
+    100248: Tile-Blank 68
+    100250: Tile-Blank 69
+    100252: Tile-Blank 7
+    100254: Tile-Blank 70
+    100256: Tile-Blank 71
+    100258: Tile-Blank 72
+    100260: Tile-Blank 73
+    100262: Tile-Blank 74
+    100264: Tile-Blank 75
+    100266: Tile-Blank 76
+    100268: Tile-Blank 77
+    100270: Tile-Blank 78
+    100272: Tile-Blank 79
+    100274: Tile-Blank 8
+    100276: Tile-Blank 80
+    100278: Tile-Blank 81
+    100280: Tile-Blank 82
+    100282: Tile-Blank 83
+    100284: Tile-Blank 84
+    100286: Tile-Blank 85
+    100288: Tile-Blank 86
+    100290: Tile-Blank 87
+    100292: Tile-Blank 88
+    100294: Tile-Blank 89
+    100296: Tile-Blank 9
+    100298: Tile-Blank 90
+    100300: Tile-Blank 91
+    100302: Tile-Blank 92
+    100304: Tile-Blank 93
+    100306: Tile-Blank 94
+    100308: Tile-Blank 95
+    100310: Tile-Blank 96
+    100312: Tile-Blank 97
+    100314: Tile-Blank 98
+    100316: Tile-Blank 99
+    400000: Flag-Goal
+    400002: Flag-Goal 1
+    400004: Flag-Spawner-2-25
+    400006: Flag-Spawner-4-10
+    400008: Flag-Spawner-5-5
+    400010: Jumper-A
+    400012: Jumper-F
+    400014: Jumper-G
+    400016: Jumper-H
+    400018: Jumper-Target-A
+    400020: Jumper-Target-F
+    400022: Jumper-Target-G
+    400024: Jumper-Target-H
+    400026: //RootNode
+    400028: Player-Spawner
+    400030: Teleporter-A
+    400032: Teleporter-A 1
+    400034: Teleporter-B
+    400036: Teleporter-B 1
+    400038: Tile-Blank
+    400040: Tile-Blank 1
+    400042: Tile-Blank 10
+    400044: Tile-Blank 100
+    400046: Tile-Blank 101
+    400048: Tile-Blank 102
+    400050: Tile-Blank 103
+    400052: Tile-Blank 104
+    400054: Tile-Blank 105
+    400056: Tile-Blank 106
+    400058: Tile-Blank 107
+    400060: Tile-Blank 108
+    400062: Tile-Blank 109
+    400064: Tile-Blank 11
+    400066: Tile-Blank 110
+    400068: Tile-Blank 111
+    400070: Tile-Blank 112
+    400072: Tile-Blank 113
+    400074: Tile-Blank 114
+    400076: Tile-Blank 115
+    400078: Tile-Blank 116
+    400080: Tile-Blank 117
+    400082: Tile-Blank 118
+    400084: Tile-Blank 119
+    400086: Tile-Blank 12
+    400088: Tile-Blank 120
+    400090: Tile-Blank 121
+    400092: Tile-Blank 122
+    400094: Tile-Blank 123
+    400096: Tile-Blank 124
+    400098: Tile-Blank 125
+    400100: Tile-Blank 126
+    400102: Tile-Blank 127
+    400104: Tile-Blank 128
+    400106: Tile-Blank 129
+    400108: Tile-Blank 13
+    400110: Tile-Blank 130
+    400112: Tile-Blank 131
+    400114: Tile-Blank 132
+    400116: Tile-Blank 133
+    400118: Tile-Blank 134
+    400120: Tile-Blank 135
+    400122: Tile-Blank 136
+    400124: Tile-Blank 137
+    400126: Tile-Blank 138
+    400128: Tile-Blank 139
+    400130: Tile-Blank 14
+    400132: Tile-Blank 15
+    400134: Tile-Blank 16
+    400136: Tile-Blank 17
+    400138: Tile-Blank 18
+    400140: Tile-Blank 19
+    400142: Tile-Blank 2
+    400144: Tile-Blank 20
+    400146: Tile-Blank 21
+    400148: Tile-Blank 22
+    400150: Tile-Blank 23
+    400152: Tile-Blank 24
+    400154: Tile-Blank 25
+    400156: Tile-Blank 26
+    400158: Tile-Blank 27
+    400160: Tile-Blank 28
+    400162: Tile-Blank 29
+    400164: Tile-Blank 3
+    400166: Tile-Blank 30
+    400168: Tile-Blank 31
+    400170: Tile-Blank 32
+    400172: Tile-Blank 33
+    400174: Tile-Blank 34
+    400176: Tile-Blank 35
+    400178: Tile-Blank 36
+    400180: Tile-Blank 37
+    400182: Tile-Blank 38
+    400184: Tile-Blank 39
+    400186: Tile-Blank 4
+    400188: Tile-Blank 40
+    400190: Tile-Blank 41
+    400192: Tile-Blank 42
+    400194: Tile-Blank 43
+    400196: Tile-Blank 44
+    400198: Tile-Blank 45
+    400200: Tile-Blank 46
+    400202: Tile-Blank 47
+    400204: Tile-Blank 48
+    400206: Tile-Blank 49
+    400208: Tile-Blank 5
+    400210: Tile-Blank 50
+    400212: Tile-Blank 51
+    400214: Tile-Blank 52
+    400216: Tile-Blank 53
+    400218: Tile-Blank 54
+    400220: Tile-Blank 55
+    400222: Tile-Blank 56
+    400224: Tile-Blank 57
+    400226: Tile-Blank 58
+    400228: Tile-Blank 59
+    400230: Tile-Blank 6
+    400232: Tile-Blank 60
+    400234: Tile-Blank 61
+    400236: Tile-Blank 62
+    400238: Tile-Blank 63
+    400240: Tile-Blank 64
+    400242: Tile-Blank 65
+    400244: Tile-Blank 66
+    400246: Tile-Blank 67
+    400248: Tile-Blank 68
+    400250: Tile-Blank 69
+    400252: Tile-Blank 7
+    400254: Tile-Blank 70
+    400256: Tile-Blank 71
+    400258: Tile-Blank 72
+    400260: Tile-Blank 73
+    400262: Tile-Blank 74
+    400264: Tile-Blank 75
+    400266: Tile-Blank 76
+    400268: Tile-Blank 77
+    400270: Tile-Blank 78
+    400272: Tile-Blank 79
+    400274: Tile-Blank 8
+    400276: Tile-Blank 80
+    400278: Tile-Blank 81
+    400280: Tile-Blank 82
+    400282: Tile-Blank 83
+    400284: Tile-Blank 84
+    400286: Tile-Blank 85
+    400288: Tile-Blank 86
+    400290: Tile-Blank 87
+    400292: Tile-Blank 88
+    400294: Tile-Blank 89
+    400296: Tile-Blank 9
+    400298: Tile-Blank 90
+    400300: Tile-Blank 91
+    400302: Tile-Blank 92
+    400304: Tile-Blank 93
+    400306: Tile-Blank 94
+    400308: Tile-Blank 95
+    400310: Tile-Blank 96
+    400312: Tile-Blank 97
+    400314: Tile-Blank 98
+    400316: Tile-Blank 99
+    2300000: Flag-Goal
+    2300002: Flag-Goal 1
+    2300004: Flag-Spawner-2-25
+    2300006: Flag-Spawner-4-10
+    2300008: Flag-Spawner-5-5
+    2300010: Jumper-A
+    2300012: Jumper-F
+    2300014: Jumper-G
+    2300016: Jumper-H
+    2300018: Jumper-Target-A
+    2300020: Jumper-Target-F
+    2300022: Jumper-Target-G
+    2300024: Jumper-Target-H
+    2300026: Player-Spawner
+    2300028: Teleporter-A
+    2300030: Teleporter-A 1
+    2300032: Teleporter-B
+    2300034: Teleporter-B 1
+    2300036: Tile-Blank
+    2300038: Tile-Blank 1
+    2300040: Tile-Blank 10
+    2300042: Tile-Blank 100
+    2300044: Tile-Blank 101
+    2300046: Tile-Blank 102
+    2300048: Tile-Blank 103
+    2300050: Tile-Blank 104
+    2300052: Tile-Blank 105
+    2300054: Tile-Blank 106
+    2300056: Tile-Blank 107
+    2300058: Tile-Blank 108
+    2300060: Tile-Blank 109
+    2300062: Tile-Blank 11
+    2300064: Tile-Blank 110
+    2300066: Tile-Blank 111
+    2300068: Tile-Blank 112
+    2300070: Tile-Blank 113
+    2300072: Tile-Blank 114
+    2300074: Tile-Blank 115
+    2300076: Tile-Blank 116
+    2300078: Tile-Blank 117
+    2300080: Tile-Blank 118
+    2300082: Tile-Blank 119
+    2300084: Tile-Blank 12
+    2300086: Tile-Blank 120
+    2300088: Tile-Blank 121
+    2300090: Tile-Blank 122
+    2300092: Tile-Blank 123
+    2300094: Tile-Blank 124
+    2300096: Tile-Blank 125
+    2300098: Tile-Blank 126
+    2300100: Tile-Blank 127
+    2300102: Tile-Blank 128
+    2300104: Tile-Blank 129
+    2300106: Tile-Blank 13
+    2300108: Tile-Blank 130
+    2300110: Tile-Blank 131
+    2300112: Tile-Blank 132
+    2300114: Tile-Blank 133
+    2300116: Tile-Blank 134
+    2300118: Tile-Blank 135
+    2300120: Tile-Blank 136
+    2300122: Tile-Blank 137
+    2300124: Tile-Blank 138
+    2300126: Tile-Blank 139
+    2300128: Tile-Blank 14
+    2300130: Tile-Blank 15
+    2300132: Tile-Blank 16
+    2300134: Tile-Blank 17
+    2300136: Tile-Blank 18
+    2300138: Tile-Blank 19
+    2300140: Tile-Blank 2
+    2300142: Tile-Blank 20
+    2300144: Tile-Blank 21
+    2300146: Tile-Blank 22
+    2300148: Tile-Blank 23
+    2300150: Tile-Blank 24
+    2300152: Tile-Blank 25
+    2300154: Tile-Blank 26
+    2300156: Tile-Blank 27
+    2300158: Tile-Blank 28
+    2300160: Tile-Blank 29
+    2300162: Tile-Blank 3
+    2300164: Tile-Blank 30
+    2300166: Tile-Blank 31
+    2300168: Tile-Blank 32
+    2300170: Tile-Blank 33
+    2300172: Tile-Blank 34
+    2300174: Tile-Blank 35
+    2300176: Tile-Blank 36
+    2300178: Tile-Blank 37
+    2300180: Tile-Blank 38
+    2300182: Tile-Blank 39
+    2300184: Tile-Blank 4
+    2300186: Tile-Blank 40
+    2300188: Tile-Blank 41
+    2300190: Tile-Blank 42
+    2300192: Tile-Blank 43
+    2300194: Tile-Blank 44
+    2300196: Tile-Blank 45
+    2300198: Tile-Blank 46
+    2300200: Tile-Blank 47
+    2300202: Tile-Blank 48
+    2300204: Tile-Blank 49
+    2300206: Tile-Blank 5
+    2300208: Tile-Blank 50
+    2300210: Tile-Blank 51
+    2300212: Tile-Blank 52
+    2300214: Tile-Blank 53
+    2300216: Tile-Blank 54
+    2300218: Tile-Blank 55
+    2300220: Tile-Blank 56
+    2300222: Tile-Blank 57
+    2300224: Tile-Blank 58
+    2300226: Tile-Blank 59
+    2300228: Tile-Blank 6
+    2300230: Tile-Blank 60
+    2300232: Tile-Blank 61
+    2300234: Tile-Blank 62
+    2300236: Tile-Blank 63
+    2300238: Tile-Blank 64
+    2300240: Tile-Blank 65
+    2300242: Tile-Blank 66
+    2300244: Tile-Blank 67
+    2300246: Tile-Blank 68
+    2300248: Tile-Blank 69
+    2300250: Tile-Blank 7
+    2300252: Tile-Blank 70
+    2300254: Tile-Blank 71
+    2300256: Tile-Blank 72
+    2300258: Tile-Blank 73
+    2300260: Tile-Blank 74
+    2300262: Tile-Blank 75
+    2300264: Tile-Blank 76
+    2300266: Tile-Blank 77
+    2300268: Tile-Blank 78
+    2300270: Tile-Blank 79
+    2300272: Tile-Blank 8
+    2300274: Tile-Blank 80
+    2300276: Tile-Blank 81
+    2300278: Tile-Blank 82
+    2300280: Tile-Blank 83
+    2300282: Tile-Blank 84
+    2300284: Tile-Blank 85
+    2300286: Tile-Blank 86
+    2300288: Tile-Blank 87
+    2300290: Tile-Blank 88
+    2300292: Tile-Blank 89
+    2300294: Tile-Blank 9
+    2300296: Tile-Blank 90
+    2300298: Tile-Blank 91
+    2300300: Tile-Blank 92
+    2300302: Tile-Blank 93
+    2300304: Tile-Blank 94
+    2300306: Tile-Blank 95
+    2300308: Tile-Blank 96
+    2300310: Tile-Blank 97
+    2300312: Tile-Blank 98
+    2300314: Tile-Blank 99
+    3300000: Flag-Goal
+    3300002: Flag-Goal 1
+    3300004: Flag-Spawner-2-25
+    3300006: Flag-Spawner-4-10
+    3300008: Flag-Spawner-5-5
+    3300010: Jumper-A
+    3300012: Jumper-F
+    3300014: Jumper-G
+    3300016: Jumper-H
+    3300018: Jumper-Target-A
+    3300020: Jumper-Target-F
+    3300022: Jumper-Target-G
+    3300024: Jumper-Target-H
+    3300026: Player-Spawner
+    3300028: Teleporter-A
+    3300030: Teleporter-A 1
+    3300032: Teleporter-B
+    3300034: Teleporter-B 1
+    3300036: Tile-Blank
+    3300038: Tile-Blank 1
+    3300040: Tile-Blank 10
+    3300042: Tile-Blank 100
+    3300044: Tile-Blank 101
+    3300046: Tile-Blank 102
+    3300048: Tile-Blank 103
+    3300050: Tile-Blank 104
+    3300052: Tile-Blank 105
+    3300054: Tile-Blank 106
+    3300056: Tile-Blank 107
+    3300058: Tile-Blank 108
+    3300060: Tile-Blank 109
+    3300062: Tile-Blank 11
+    3300064: Tile-Blank 110
+    3300066: Tile-Blank 111
+    3300068: Tile-Blank 112
+    3300070: Tile-Blank 113
+    3300072: Tile-Blank 114
+    3300074: Tile-Blank 115
+    3300076: Tile-Blank 116
+    3300078: Tile-Blank 117
+    3300080: Tile-Blank 118
+    3300082: Tile-Blank 119
+    3300084: Tile-Blank 12
+    3300086: Tile-Blank 120
+    3300088: Tile-Blank 121
+    3300090: Tile-Blank 122
+    3300092: Tile-Blank 123
+    3300094: Tile-Blank 124
+    3300096: Tile-Blank 125
+    3300098: Tile-Blank 126
+    3300100: Tile-Blank 127
+    3300102: Tile-Blank 128
+    3300104: Tile-Blank 129
+    3300106: Tile-Blank 13
+    3300108: Tile-Blank 130
+    3300110: Tile-Blank 131
+    3300112: Tile-Blank 132
+    3300114: Tile-Blank 133
+    3300116: Tile-Blank 134
+    3300118: Tile-Blank 135
+    3300120: Tile-Blank 136
+    3300122: Tile-Blank 137
+    3300124: Tile-Blank 138
+    3300126: Tile-Blank 139
+    3300128: Tile-Blank 14
+    3300130: Tile-Blank 15
+    3300132: Tile-Blank 16
+    3300134: Tile-Blank 17
+    3300136: Tile-Blank 18
+    3300138: Tile-Blank 19
+    3300140: Tile-Blank 2
+    3300142: Tile-Blank 20
+    3300144: Tile-Blank 21
+    3300146: Tile-Blank 22
+    3300148: Tile-Blank 23
+    3300150: Tile-Blank 24
+    3300152: Tile-Blank 25
+    3300154: Tile-Blank 26
+    3300156: Tile-Blank 27
+    3300158: Tile-Blank 28
+    3300160: Tile-Blank 29
+    3300162: Tile-Blank 3
+    3300164: Tile-Blank 30
+    3300166: Tile-Blank 31
+    3300168: Tile-Blank 32
+    3300170: Tile-Blank 33
+    3300172: Tile-Blank 34
+    3300174: Tile-Blank 35
+    3300176: Tile-Blank 36
+    3300178: Tile-Blank 37
+    3300180: Tile-Blank 38
+    3300182: Tile-Blank 39
+    3300184: Tile-Blank 4
+    3300186: Tile-Blank 40
+    3300188: Tile-Blank 41
+    3300190: Tile-Blank 42
+    3300192: Tile-Blank 43
+    3300194: Tile-Blank 44
+    3300196: Tile-Blank 45
+    3300198: Tile-Blank 46
+    3300200: Tile-Blank 47
+    3300202: Tile-Blank 48
+    3300204: Tile-Blank 49
+    3300206: Tile-Blank 5
+    3300208: Tile-Blank 50
+    3300210: Tile-Blank 51
+    3300212: Tile-Blank 52
+    3300214: Tile-Blank 53
+    3300216: Tile-Blank 54
+    3300218: Tile-Blank 55
+    3300220: Tile-Blank 56
+    3300222: Tile-Blank 57
+    3300224: Tile-Blank 58
+    3300226: Tile-Blank 59
+    3300228: Tile-Blank 6
+    3300230: Tile-Blank 60
+    3300232: Tile-Blank 61
+    3300234: Tile-Blank 62
+    3300236: Tile-Blank 63
+    3300238: Tile-Blank 64
+    3300240: Tile-Blank 65
+    3300242: Tile-Blank 66
+    3300244: Tile-Blank 67
+    3300246: Tile-Blank 68
+    3300248: Tile-Blank 69
+    3300250: Tile-Blank 7
+    3300252: Tile-Blank 70
+    3300254: Tile-Blank 71
+    3300256: Tile-Blank 72
+    3300258: Tile-Blank 73
+    3300260: Tile-Blank 74
+    3300262: Tile-Blank 75
+    3300264: Tile-Blank 76
+    3300266: Tile-Blank 77
+    3300268: Tile-Blank 78
+    3300270: Tile-Blank 79
+    3300272: Tile-Blank 8
+    3300274: Tile-Blank 80
+    3300276: Tile-Blank 81
+    3300278: Tile-Blank 82
+    3300280: Tile-Blank 83
+    3300282: Tile-Blank 84
+    3300284: Tile-Blank 85
+    3300286: Tile-Blank 86
+    3300288: Tile-Blank 87
+    3300290: Tile-Blank 88
+    3300292: Tile-Blank 89
+    3300294: Tile-Blank 9
+    3300296: Tile-Blank 90
+    3300298: Tile-Blank 91
+    3300300: Tile-Blank 92
+    3300302: Tile-Blank 93
+    3300304: Tile-Blank 94
+    3300306: Tile-Blank 95
+    3300308: Tile-Blank 96
+    3300310: Tile-Blank 97
+    3300312: Tile-Blank 98
+    3300314: Tile-Blank 99
+    4300000: Player-Spawner
+    4300002: Jumper-Target-A
+    4300004: Tile-Blank
+    4300006: Flag-Goal
+    4300008: Flag-Spawner-5-5
+    4300010: Jumper-A
+    4300012: Flag-Spawner-2-25
+    4300014: Flag-Goal
+    4300016: Jumper-F
+    4300018: Jumper-G
+    4300020: Jumper-H
+    4300022: Jumper-Target-F
+    4300024: Jumper-Target-G
+    4300026: Jumper-Target-H
+    4300028: Teleporter-A
+    4300030: Teleporter-A
+    4300032: Teleporter-B
+    4300034: Teleporter-B
+    4300036: Tile-Blank
+    4300038: Tile-Blank
+    4300040: Tile-Blank
+    4300042: Tile-Blank
+    4300044: Tile-Blank
+    4300046: Tile-Blank
+    4300048: Tile-Blank
+    4300050: Tile-Blank
+    4300052: Tile-Blank
+    4300054: Tile-Blank
+    4300056: Tile-Blank
+    4300058: Tile-Blank
+    4300060: Tile-Blank
+    4300062: Tile-Blank
+    4300064: Tile-Blank
+    4300066: Tile-Blank
+    4300068: Tile-Blank
+    4300070: Tile-Blank
+    4300072: Tile-Blank
+    4300074: Tile-Blank
+    4300076: Tile-Blank
+    4300078: Tile-Blank
+    4300080: Tile-Blank
+    4300082: Tile-Blank
+    4300084: Tile-Blank
+    4300086: Tile-Blank
+    4300088: Tile-Blank
+    4300090: Tile-Blank
+    4300092: Tile-Blank
+    4300094: Tile-Blank
+    4300096: Tile-Blank
+    4300098: Tile-Blank
+    4300100: Tile-Blank
+    4300102: Tile-Blank
+    4300104: Tile-Blank
+    4300106: Tile-Blank
+    4300108: Tile-Blank
+    4300110: Tile-Blank
+    4300112: Tile-Blank
+    4300114: Tile-Blank
+    4300116: Tile-Blank
+    4300118: Tile-Blank
+    4300120: Tile-Blank
+    4300122: Tile-Blank
+    4300124: Tile-Blank
+    4300126: Tile-Blank
+    4300128: Tile-Blank
+    4300130: Tile-Blank
+    4300132: Tile-Blank
+    4300134: Tile-Blank
+    4300136: Tile-Blank
+    4300138: Tile-Blank
+    4300140: Tile-Blank
+    4300142: Tile-Blank
+    4300144: Tile-Blank
+    4300146: Tile-Blank
+    4300148: Tile-Blank
+    4300150: Tile-Blank
+    4300152: Tile-Blank
+    4300154: Tile-Blank
+    4300156: Tile-Blank
+    4300158: Tile-Blank
+    4300160: Tile-Blank
+    4300162: Tile-Blank
+    4300164: Tile-Blank
+    4300166: Tile-Blank
+    4300168: Tile-Blank
+    4300170: Tile-Blank
+    4300172: Tile-Blank
+    4300174: Tile-Blank
+    4300176: Tile-Blank
+    4300178: Tile-Blank
+    4300180: Tile-Blank
+    4300182: Tile-Blank
+    4300184: Tile-Blank
+    4300186: Tile-Blank
+    4300188: Tile-Blank
+    4300190: Tile-Blank
+    4300192: Tile-Blank
+    4300194: Tile-Blank
+    4300196: Tile-Blank
+    4300198: Tile-Blank
+    4300200: Tile-Blank
+    4300202: Tile-Blank
+    4300204: Tile-Blank
+    4300206: Tile-Blank
+    4300208: Tile-Blank
+    4300210: Tile-Blank
+    4300212: Tile-Blank
+    4300214: Tile-Blank
+    4300216: Tile-Blank
+    4300218: Tile-Blank
+    4300220: Tile-Blank
+    4300222: Tile-Blank
+    4300224: Tile-Blank
+    4300226: Tile-Blank
+    4300228: Tile-Blank
+    4300230: Tile-Blank
+    4300232: Tile-Blank
+    4300234: Tile-Blank
+    4300236: Tile-Blank
+    4300238: Tile-Blank
+    4300240: Tile-Blank
+    4300242: Tile-Blank
+    4300244: Tile-Blank
+    4300246: Tile-Blank
+    4300248: Tile-Blank
+    4300250: Tile-Blank
+    4300252: Tile-Blank
+    4300254: Tile-Blank
+    4300256: Tile-Blank
+    4300258: Tile-Blank
+    4300260: Tile-Blank
+    4300262: Tile-Blank
+    4300264: Tile-Blank
+    4300266: Tile-Blank
+    4300268: Tile-Blank
+    4300270: Tile-Blank
+    4300272: Tile-Blank
+    4300274: Tile-Blank
+    4300276: Tile-Blank
+    4300278: Tile-Blank
+    4300280: Tile-Blank
+    4300282: Tile-Blank
+    4300284: Tile-Blank
+    4300286: Tile-Blank
+    4300288: Tile-Blank
+    4300290: Tile-Blank
+    4300292: Tile-Blank
+    4300294: Tile-Blank
+    4300296: Tile-Blank
+    4300298: Tile-Blank
+    4300300: Tile-Blank
+    4300302: Tile-Blank
+    4300304: Tile-Blank
+    4300306: Tile-Blank
+    4300308: Tile-Blank
+    4300310: Flag-Spawner-4-10
+    4300312: Tile-Blank
+    4300314: Tile-Blank
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 
