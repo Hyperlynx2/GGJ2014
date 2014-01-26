@@ -75,7 +75,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110206990}
   m_DstState: {fileID: 110200000}
-  m_TransitionDuration: .258620709
+  m_TransitionDuration: .0752554983
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
@@ -93,7 +93,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110218686}
   m_DstState: {fileID: 110200000}
-  m_TransitionDuration: .767241299
+  m_TransitionDuration: .112365134
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
@@ -129,8 +129,8 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110206990}
   m_DstState: {fileID: 110218686}
-  m_TransitionDuration: 0
-  m_TransitionOffset: .00559723238
+  m_TransitionDuration: .104780249
+  m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: bFalling
@@ -147,8 +147,8 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110218686}
   m_DstState: {fileID: 110206990}
-  m_TransitionDuration: 0
-  m_TransitionOffset: .0111940941
+  m_TransitionDuration: .130975291
+  m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: bFalling
@@ -165,8 +165,8 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110200000}
   m_DstState: {fileID: 110218686}
-  m_TransitionDuration: 0
-  m_TransitionOffset: .0456456095
+  m_TransitionDuration: .18336536
+  m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: bFalling
@@ -183,7 +183,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110285392}
   m_DstState: {fileID: 110200000}
-  m_TransitionDuration: 1
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
@@ -219,7 +219,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110206990}
   m_DstState: {fileID: 110270911}
-  m_TransitionDuration: 0
+  m_TransitionDuration: .104780242
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
@@ -237,8 +237,8 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110270911}
   m_DstState: {fileID: 110206990}
-  m_TransitionDuration: 0
-  m_TransitionOffset: .0139925694
+  m_TransitionDuration: .130975291
+  m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: bJumping

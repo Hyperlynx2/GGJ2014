@@ -64,13 +64,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02175c2f62dec4742b2cd536600f782a, type: 3}
   m_Name: 
-  NumSpawnedFlags: 5
-  FlagInstances:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  NumSpawnedCandles: 0
+  PointsPerCandle: 0
+  CandleInstances: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
