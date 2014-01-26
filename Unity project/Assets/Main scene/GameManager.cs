@@ -62,7 +62,7 @@ public class GameManager
 	{
 		_state = STATE.MENU;
 	}
-	
+
 	public void OnGUI()
 	{
 		GUI.skin = skin;
@@ -124,6 +124,8 @@ public class GameManager
 			if(Input.GetAxis("Start") > 0)
 			{
 				_state = STATE.MENU;
+				_player1Score = 0;
+				_player2Score = 0;
 			}
 		}		
 	}

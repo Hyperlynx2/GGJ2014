@@ -185,23 +185,11 @@ public class Player : MonoBehaviour
 	}
 	
 	void OnGUI()
-	{
-		//whose turn it is, time remaining before player switch:
-		GUI.Box (new Rect (500, 200,100,50), playerNames[(int)_currentPlayer] + "\n" + _playerTurnRemaining);
-		
-		//TODO: remove playerNames array. replace it with two variables, or stick it in GameManager
-		
-		string scoreText = playerNames[0] + ": " + GameManager.GetInstance().Player1Score + "\n"
-			+ playerNames[1] + ": " + GameManager.GetInstance().Player2Score;		
-		
-		//score:
-		GUI.Box (new Rect (500, 400,150,50), scoreText);
-		
+	{		
 		//candles carried:
 		float textureWidth = 32;
 		float margin = 5;
 		
-				
 		//5 candle
 		GUI.Label(new Rect(Screen.width - (textureWidth + margin),
 			Screen.height - 4*(textureWidth + margin),
@@ -229,6 +217,9 @@ public class Player : MonoBehaviour
 			textureWidth,
 			textureWidth),
 			_have25Candle?FullCandleSlot25:EmptyCandleSlot25);
+		
+		//whose turn it is, time remaining before player switch (placeholder):
+		GUI.Box (new Rect (500, 200,100,50), playerNames[(int)_currentPlayer] + "\n" + _playerTurnRemaining);
 	}
 
 	/// <summary>
