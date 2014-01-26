@@ -67,22 +67,31 @@ public class GameManager
 	{
 		GUI.skin = skin;
 		
-		float heightOffset = 10;
-		const float height = 50;
-		const float width = 200;
+		float heightOffset = 25;
+		const float elementHeight = 50;
+		const float elementWidth = 200;
 
 		switch(_state)
 		{
 		case STATE.MENU:
+			
+			GUI.Label(new Rect(Screen.width/2 - elementWidth/2, heightOffset, elementWidth, elementHeight),
+				"Me vs Me", 
+				skin.GetStyle("Title"));
+			heightOffset += elementHeight *2;
+			
 			//god help you if you haven't got the labels and scenes right sized!
 			for(int i = 0; i < menuItemLabels.Length; ++i)
 			{
 				//TODO: change to be percentage of screen rather than absolute position.
-				if(GUI.Button(new Rect(Screen.width /2 - width/2, 10 + i*(height + separation), width, height), menuItemLabels[i]))
+				//if(GUI.Button(new Rect(Screen.width /2 - width/2, 10 + i*(elementHeight + separation), width, elementHeight), menuItemLabels[i]))
+				if(GUI.Button(new Rect(Screen.width /2 - elementWidth/2, heightOffset, elementWidth, elementHeight), menuItemLabels[i]))
 				{
 					_state = STATE.INGAME;
 					Application.LoadLevel(menuItemScenes[i]);
 				}
+				
+				heightOffset += elementHeight + separation;
 				
 			}
 			break;
@@ -90,8 +99,8 @@ public class GameManager
 			//nothing to do. player GUI and level GUI take over.
 			break;
 		case STATE.GAMEOVER:
-			GUI.Label(new Rect(Screen.width /2 - width/2, heightOffset, width, height), "Game over!");
-			heightOffset += height;
+			GUI.Label(new Rect(Screen.width /2 - elementWidth/2, heightOffset, elementWidth, elementHeight), "Game over!");
+			heightOffset += elementHeight;
 			
 			string victoryText = "Player 1 wins!";
 			
@@ -104,13 +113,13 @@ public class GameManager
 				victoryText = "Draw!";
 			}
 			
-			GUI.Label(new Rect(Screen.width /2 - width, heightOffset, width*2, height), victoryText);
-			heightOffset += height;
+			GUI.Label(new Rect(Screen.width /2 - elementWidth, heightOffset, elementWidth*2, elementHeight), victoryText);
+			heightOffset += elementHeight;
 			
-			GUI.Label(new Rect(Screen.width /2 - width/2, heightOffset, width, height), _player1Score + " vs " + _player2Score);
-			heightOffset += height;
+			GUI.Label(new Rect(Screen.width /2 - elementWidth/2, heightOffset, elementWidth, elementHeight), _player1Score + " vs " + _player2Score);
+			heightOffset += elementHeight;
 			
-			GUI.Label(new Rect(Screen.width /2 - width/2, Screen.height - (height+10), width, height), "Press start");
+			GUI.Label(new Rect(Screen.width /2 - elementWidth/2, Screen.height - (elementHeight+10), elementWidth, elementHeight), "Press start");
 			
 			
 			break;
