@@ -13,3 +13,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Cake it away/Cake It Away.unity
   - enabled: 1
     path: Assets/Scenes/Icing what you did there/Icing What You Did There.unity
+  - enabled: 1
+    path: Assets/Scenes/Any way you slice it/Any Way You Slice It.unity
+  - enabled: 1
+    path: Assets/Scenes/Das Bundt/Das Bundt.unity
