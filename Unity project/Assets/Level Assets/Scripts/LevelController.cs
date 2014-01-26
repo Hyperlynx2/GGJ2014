@@ -11,11 +11,12 @@ public class LevelController : MonoBehaviour {
 	public GUISkin HUDSkin;
 	public GUISkin player1HUDSkin;
 	
-	float timerBoxWidth = 200;
-	float timerBoxHeight = 55;
-	float hudMargin = 10;
-	float scoreBoxWidth = 170;
-	float scoreBoxHeight = 30;
+	//TODO: should be consts
+	public static float timerBoxWidth = 200;
+	public static float timerBoxHeight = 55;
+	public static float hudMargin = 10;
+	public static float scoreBoxWidth = 170;
+	public static float scoreBoxHeight = 30;
 	
 	private float _remainingTime;
 	
