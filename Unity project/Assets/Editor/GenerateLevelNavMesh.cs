@@ -196,7 +196,9 @@ public class GenerateLevelNavMesh : Editor
 				
 				if(obj.name.Contains("Flag-Goal"))
 				{
-					clone.name = "Flag-Goal";	
+					clone.name = "Flag-Goal";
+					clone.transform.position = obj.transform.position;
+					clone.transform.rotation = Quaternion.identity;
 				}
 				
 				if(obj.name.Contains("Flag-Spawner"))
