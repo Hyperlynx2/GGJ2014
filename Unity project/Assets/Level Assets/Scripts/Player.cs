@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 	public string player1RotateAxis;
 	public string player2RotateAxis;
 	public string[] playerNames;
+	
+	public GUIStyle turnTimerStyle;
 		
 	public GameObject prefabCandleGoalParticle;
 	public GameObject prefabCandlePickupParticle;
@@ -187,23 +189,11 @@ public class Player : MonoBehaviour
 	}
 	
 	void OnGUI()
-	{
-		//whose turn it is, time remaining before player switch:
-		GUI.Box (new Rect (500, 200,100,50), playerNames[(int)_currentPlayer] + "\n" + _playerTurnRemaining);
-		
-		//TODO: remove playerNames array. replace it with two variables, or stick it in GameManager
-		
-		string scoreText = playerNames[0] + ": " + GameManager.GetInstance().Player1Score + "\n"
-			+ playerNames[1] + ": " + GameManager.GetInstance().Player2Score;		
-		
-		//score:
-		GUI.Box (new Rect (500, 400,150,50), scoreText);
-		
+	{		
 		//candles carried:
 		float textureWidth = 32;
 		float margin = 5;
 		
-				
 		//5 candle
 		GUI.Label(new Rect(Screen.width - (textureWidth + margin),
 			Screen.height - 4*(textureWidth + margin),
@@ -231,6 +221,12 @@ public class Player : MonoBehaviour
 			textureWidth,
 			textureWidth),
 			_have25Candle?FullCandleSlot25:EmptyCandleSlot25);
+		
+		//whose turn it is, time remaining before player switch:
+		const float turnTimerWidth = 200;
+		
+		GUI.Label (new Rect (Screen.width/2 - turnTimerWidth/2, LevelController.hudMargin*2 + LevelController.timerBoxHeight, turnTimerWidth,50),
+			playerNames[(int)_currentPlayer] + "\n" +_playerTurnRemaining.ToString ("F2"), turnTimerStyle); //add player style.
 	}
 
 	/// <summary>

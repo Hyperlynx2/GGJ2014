@@ -40,14 +40,7 @@ MonoBehaviour:
   MaxLevelTime: 100
   TransitionSceneName: EndGame
   HUDSkin: {fileID: 11400000, guid: 9dc692aaf93dfdd47bc48b7c06e4b02f, type: 2}
-  FullCandleSlot5: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot5: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
-  FullCandleSlot10: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot10: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
-  FullCandleSlot15: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot15: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
-  FullCandleSlot25: {fileID: 2800000, guid: a07f402e01bb1ff40833d2a787a4ca36, type: 3}
-  EmptyCandleSlot25: {fileID: 2800000, guid: b3f472c4a9586d445bc97089556a61b5, type: 3}
+  player1HUDSkin: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

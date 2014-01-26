@@ -62,7 +62,7 @@ public class GameManager
 	{
 		_state = STATE.MENU;
 	}
-	
+
 	public void OnGUI()
 	{
 		GUI.skin = skin;
@@ -90,7 +90,7 @@ public class GameManager
 			//nothing to do. player GUI and level GUI take over.
 			break;
 		case STATE.GAMEOVER:
-			GUI.Box(new Rect(Screen.width /2 - width/2, heightOffset, width, height), "Game over!");
+			GUI.Label(new Rect(Screen.width /2 - width/2, heightOffset, width, height), "Game over!");
 			heightOffset += height;
 			
 			string victoryText = "Player 1 wins!";
@@ -104,13 +104,13 @@ public class GameManager
 				victoryText = "Draw!";
 			}
 			
-			GUI.Box(new Rect(Screen.width /2 - width/2, heightOffset, width, height), victoryText);
+			GUI.Label(new Rect(Screen.width /2 - width, heightOffset, width*2, height), victoryText);
 			heightOffset += height;
 			
-			GUI.Box(new Rect(Screen.width /2 - width/2, heightOffset, width, height), _player1Score + " vs " + _player2Score);
+			GUI.Label(new Rect(Screen.width /2 - width/2, heightOffset, width, height), _player1Score + " vs " + _player2Score);
 			heightOffset += height;
 			
-			GUI.Box(new Rect(Screen.width /2 - width/2, Screen.height - (height+10), width, height), "Press start");
+			GUI.Label(new Rect(Screen.width /2 - width/2, Screen.height - (height+10), width, height), "Press start");
 			
 			
 			break;
@@ -124,6 +124,8 @@ public class GameManager
 			if(Input.GetAxis("Start") > 0)
 			{
 				_state = STATE.MENU;
+				_player1Score = 0;
+				_player2Score = 0;
 			}
 		}		
 	}
