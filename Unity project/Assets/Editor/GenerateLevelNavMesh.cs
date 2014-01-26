@@ -12,14 +12,14 @@ public class GenerateLevelNavMesh : Editor
 	public static void GenerateLevelMesh()
 	{	
 		TeleporterColourList = new List<Color>();
-		TeleporterColourList.Add(new Color(1.0f, 0, 0));
-		TeleporterColourList.Add(new Color(0, 1.0f, 0));
-		TeleporterColourList.Add (new Color(0, 0.0f, 1.0f));
-		TeleporterColourList.Add (new Color(0, 1.0f, 1.0f));
-		TeleporterColourList.Add (new Color(1.0f, 0.0f, 1.0f));
-		TeleporterColourList.Add (new Color(1.0f, 1.0f, 0.0f));
-		TeleporterColourList.Add (new Color(0.7f, 0.1f, 0.5f));
-		TeleporterColourList.Add (new Color(0.2f, 0.9f, 0.3f));
+		TeleporterColourList.Add(new Color(1.0f, 0.5f, 0.5f));
+		TeleporterColourList.Add(new Color(0.5f, 1.0f, 0.5f));
+		TeleporterColourList.Add (new Color(0.5f, 0.5f, 1.0f));
+		TeleporterColourList.Add (new Color(0.5f, 1.0f, 1.0f));
+		TeleporterColourList.Add (new Color(1.0f, 0.5f, 1.0f));
+		TeleporterColourList.Add (new Color(1.0f, 1.0f, 0.5f));
+		TeleporterColourList.Add (new Color(0.9f, 0.6f, 0.9f));
+		TeleporterColourList.Add (new Color(0.7f, 1.0f, 0.7f));
 		
 		_TeleportColourIndex = 0;
 		
