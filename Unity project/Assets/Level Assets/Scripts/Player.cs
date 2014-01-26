@@ -80,6 +80,7 @@ public class Player : MonoBehaviour
 	private AudioSource _playerPainterLoop;
 	private AudioSource _playerCounterLoop;
 	private AudioSource _playerChangeSound;
+	private AudioSource _playerPutDownCandle;
 	
 	private bool _have5Candle;		
 	private bool _have10Candle;		
@@ -152,6 +153,7 @@ public class Player : MonoBehaviour
 		_playerPainterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerOneLoop").GetComponent<AudioSource>();
 		_playerCounterLoop = transform.FindChild ("Sounds").transform.FindChild("PlayerTwoLoop").GetComponent<AudioSource>();
 		_playerChangeSound = transform.FindChild ("Sounds").transform.FindChild("PlayerChange").GetComponent<AudioSource>();
+		_playerPutDownCandle = transform.FindChild ("Sounds").transform.FindChild("PlayerPutDownCandle").GetComponent<AudioSource>();
 		
 		_have5Candle = false;
 		_have10Candle = false;
@@ -562,6 +564,8 @@ public class Player : MonoBehaviour
 						DestroyObject(_candleBackpack);
 						_candleBackpack = null;
 					}
+					
+					_playerPutDownCandle.Play();
 				}
 				if(_have5Candle)
 				{
