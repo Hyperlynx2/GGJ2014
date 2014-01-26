@@ -163,6 +163,7 @@ public class Tile : MonoBehaviour
 		DestroyObject(ConnectedSpawner.CandleInstances[0]);
 		ConnectedSpawner.CandleInstances.RemoveAt(0);
 		ConnectedSpawner.NumSpawnedCandles--;
+		ConnectedSpawner.audio.Play();
 
 	}
 	
