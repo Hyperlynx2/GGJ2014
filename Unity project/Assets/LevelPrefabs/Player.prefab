@@ -580,6 +580,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+  m_OcclusionCulling: 1
 --- !u!81 &8100000
 AudioListener:
   m_ObjectHideFlags: 1
@@ -608,6 +609,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -664,6 +667,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -720,6 +725,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -776,6 +783,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -832,6 +841,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -876,6 +887,7 @@ Behaviour:
   m_Enabled: 1
 --- !u!95 &9500000
 Animator:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -886,6 +898,7 @@ Animator:
   m_CullingMode: 1
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!108 &10800000
 Light:
   m_ObjectHideFlags: 1
@@ -931,6 +944,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df27e11b779ad5c42901be10ad910808, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   DistanceToPlayer: 15
 --- !u!114 &11400002
 MonoBehaviour:
@@ -942,6 +956,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e914411cbf228714f9627b3bad8b8358, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   startTile: {fileID: 0}
   movementSpeed: .300000012
   player1HorizontalAxis: P1Horizontal
@@ -1046,6 +1061,9 @@ MonoBehaviour:
   EmptyCandleSlot15: {fileID: 2800000, guid: f4dbec8f95c74684793ff8e595d43ed8, type: 3}
   FullCandleSlot25: {fileID: 2800000, guid: 64036dca98f032e408b67b5ae36e3607, type: 3}
   EmptyCandleSlot25: {fileID: 2800000, guid: 11012426edcf4e9409940bd8c8cc96e5, type: 3}
+  skyboxPrefab: {fileID: 100000, guid: d18417e77c2a0ff40974c7e0e27410d6, type: 2}
+  p1SkyboxTexture: {fileID: 2800000, guid: dc95ba254eeb07449b26aaa97c0b1a09, type: 3}
+  p2SkyboxTexture: {fileID: 2800000, guid: 1e343dd831bc1aa4f817cd6d5a04f715, type: 3}
   CandleBackpackPrefab: {fileID: 100006, guid: aeb39b4f14a466b478b12949883e0834, type: 2}
 --- !u!124 &12400000
 Behaviour:
@@ -1072,6 +1090,9 @@ SkinnedMeshRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -1084,6 +1105,7 @@ SkinnedMeshRenderer:
   - {fileID: 400028}
   - {fileID: 400030}
   - {fileID: 400016}
+  m_BlendShapeWeights: []
   m_RootBone: {fileID: 400024}
   m_AABB:
     m_Center: {x: 0, y: -.203698754, z: 1.21203959}

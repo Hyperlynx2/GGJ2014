@@ -95,6 +95,11 @@ public class Player : MonoBehaviour
 	public Texture EmptyCandleSlot15;
 	public Texture FullCandleSlot25;
 	public Texture EmptyCandleSlot25;
+
+	public GameObject skyboxPrefab;
+	public Texture p1SkyboxTexture;
+	public Texture p2SkyboxTexture;
+	private GameObject _skybox;
 	
 	/// <summary>
 	/// Stops multiple inputs for rotate.
@@ -162,6 +167,12 @@ public class Player : MonoBehaviour
 		
 		_candleHolster = _playerModel.FindChild("CandleHolster").gameObject;
 		_candleBackpack = null;
+
+		_skybox = (GameObject)Instantiate(skyboxPrefab);
+
+		_skybox.transform.position = new Vector3(0,0,0);
+
+		_skybox.renderer.material.mainTexture = p1SkyboxTexture;
 	}
 	
 	// Update is called once per frame
@@ -254,6 +265,7 @@ public class Player : MonoBehaviour
 				_playerPainterLoop.Stop();
 				_playerCounterLoop.time = fMusicTime;
 				_playerCounterLoop.Play();
+				_skybox.renderer.material.mainTexture = p2SkyboxTexture;
 			}
 			else
 			{
@@ -263,6 +275,7 @@ public class Player : MonoBehaviour
 				_playerCounterLoop.Stop();
 				_playerPainterLoop.time = fMusicTime;
 				_playerPainterLoop.Play();
+				_skybox.renderer.material.mainTexture = p1SkyboxTexture;
 			}
 			
 			_playerTurnRemaining = turnTime;
