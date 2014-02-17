@@ -4,10 +4,20 @@ ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
     100000: //RootNode
+    100002: SKYBOX
+    100004: SKYBOX001
     400000: //RootNode
+    400002: SKYBOX
+    400004: SKYBOX001
     2300000: //RootNode
+    2300002: SKYBOX
+    2300004: SKYBOX001
     3300000: //RootNode
+    3300002: SKYBOX
+    3300004: SKYBOX001
     4300000: SKYBOX
+    4300002: SKYBOX001
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1

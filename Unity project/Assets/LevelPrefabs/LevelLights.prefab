@@ -83,7 +83,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: -.336602628, y: -.143105656, z: -.0659152865, w: -.928372085}
+  m_LocalRotation: {x: -.341587633, y: -.397523344, z: .0310494378, w: -.851075232}
   m_LocalPosition: {x: 2.28409004, y: 28.1718712, z: -21.9819145}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -120,7 +120,7 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: .388059676, g: .164887875, b: .11294274, a: 1}
-  m_Intensity: .100000001
+  m_Intensity: .349999994
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -155,7 +155,7 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: .150470361, g: .115170404, b: .164179087, a: 1}
-  m_Intensity: 1.60000002
+  m_Intensity: 2.20000005
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -190,16 +190,16 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: .962686539, g: .916064441, b: .754343927, a: 1}
-  m_Intensity: .349999994
+  m_Intensity: .5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
-    m_Resolution: -1
-    m_Strength: 1
+    m_Resolution: 2
+    m_Strength: .699999988
     m_Bias: .0500000007
-    m_Softness: 4
+    m_Softness: 8
     m_SoftnessFade: 1
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
@@ -211,7 +211,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 1
   m_ShadowSamples: 1
-  m_ShadowRadius: 0
+  m_ShadowRadius: 1
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}

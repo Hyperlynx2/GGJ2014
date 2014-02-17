@@ -67,7 +67,7 @@ public class GameManager
 	{
 		GUI.skin = skin;
 		
-		float heightOffset = 25;
+		float heightOffset = 55;
 		const float elementHeight = 50;
 		const float elementWidth = 200;
 
@@ -85,7 +85,7 @@ public class GameManager
 			{
 				//TODO: change to be percentage of screen rather than absolute position.
 				//if(GUI.Button(new Rect(Screen.width /2 - width/2, 10 + i*(elementHeight + separation), width, elementHeight), menuItemLabels[i]))
-				if(GUI.Button(new Rect(Screen.width /2 - elementWidth/2, heightOffset, elementWidth, elementHeight), menuItemLabels[i]))
+				if(GUI.Button(new Rect(Screen.width /2 - elementWidth/2, (heightOffset-20), elementWidth, elementHeight), menuItemLabels[i]))
 				{
 					_state = STATE.INGAME;
 					Application.LoadLevel(menuItemScenes[i]);
@@ -119,7 +119,7 @@ public class GameManager
 			GUI.Label(new Rect(Screen.width /2 - elementWidth/2, heightOffset, elementWidth, elementHeight), _player1Score + " vs " + _player2Score);
 			heightOffset += elementHeight;
 			
-			GUI.Label(new Rect(Screen.width /2 - elementWidth/2, Screen.height - (elementHeight+10), elementWidth, elementHeight), "Press start");
+			GUI.Label(new Rect(Screen.width /2 - elementWidth/2, Screen.height - (elementHeight+60), elementWidth, elementHeight), "Press start");
 			
 			
 			break;
