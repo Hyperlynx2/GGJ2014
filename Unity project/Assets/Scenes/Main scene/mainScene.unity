@@ -122,7 +122,6 @@ MonoBehaviour:
   - Icing What You Did There
   - Any Way You Slice It
   - Das Bundt
-  - 
   guiSkin: {fileID: 11400000, guid: ddbd0d399a29419488bdb78f73141f13, type: 2}
 --- !u!1 &780352448
 GameObject:
